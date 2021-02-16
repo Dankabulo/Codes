@@ -1,0 +1,5 @@
+var DISQUSWIDGETS;
+
+if (typeof DISQUSWIDGETS != 'undefined') {
+    DISQUSWIDGETS.displayCount({"text":{"and":"et","comments":{"zero":"0 Comments","multiple":"{num} Comments","one":"1 Comment"}},"counts":[{"id":"https:\/\/lioncoding.com\/2019\/03\/07\/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms\/","comments":0}]});
+}

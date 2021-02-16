@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BarCodeReader.Views.DejaRecu"
+             Title="{Binding Title}">
+    <ScrollView>
+        <Grid InputTransparent="False" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid BackgroundColor="{DynamicResource PrimaryColor}">
+                <ImageButton
+                Aspect="AspectFit"
+                BackgroundColor="Transparent"
+                FlexLayout.AlignSelf="Center"
+                FlexLayout.Grow="1"
+                Command="{Binding AccueilCommand}"
+                HeightRequest="250"
+                WidthRequest="250"
+                HorizontalOptions="CenterAndExpand"
+                Source="djeRecu.png"
+                VerticalOptions="CenterAndExpand">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+            </Grid>
+            <StackLayout Grid.Row="1">
+                <Label Text="Ce billet est déjà reçu."
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

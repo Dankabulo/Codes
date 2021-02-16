@@ -1,0 +1,824 @@
+(function ($) {
+    "use strict";
+
+    window.$ = $;
+    /*****************************************
+    Wyde Core
+    /******************************************/
+    $.extend(window, {
+        wyde: {
+            init: function () {
+                this.version = "1.2";
+                this.browser = {};
+                this.detectBrowser();
+
+                Modernizr.addTest("boxsizing", function () {
+                    return Modernizr.testAllProps("boxSizing") && (document.documentMode === undefined || document.documentMode > 7);
+                });
+
+            },
+            detectBrowser: function () {
+
+                this.browser.touch = (Modernizr.touch) ? true : false;
+                this.browser.css3 = (Modernizr.csstransforms3d) ? true : false;
+                this.browser.mobile = this.isMobile(navigator.userAgent || navigator.vendor || window.opera);
+                
+                var self = this;
+                var getBrowserScreenSize = function(){
+                    var w = $(window).width();
+                    self.browser.xs = w < 768;
+                    self.browser.sm = (w > 767 && w < 992);
+                    self.browser.md = (w > 991 && w < 1200);
+                    self.browser.lg = w > 1199;                  
+                  
+                };
+
+                getBrowserScreenSize();
+
+                var ua = window.navigator.userAgent;
+                var msie = ua.indexOf("MSIE ");
+
+                // IE 10 or older
+                if (msie > 0) {
+                    this.browser.msie = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+                }
+
+                // IE 11
+                var trident = ua.indexOf('Trident/');
+                if (trident > 0) {
+                    var rv = ua.indexOf('rv:');
+                    this.browser.msie = parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+                }
+
+                // IE 12
+                var edge = ua.indexOf('Edge/');
+                if (edge > 0) {
+                    this.browser.msie = parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+                }
+
+                this.browser.prefix = "";
+
+                if (this.browser.css3 === true) {
+                    var styles = window.getComputedStyle(document.documentElement, "");
+                    this.browser.prefix = "-" + (Array.prototype.slice.call(styles).join("").match(/-(moz|webkit|ms)-/) || (styles.OLink === "" && ["", "o"]))[1] + "-";
+                }
+                
+                $(window).resize(function (event) {                    
+                    getBrowserScreenSize();                    
+                });
+
+            },
+            isMobile: function(a){              
+                return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4));
+            }
+        }
+    });
+
+    wyde.init();
+
+    /*****************************************
+    String Extension
+    /*****************************************/
+    $.extend(String, {
+
+        format: function () {
+            if (arguments.length == 0) return null;
+            var args;
+            if (arguments.length == 1) args = arguments[0];
+            else args = arguments;
+
+            var result = args[0];
+            for (var i = 1; i < args.length; i++) {
+                var re = new RegExp("\\{" + (i - 1) + "\\}", "gm");
+                result = result.replace(re, args[i]);
+            }
+            return result;
+        }
+    });
+
+    $.extend(String.prototype, {
+
+        trim: function (ch) {
+            if (!ch) ch = ' ';
+            return this.replace(new RegExp("^" + ch + "+|" + ch + "+$", "gm"), "").replace(/(\n)/gm, "");
+        },
+        ltrim: function () {
+            return this.replace(/^\s+/, "");
+        },
+        rtrim: function () {
+            return this.replace(/\s+$/, "");
+        },
+        reverse: function () {
+            var res = "";
+            for (var i = this.length; i > 0; --i) {
+                res += this.charAt(i - 1);
+            }
+            return res;
+        },
+        startWith: function (pattern) {
+            return this.match('^' + pattern);
+        },
+        endsWith: function (pattern) {
+            return this.match(pattern + '$');
+        }
+    });
+
+
+    /*****************************************
+    Number Extension
+    /*****************************************/    
+    $.extend(Number.prototype, {       
+        toFormat: function(format){
+            var value = this;
+            var mask = format; 
+            if ( !mask || isNaN( +value ) ) {
+                return value; // return as it is.
+            }
+
+            var isNegative, result, decimal, group, posLeadZero, posTrailZero, posSeparator,
+                part, szSep, integer,
+
+                // find prefix/suffix
+                len = mask.length,
+                start = mask.search( /[0-9\-\+#]/ ),
+                prefix = start > 0 ? mask.substring( 0, start ) : '',
+                // reverse string: not an ideal method if there are surrogate pairs
+                str = mask.split( '' ).reverse().join( '' ),
+                end = str.search( /[0-9\-\+#]/ ),
+                offset = len - end,
+                substr = mask.substring( offset, offset + 1 ),
+                indx = offset + ( ( substr === '.' || ( substr === ',' )) ? 1 : 0 ),
+                suffix = end > 0 ? mask.substring( indx, len ) : '';
+
+            // mask with prefix & suffix removed
+            mask = mask.substring( start, indx );
+
+            // convert any string to number according to formation sign.
+            value = mask.charAt( 0 ) === '-' ? -value : +value;
+            isNegative = value < 0 ? value = -value : 0; // process only abs(), and turn on flag.
+
+            // search for separator for grp & decimal, anything not digit, not +/- sign, not #.
+            result = mask.match( /[^\d\-\+#]/g );
+            decimal = ( result && result[ result.length - 1 ] ) || '.'; // treat the right most symbol as decimal
+            group = ( result && result[ 1 ] && result[ 0 ] ) || ',';  // treat the left most symbol as group separator
+
+            // split the decimal for the format string if any.
+            mask = mask.split( decimal );
+            // Fix the decimal first, toFixed will auto fill trailing zero.
+            value = value.toFixed( mask[ 1 ] && mask[ 1 ].length );
+            value = +( value ) + ''; // convert number to string to trim off *all* trailing decimal zero(es)
+
+            // fill back any trailing zero according to format
+            posTrailZero = mask[ 1 ] && mask[ 1 ].lastIndexOf( '0' ); // look for last zero in format
+            part = value.split( '.' );
+            // integer will get !part[1]
+            if ( !part[ 1 ] || ( part[ 1 ] && part[ 1 ].length <= posTrailZero ) ) {
+                value = ( +value ).toFixed( posTrailZero + 1 );
+            }
+            szSep = mask[ 0 ].split( group ); // look for separator
+            mask[ 0 ] = szSep.join( '' ); // join back without separator for counting the pos of any leading 0.
+
+            posLeadZero = mask[ 0 ] && mask[ 0 ].indexOf( '0' );
+            if ( posLeadZero > -1 ) {
+                while ( part[ 0 ].length < ( mask[ 0 ].length - posLeadZero ) ) {
+                    part[ 0 ] = '0' + part[ 0 ];
+                }
+            } else if ( +part[ 0 ] === 0 ) {
+                part[ 0 ] = '';
+            }
+
+            value = value.split( '.' );
+            value[ 0 ] = part[ 0 ];
+
+            // process the first group separator from decimal (.) only, the rest ignore.
+            // get the length of the last slice of split result.
+            posSeparator = ( szSep[ 1 ] && szSep[ szSep.length - 1 ].length );
+            if ( posSeparator ) {
+                integer = value[ 0 ];
+                str = '';
+                offset = integer.length % posSeparator;
+                len = integer.length;
+                for ( indx = 0; indx < len; indx++ ) {
+                    str += integer.charAt( indx ); // ie6 only support charAt for sz.
+                    // -posSeparator so that won't trail separator on full length
+                    /*jshint -W018 */
+                    if ( !( ( indx - offset + 1 ) % posSeparator ) && indx < len - posSeparator ) {
+                        str += group;
+                    }
+                }
+                value[ 0 ] = str;
+            }
+            value[ 1 ] = ( mask[ 1 ] && value[ 1 ] ) ? decimal + value[ 1 ] : '';
+
+            // remove negative sign if result is zero
+            result = value.join( '' );
+            if ( result === '0' || result === '' ) {
+                // remove negative sign if result is zero
+                isNegative = false;
+            }
+
+            // put back any negation, combine integer and fraction, and add back prefix & suffix
+            return prefix + ( ( isNegative ? '-' : '' ) + result ) + suffix;
+        }
+    });
+
+    /*****************************************
+    Utilities
+    /*****************************************/
+    $.extend(window, {
+
+        /*  Convert Hex color to RGB color */
+        hex2rgb: function (hex, opacity) {
+
+            var hex = hex.replace("#", "");
+            var r = parseInt(hex.substring(0, 2), 16);
+            var g = parseInt(hex.substring(2, 4), 16);
+            var b = parseInt(hex.substring(4, 6), 16);
+
+            return String.format("rgba({0},{1},{2},{3})", r, g, b, opacity);
+        },
+        /*  Convert RGB color to Hex color */
+        rgb2hex: function (rgb) {
+            rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+            return (rgb && rgb.length === 4) ? "#" +
+              ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
+              ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
+              ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
+        },
+        getViewPort: function () {
+            var win = $(window);
+            var viewport = {
+                top: win.scrollTop(),
+                left: win.scrollLeft()
+            };
+            viewport.right = viewport.left + win.width();
+            viewport.bottom = viewport.top + win.height();
+
+            return viewport;
+        },
+        getHash: function (url) {
+            return (url && url.indexOf("#") > -1) ? url.substr(url.indexOf("#")) : null;
+        }
+    });
+
+    /*****************************************
+    Is on screen 
+    /*****************************************/
+    $.fn.isOnScreen = function () {
+
+        var viewport = getViewPort();
+
+        var bounds = this.offset();
+        if(bounds){
+            bounds.right = bounds.left + this.outerWidth();
+            bounds.bottom = bounds.top + this.outerHeight();
+        }
+        return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    };
+
+    /**
+     * Returns a function, that, as long as it continues to be invoked, will not be triggered. 
+     * The function will be called after it stops being called for N milliseconds.
+     * If `immediate` is passed, trigger the function on the leading edge, instead of the trailing.
+     * 
+     * @since 1.0.0
+     * 
+     * @param {Function} callback   A callback function.
+     * @param {Number}   wait       Waiting time in milliseconds.
+     * @param {Boolean}  immediate  Whether to trigger the function on the leading edge, instead of the trailing.
+     * @return {Function} A debounced function that, as long as it continues to be invoked, will not be triggered.
+     */
+    window.wydeDebounce = function( callback, wait, immediate ) {
+        var timeout;
+        if ( ! wait ) wait = 300;
+        return function() {
+            if ( typeof callback !== 'function' ) return false;
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if ( ! immediate ) callback.apply( context, args );
+            };
+            var callNow = immediate && ! timeout;
+            clearTimeout( timeout );
+            timeout = setTimeout( later, wait );
+            if ( callNow ) callback.apply( context, args );
+        };
+    };
+
+    /**
+     * Returns a function, that, when invoked, will only be triggered at most once
+     * during a given window of time.
+     * 
+     * @since 1.0.0
+     *  
+     * @param {Function} callback   A callback function.
+     * @param {Number}   threshhold The time in milliseconds so that the callback function will be called.
+     * @return {Function} A function that will be called in every threshhold.
+     */
+    window.wydeThrottle = function( callback, threshhold ) {
+
+		if ( ! threshhold ) threshhold = 300;
+        var last, deferTimer;
+        return function() {
+            var context = this;
+
+            var now = +new Date,
+                args = arguments;
+            if ( last && now < last + threshhold ) {
+                clearTimeout( deferTimer );
+                deferTimer = setTimeout(function() {
+                    last = now;
+                    callback.apply( context, args );
+                }, threshhold );
+            } else {
+                last = now;
+                callback.apply( context, args );
+            }
+        };
+
+	};
+
+    /*****************************************
+    Request Animation frame
+    /*****************************************/
+    (function () {
+
+        var lastTime = 0;
+        var vendors = ['ms', 'moz', 'webkit', 'o'];
+        for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+            window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+            window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame']
+                                 || window[vendors[x] + 'CancelRequestAnimationFrame'];
+        }
+
+        if (!window.requestAnimationFrame) {
+            window.requestAnimationFrame = function (callback) {
+                var currTime = new Date().getTime();
+                var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                var id = window.setTimeout(function () { callback(currTime + timeToCall); },
+          timeToCall);
+                lastTime = currTime + timeToCall;
+                return id;
+            };
+        }
+
+        if (!window.cancelAnimationFrame) {
+            window.cancelAnimationFrame = function (id) {
+                clearTimeout(id);
+            };
+        }
+    })();
+
+
+    /*****************************************
+    Video Background
+    /*****************************************/
+    function initVideoBackground() {
+
+        var $videos = $(".videobg");
+
+        if(!$videos.length) return;        
+                
+        $videos.each(function(){        
+            var $el = $(this);
+            $el.attr("id", "videobg-"+$el.index(".videobg"));
+            
+            var host = $('<a>').prop('href', $el.attr("src")).prop('hostname');
+            if( host.indexOf("youtube.co") > -1 ){
+                $el.addClass("youtube-video");
+            }else if( host.indexOf("vimeo.co") > -1 ){
+                $el.addClass("vimeo-video");               
+                $el.on("load", function(e) {
+                    if ( typeof window.$f === 'function' ) {
+                        var player = $f(this);
+                        player.api("setVolume", 0); 
+                    }                   
+                });                              
+            }     
+        });
+
+        var $first = $('script').first();
+
+        if( $(".videobg.youtube-video").length && ! $('head').find('#yt-iframe-api').length ){
+            var ytScript = document.createElement('script');
+            ytScript.id = 'yt-iframe-api';
+            ytScript.src = 'https://www.youtube.com/iframe_api';
+            $first.before(ytScript);
+
+            window.YTPlayer;
+            window.onYouTubeIframeAPIReady = function() {
+
+                $(".videobg.youtube-video").each(function(){  
+                    window.YTPlayer = new YT.Player($(this).attr("id"), {
+                        events: {
+                          onReady: function(event){
+                            event.target.mute();
+                          },
+                          onStateChange: function(event){
+                          }
+                        }
+                    });
+                });
+            };
+        }
+
+        if( $(".videobg.vimeo-video").length && ! $('head').find('#vimeo-api').length ){
+            var vimeoScript = document.createElement('script');
+            vimeoScript.id = 'vimeo-api';
+            vimeoScript.src = 'https://f.vimeocdn.com/js/froogaloop2.min.js';
+            $first.before(vimeoScript);
+        }      
+        
+    };
+
+    $(window).on("wyde.page.ready", function () {
+        if( !wyde.browser.touch && ( wyde.browser.md || wyde.browser.lg ) ){
+            initVideoBackground();   
+        }
+    });
+
+
+    /*****************************************
+    Parallax Background
+    /*****************************************/
+    $.fn.wydeParallax = function (options) {
+
+        var defaults = {
+            speed: 0.3
+        };
+
+        var settings = $.extend({}, defaults, options || {});
+
+        var $doc = $(document), $win = $(window);
+
+        var winHeight = $win.height();
+        var docHeight = $doc.height();
+
+        return this.each(function () {
+
+            var $el = $(this);
+            var isBusy = false;
+
+            var boxPos = $el.offset().top;
+            var boxHeight = $el.height();
+            var speed = settings.speed;
+
+            var reverse = $el.hasClass("w-reverse");
+            var fade = $el.hasClass("w-fadeout");
+
+            var $bg = $el.find(".bg-wrapper");
+            $bg.addClass("parallax");
+            var $content, contentHeight, contentTop, contentHalf, winHalf;
+
+            function refresh() {
+                boxHeight = $el.height();
+                if (reverse || fade) {
+                    $content = $el.find(" > .row");
+                    contentHeight = $content.height();
+                    contentTop = $content.offset().top;
+                    contentHalf = contentHeight / 2;
+                } else {
+                    speed = 44 / (winHeight + boxHeight);
+                }
+            }
+
+            function render() {
+
+                if ($el.isOnScreen()) {
+
+                    var scrollPos = $win.scrollTop();
+                    boxPos = $el.offset().top;
+                    if (reverse || fade) {
+
+                        var yPos = Math.round((scrollPos - (boxPos)) * speed);
+                        $bg.css(wyde.browser.prefix + "transform", "translate3d(0px, " + yPos + "px, 0px)");
+
+                        if (fade) {
+                            var viewport = getViewPort();
+                            winHalf = winHeight / 2;
+                            if (viewport.bottom > (contentTop + contentHeight - contentHalf + winHalf)) {
+                                var o = 1 - ((scrollPos + contentHeight - contentTop) / contentHeight);
+                                $content.css('opacity', o);
+                            }
+
+                        } else {
+                            $content.css('opacity', '1');
+                        }
+
+                    } else {
+                        var yPos = Math.abs(scrollPos - (boxPos - winHeight)) * speed * -1;
+                        $bg.css(wyde.browser.prefix + "transform", "translate3d(0px, " + yPos + "%, 0px)");
+                    }
+                }
+
+            }
+
+            function requestRender() {
+                if (!isBusy) {
+                    isBusy = true;
+                    window.requestAnimationFrame(function () {
+                        render();
+                        isBusy = false;
+                    });
+                }
+            }
+
+            $win.on("scroll", function () {
+                requestRender();
+            });
+
+            $(window).smartresize(function () {
+                winHeight = $win.height();
+                docHeight = $doc.height();
+                refresh();
+            });
+
+            refresh();
+            requestRender();
+
+        });
+
+    };
+
+    /*****************************************
+    Wyde Scroller
+    /*****************************************/
+    function WydeScroller( element, options, callback ) {
+
+        var defaults = {
+            height: null,            
+            scrollbar: false,
+            onScroll: null
+        };
+
+        var settings = $.extend( {}, defaults, options || {} );
+
+        // decorate the element with a scrollbar
+        var $el = $( element ),
+            elementHeight = settings.height,
+            scrollbarActive = false,
+            contentHeight = 0,
+            ratio = 1;
+
+        if ( ! elementHeight ) elementHeight = $el.height();        
+
+        $el.addClass( 'w-scroller' );
+        
+        $el.wrapInner( '<div class="w-scroll-area"><div class="w-content-inner"></div></div>' );
+
+        var $scrollarea = $el.find( '.w-scroll-area' ).css( 'max-height', elementHeight );
+
+        var $contentWrapper = $el.find( '.w-content-inner' ); 
+
+        var $scrollbar = $el.find( '.w-scrollbar' );
+
+        var $scrollbarButton = $el.find( '.w-bar' ); 
+
+        this.updateScrollbar = function() {
+           
+            if ( settings.scrollbar ) { 
+
+                contentHeight = $contentWrapper.outerHeight( true );
+                ratio = Math.min( 1, elementHeight / contentHeight );
+
+                scrollbarActive = ( ratio < 1 );
+                    
+                $el.toggleClass( 'active', scrollbarActive );
+            
+                // Create scrollbars                                
+                if ( ! $scrollbar.length ) {
+                    $scrollbar = $( '<div class="w-scrollbar"></div>' ).appendTo( $el );     
+                }
+
+                $scrollbar.css( 'height', elementHeight );                
+
+                if ( ! $scrollbarButton.length ) {
+                    $scrollbarButton = $( '<div class="w-bar"></div>' ).appendTo( $scrollbar );
+                }
+
+                if ( scrollbarActive ) {
+                    $scrollbarButton.css( 'height', elementHeight * ratio );
+                }
+                
+            }
+            
+        };
+
+        this.refresh = function( height ) {
+            
+            var self = this;
+            
+            setTimeout( function() {
+            
+                elementHeight = height ? height : $el.height();
+
+                $scrollarea.css( 'max-height', elementHeight );
+
+                self.updateScrollbar();
+
+            }, 100 );
+
+        };
+
+        this.destroy = function() {
+            $( window ).off( 'resize.wyde.scroller' );
+            $scrollarea.off( 'scroll.wyde.scroller' );
+            $el.off( 'scroll.wyde.scroller' );
+            $contentWrapper.contents().unwrap();
+        };
+
+        this.updateScrollbar();
+
+        $el.on( 'scroll.wyde.scroller', function() {
+            $( this ).scrollLeft( 0 ).scrollTop( 0 ); // Issue with webkit: http://stackoverflow.com/q/10036044
+            return false;
+        } );
+
+        $scrollarea.on( 'scroll.wyde.scroller', function( event ) {
+
+            if ( settings.scrollbar && scrollbarActive && $scrollbarButton.length ) {
+
+                var scrollTop = $scrollarea.scrollTop() * ratio;
+            
+                $scrollbarButton.css({
+                    'transform': 'translateY(' + scrollTop + 'px)',
+                    height: elementHeight * ratio
+                });
+
+            }
+
+            if ( null !== settings.onScroll && typeof settings.onScroll === 'function' ) {
+                settings.onScroll.call( event, scrollTop );
+            }
+                    
+        } );
+
+        var self = this;
+        $( window ).on( 'resize.wyde.scroller', 
+            wydeDebounce(                
+                function() {
+                    self.refresh();            
+                }            
+            )
+        );
+
+    }
+
+    /**
+     * jQuery - Wyde Scroller
+     * 
+     * @since 1.0.0
+     * 
+     * @param {Object} options Options for the function.
+     * @param {Function} callback Callback function.
+     * @return {Object} jQuery function.
+     */
+    $.fn.wydeScroller = function( options, callback ) {
+        var method, methodArgs;
+
+        // Attributes logic
+        if ( ! $.isPlainObject( options ) ) {
+            if ( typeof options === 'string' || false === options ) {
+                method = false === options ? 'destroy' : options;
+                methodArgs = Array.prototype.slice.call( arguments, 1 );
+            }
+            options = {};
+        }
+
+        // Apply to all elements
+        return this.each( function( i, element ) {
+            // Call with prevention against multiple instantiations
+            var plugin = $.data( element, 'WydeScroller' );
+
+            if ( ! plugin && ! method ) {
+                // Create a new object if it doesn't exist yet
+                plugin = $.data( element, 'WydeScroller', new WydeScroller( element, options, callback ) );
+            } else if ( plugin && method ) {
+                // Call method
+                if ( plugin[ method ] ) {
+                    plugin[ method ].apply( plugin, methodArgs );
+                }
+            }
+        });
+    };
+
+    /*****************************************
+    Vertical Menu
+    /*****************************************/
+    function WydeVerticalMenu(element, options, callback) {
+   
+        var defaults = {    
+            singleOpen: true,        
+            changed: function() { } 
+        };
+
+        var settings = $.extend( {}, defaults, options || {} );       
+
+        var $el = $ ( element );
+        var self = this;
+
+        this.menuSelected = function( menuItems ) {
+          
+            if ( settings.singleOpen ) {
+                var openItems = menuItems.add( menuItems.parents( '.menu-item-has-children' ) );
+                $el.find( '.menu-open' ).not( openItems ).removeClass( 'menu-open' ).find( '> ul' ).slideUp( 100 ); 
+            }                 
+
+            if ( $( menuItems ).hasClass( 'menu-open' ) ) {
+                $( menuItems ).removeClass( 'menu-open' ).find( '> ul' ).slideUp( 100, function() {
+                    settings.changed( $el );
+                } );    
+            } else {
+                $( menuItems ).addClass( 'menu-open' ).find( '> ul' ).slideDown( 100, function() {
+                    settings.changed( $el );
+                } );    
+            }                   
+            
+        }
+
+        this.refresh = function() {          
+
+            $el.find( '.vertical-menu li.menu-item-has-children' ).each( function() {
+
+                var $menu = $( this );
+                var $sub = $menu.find( '> ul' );               
+                if ( $sub.length > 0 ) {  
+                   
+                    $menu.find( '> a' ).on( 'click', function( event ) {                         
+                        if ( '#' === $( this ).attr( 'href' ) || this.pathname === window.location.pathname ) {
+                            event.preventDefault();
+                            self.menuSelected( $menu );
+                            return false;
+                        } else {
+                            return true;
+                        }
+                    } );  
+                    
+                    $menu.find( '> .sub-menu-button' ).on( 'click', function() { 
+                        self.menuSelected( $menu );                        
+                        return false;                                         
+                    } );
+
+                }                                   
+                
+            } );            
+
+            setTimeout( function() {
+                self.openSubMenu();
+            }, 500 );                     
+        };
+
+        this.openSubMenu = function() {
+            // Select sub menu item  
+            var $selectedItems = $el.find( '.current-menu-item' ).parents( '.menu-item-has-children' );
+            if ( ! $selectedItems.length ) return 0;    
+            
+            self.menuSelected( $selectedItems );
+
+            return $selectedItems.length; 
+        };
+
+        this.refresh();
+
+     
+    };
+
+    /**
+     * jQuery - Wyde Vertical Menu
+     * 
+     * @since 1.0.0
+     * 
+     * @param {Object} options Options for the function.
+     * @param {Function} callback Callback function.
+     * @return {Object} jQuery function.
+     */
+    $.fn.wydeVerticalMenu = function (options, callbackMap) {
+        var method, methodArgs;
+
+        // Attributes logic
+        if (!$.isPlainObject(options)) {
+            if (typeof options === "string" || options === false) {
+                method = options === false ? "destroy" : options;
+                methodArgs = Array.prototype.slice.call(arguments, 1);
+            }
+            options = {};
+        }
+
+        // Apply to all elements
+        return this.each(function (i, element) {
+            // Call with prevention against multiple instantiations
+            var plugin = $.data(element, "wydeVerticalMenu");
+
+            if (!plugin && !method) {
+                // Create a new object if it doesn't exist yet
+                plugin = $.data(element, "wydeVerticalMenu", new WydeVerticalMenu(element, options, callbackMap));
+            } else if (plugin && method) {
+                // Call method
+                if (plugin[method]) {
+                    plugin[method].apply(plugin, methodArgs);
+                }
+            }
+        });
+    };
+
+})(jQuery);

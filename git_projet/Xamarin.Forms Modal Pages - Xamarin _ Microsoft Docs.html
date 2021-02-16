@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus js-focus-visible theme-dark" lang="en-us" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Xamarin.Forms Modal Pages - Xamarin">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal">
+			<meta property="og:description" content="Xamarin.Forms provides support for modal pages. A modal page encourages users to complete a self-contained task that cannot be navigated away from until the task is completed or cancelled. This article demonstrates how to navigate to modal pages.">
+		<meta property="og:image" content="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png">
+		<meta property="og:image:alt" content="Microsoft Logo">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@docsmsft">
+
+
+	<meta name="audience" content="developer">
+<meta name="author" content="davidbritch">
+<meta name="breadcrumb_path" content="/xamarin/breadcrumb/toc.json">
+<meta name="depot_name" content="MSDN.xamarin-docs">
+<meta name="description" content="Xamarin.Forms provides support for modal pages. A modal page encourages users to complete a self-contained task that cannot be navigated away from until the task is completed or cancelled. This article demonstrates how to navigate to modal pages.">
+<meta name="document_id" content="4dbd0d0d-484d-ea90-3a8c-e0780a058017">
+<meta name="document_version_independent_id" content="cf200dae-4d45-cc32-e323-c317e969ac64">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/xamarin-docs-pr/blob/7fe9e7bd8d06e017b7b0501ed7dd565340e7b273/docs/xamarin-forms/app-fundamentals/navigation/modal.md">
+<meta name="locale" content="en-us">
+<meta name="manager" content="crdun">
+<meta name="ms.assetid" content="486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6">
+<meta name="ms.author" content="dabritch">
+<meta name="ms.date" content="12/01/2017">
+<meta name="ms.prod" content="xamarin">
+<meta name="ms.technology" content="xamarin-forms">
+<meta name="ms.topic" content="conceptual">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/xamarin-docs-pr/blob/live/docs/xamarin-forms/app-fundamentals/navigation/modal.md">
+<meta name="search.ms_docsetname" content="xamarin-docs">
+<meta name="search.ms_product" content="MSDN">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="site_name" content="Docs">
+<meta name="uhfHeaderId" content="MSDocsHeader-Xamarin">
+<meta name="updated_at" content="2020-06-09 09:33 AM">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="../../toc.json">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/en-us/MSDN.xamarin-docs/{branchName}{pdfName}">
+<meta name="word_count" content="1279">
+
+
+	<meta name="scope" content="Xamarin, Xamarin.Forms">
+<link href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal" rel="canonical">
+	<title>Xamarin.Forms Modal Pages - Xamarin | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/3255499b.site-ltr.css">
+
+	<link rel="stylesheet" href="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/5a8a71c1.conceptual.css">
+
+
+	<script async="" defer="" crossorigin="anonymous" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/lux.js.téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/analytics.js.téléchargement"></script><script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: true,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/xamarin-docs',
+			feedbackProductUrl: 'https://developercommunity.visualstudio.com/',
+			contentGitUrl: 'https://github.com/MicrosoftDocs/xamarin-docs/blob/live/docs/xamarin-forms/app-fundamentals/navigation/modal.md',
+			extendBreadcrumb: true,
+			isEditDisplayable: true,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasBookmark: true,
+			hasShare: true
+		},
+		functions:{}
+	};
+	</script>
+	<script nomodule="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/bluebird.min.js.téléchargement" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"></script>
+	<script nomodule="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/fetch.umd.min.js.téléchargement" integrity="sha384-EQIXrC5K2+7X8nGgLkB995I0/6jfAvvyG1ieZ+WYGxgJHFMD/alsG9fSDWvzb5Y1" crossorigin="anonymous"></script>
+	<script nomodule="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/template.min.js.téléchargement" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"></script>
+	<script nomodule="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/url.min.js.téléchargement" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"></script>
+	<script nomodule="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/7501e2bd.index-polyfills.js.téléchargement"></script>
+		<script src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/38a6a415.index-docs.js.téléchargement"></script><style></style><script src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/jsll-4.js.téléchargement" async="" defer=""></script>
+<script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js.téléchargement"></script><style type="text/css" media="print">.usabilla_live_button_container { display: none; }</style><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(1).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(2).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(3).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(4).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(5).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(6).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(7).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(8).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(9).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(10).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(11).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(12).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(13).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(14).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(15).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(16).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(17).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(18).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(19).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(20).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(21).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(22).téléchargement"></script><script async="" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/t.js(23).téléchargement"></script><script async="" src="https://web.vortex.data.microsoft.com/collect/v1/t.js?ver=%272.1%27&amp;name=%27Ms.Webi.PageAction%27&amp;time=%272020-07-01T11%3A50%3A45.629Z%27&amp;os=%27Windows%27&amp;appId=%27JS%3ADocs%27&amp;-ver=%271.0%27&amp;-impressionGuid=%2766097a85-d84b-4944-9d03-2309246c8eb9%27&amp;-pageName=%274dbd0d0d-484d-ea90-3a8c-e0780a058017%27&amp;-uri=%27https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal%27&amp;-pageTags=%27%7B%22aud%22%3A%22developer%22%2C%22author%22%3A%22davidbritch%22%2C%22depotname%22%3A%22MSDN.xamarin-docs%22%2C%22document_version_independent_id%22%3A%22cf200dae-4d45-cc32-e323-c317e969ac64%22%2C%22gitcommit%22%3A%22https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fxamarin-docs-pr%2Fblob%2F7fe9e7bd8d06e017b7b0501ed7dd565340e7b273%2Fdocs%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal.md%22%2C%22manager%22%3A%22crdun%22%2C%22asst%22%3A%22486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6%22%2C%22pgauth%22%3A%22dabritch%22%2C%22date%22%3A%2212%2F01%2F2017%22%2C%22product%22%3A%22xamarin%22%2C%22technology%22%3A%22xamarin-forms%22%2C%22pgtop%22%3A%22conceptual%22%2C%22giturl%22%3A%22https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fxamarin-docs-pr%2Fblob%2Flive%2Fdocs%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal.md%22%2C%22publishtime%22%3A%222020-06-09%2009%3A33%20AM%22%2C%22contentlocale%22%3A%22en-us%22%2C%22highContrast%22%3A%22false%22%2C%22metaTags%22%3A%7B%7D%7D%27&amp;-contentVer=%272.0%27&amp;-market=%27en-us%27&amp;-pageType=%27conceptual%27&amp;-actionType=%27O%27&amp;-behavior=300&amp;-content=%27%5B%7B%22event%22%3A%22page-visibility-changed%22%2C%22value%22%3A%22hidden%22%7D%5D%27&amp;*baseType=%27Ms.Content.PageAction%27&amp;*timeToAction=116100&amp;*cookieEnabled=true&amp;*isJs=true&amp;*title=%27Xamarin.Forms%20Modal%20Pages%20-%20Xamarin%20%7C%20Microsoft%20Docs%27&amp;*isLoggedIn=false&amp;*isManual=true&amp;*referrerUri=%27https%3A%2F%2Fwww.google.fr%2F%27&amp;ext-javascript-ver=%271.1%27&amp;ext-javascript-libVer=%274.2.14%27&amp;ext-javascript-domain=%27docs.microsoft.com%27&amp;ext-javascript-msfpc=%27GUID%3D8ecf382655c54072ad387b16f756e1f2%26HASH%3D8ecf%26LV%3D202006%26V%3D4%26LU%3D1590995755033%27&amp;ext-javascript-userConsent=true&amp;ext-user-localId=%27t%3A2DAE270F18CC64E8226D29D71934651B%27&amp;$mscomCookies=false"></script><script async="" src="https://web.vortex.data.microsoft.com/collect/v1/t.js?ver=%272.1%27&amp;name=%27Ms.Webi.PageAction%27&amp;time=%272020-07-01T11%3A50%3A46.465Z%27&amp;os=%27Windows%27&amp;appId=%27JS%3ADocs%27&amp;-ver=%271.0%27&amp;-impressionGuid=%2766097a85-d84b-4944-9d03-2309246c8eb9%27&amp;-pageName=%274dbd0d0d-484d-ea90-3a8c-e0780a058017%27&amp;-uri=%27https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal%27&amp;-pageTags=%27%7B%22aud%22%3A%22developer%22%2C%22author%22%3A%22davidbritch%22%2C%22depotname%22%3A%22MSDN.xamarin-docs%22%2C%22document_version_independent_id%22%3A%22cf200dae-4d45-cc32-e323-c317e969ac64%22%2C%22gitcommit%22%3A%22https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fxamarin-docs-pr%2Fblob%2F7fe9e7bd8d06e017b7b0501ed7dd565340e7b273%2Fdocs%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal.md%22%2C%22manager%22%3A%22crdun%22%2C%22asst%22%3A%22486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6%22%2C%22pgauth%22%3A%22dabritch%22%2C%22date%22%3A%2212%2F01%2F2017%22%2C%22product%22%3A%22xamarin%22%2C%22technology%22%3A%22xamarin-forms%22%2C%22pgtop%22%3A%22conceptual%22%2C%22giturl%22%3A%22https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fxamarin-docs-pr%2Fblob%2Flive%2Fdocs%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal.md%22%2C%22publishtime%22%3A%222020-06-09%2009%3A33%20AM%22%2C%22contentlocale%22%3A%22en-us%22%2C%22highContrast%22%3A%22false%22%2C%22metaTags%22%3A%7B%7D%7D%27&amp;-contentVer=%272.0%27&amp;-market=%27en-us%27&amp;-pageType=%27conceptual%27&amp;-actionType=%27O%27&amp;-behavior=300&amp;-content=%27%5B%7B%22event%22%3A%22page-focus-changed%22%2C%22value%22%3A%22blur%22%7D%5D%27&amp;*baseType=%27Ms.Content.PageAction%27&amp;*timeToAction=116935&amp;*cookieEnabled=true&amp;*isJs=true&amp;*title=%27Xamarin.Forms%20Modal%20Pages%20-%20Xamarin%20%7C%20Microsoft%20Docs%27&amp;*isLoggedIn=false&amp;*isManual=true&amp;*referrerUri=%27https%3A%2F%2Fwww.google.fr%2F%27&amp;ext-javascript-ver=%271.1%27&amp;ext-javascript-libVer=%274.2.14%27&amp;ext-javascript-domain=%27docs.microsoft.com%27&amp;ext-javascript-msfpc=%27GUID%3D8ecf382655c54072ad387b16f756e1f2%26HASH%3D8ecf%26LV%3D202006%26V%3D4%26LU%3D1590995755033%27&amp;ext-javascript-userConsent=true&amp;ext-user-localId=%27t%3A2DAE270F18CC64E8226D29D71934651B%27&amp;$mscomCookies=false"></script></head>
+
+<body lang="en-us" dir="ltr"><div style="display: none;" id="lightningjs-usabilla_live"><div><iframe frameborder="0" id="lightningjs-frame-usabilla_live" src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/saved_resource.html"></iframe></div></div>
+<div class="header-holder has-default-focus">
+	<a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused is-fixed has-inner-focus focus-visible has-top-zero has-left-zero has-right-zero has-padding-medium has-text-centered has-body-background-medium" tabindex="1">Skip to main content</a>
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!----><!----><div class="nav-bar"><!---->  <div class="nav-bar-brand">
+		<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft">
+			<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+		</a>
+	</div> 
+			
+		<div class="nav-bar-item is-hidden-tablet">
+			<button class="nav-bar-button nav-bar-menu" title="Global navigation" aria-expanded="false">
+				<span class="nav-bar-menu-title"><!---->Documentation<!----></span>
+				<div class="nav-bar-burger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span class="nav-bar-burger-label"><!---->Global navigation<!----></span>
+				</div>
+			</button>
+		</div>
+	
+			
+		<nav class="nav-bar-nav" role="navigation" aria-label="Global">
+			<ul class="nav-bar-nav-list">
+				
+		<li class="nav-bar-item is-category">
+			<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://docs.microsoft.com/en-us/">
+				<span><!---->Docs<!----></span>
+			</a>
+		</li>
+	
+				<!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline is-active" href="https://docs.microsoft.com/en-us/">
+					<span><!---->Documentation<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/learn/">
+					<span><!---->Learn<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/answers/products/">
+					<span><!---->Q&amp;A<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/en-us/samples/browse/">
+					<span><!---->Code Samples<!----></span>
+				</a>
+		  </li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button has-hover-underline" aria-controls="ax-50">
+			<span><!---->More<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-50" aria-label="More">
+			<!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/"><!---->Documentation<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/learn/"><!---->Learn<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/answers/products/"><!---->Q&amp;A<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/samples/browse/"><!---->Code Samples<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+			<span class="nav-bar-spacer"></span>
+			
+		<div class="nav-bar-search " id="ax-51" hidden="">
+			
+		<form class="nav-bar-search-form" method="GET" name="searchForm" role="search" id="searchForm" aria-label="Search" aria-expanded="false" action="https://docs.microsoft.com/en-us/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!----> <div class="control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-search-input" class="autocomplete-input input   is-small" type="search" name="search" aria-expanded="false" aria-owns="ax-52-listbox" aria-activedescendant="" aria-label="Search" placeholder="Search">
+
+				<span aria-hidden="true" class="icon is-small is-left" hidden="">
+					<span class="has-text-primary docon docon-undefined"></span>
+				</span>
+
+				<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-52-listbox" aria-label="site-search-input-suggestions" hidden="">
+				
+			</ul><!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="All">
+			<input name="scope" hidden="" value="Xamarin.Forms">
+			
+			
+		</form>
+	
+		</div>
+		
+					<div class="nav-bar-search">
+						<!-- hidden when the width drops to tablet -->
+						
+		<form class="nav-bar-search-form" method="GET" name="searchForm" role="search" id="searchFormDesktop" aria-label="Search" aria-expanded="false" action="https://docs.microsoft.com/en-us/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!----> <div class="control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-53" class="autocomplete-input input control has-icons-left  is-small" type="search" name="search" aria-expanded="false" aria-owns="ax-54-listbox" aria-activedescendant="" aria-label="Search" placeholder="Search">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-search"></span>
+				</span>
+
+				<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-54-listbox" aria-label="ax-53-suggestions" hidden="">
+				
+			</ul><!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="All">
+			<input name="scope" hidden="" value="Xamarin.Forms">
+			
+			
+		</form>
+	
+					</div>
+			  
+		<div class="nav-bar-search " hidden="">
+			<div class="nav-bar-search-form-expander">
+				<button id="form-expander" class="nav-bar-button has-hover-underline " title="Search" aria-expanded="false" aria-controls="ax-51">
+					
+		<span class="is-visually-hidden-mobile"><!---->Search<!----></span>
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-search"></span>
+		</span>
+	
+				</button>
+			</div>
+		</div>
+	
+			
+		<div class="nav-bar-item is-size-7 is-hidden-mobile has-padding-left-extra-small">
+			
+		<a class="docs-sign-in auth-status-determined not-authenticated button is-text has-inner-focus has-text-primary is-small" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#">
+			Sign in
+		</a>
+	 
+		<div class="dropdown has-caret auth-status-determined authenticated">
+			<button class="dropdown-trigger button is-text has-padding-none has-background-transparent" aria-controls="user-menu" aria-expanded="false" aria-label="Your Account">
+				<figure class="image is-36x36">
+					<img class="has-body-background-medium is-rounded" alt="" data-profile-property="avatarUrl">
+				</figure>
+			</button>
+			<div class="dropdown-menu box" id="user-menu" role="menu">
+				<div class="media is-user-dir">
+					<div class="media-left">
+						<figure class="image is-48x48" aria-hidden="true">
+							<img class="has-body-background-medium is-rounded" aria-labelledby="displayName" data-profile-property="avatarUrl">
+						</figure>
+					</div>
+					<div class="media-content">
+						<p class="title is-size-4">
+							<span id="displayName" class="is-inline-truncated has-max-width-200" data-profile-property="displayName"></span>
+						</p>
+						<p class="subtitle is-size-7 has-margin-bottom-none">
+							<span class="is-inline-truncated has-max-width-200" data-profile-property="upn"></span>
+						</p>
+					</div>
+				</div>
+				<ul>
+					<li><a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl"><!---->Profile<!----></a></li>
+					<li><a href="https://docs.microsoft.com/profile" data-profile-property="bookmarksUrl"><!---->Bookmarks<!----></a></li>
+					<li><a href="https://docs.microsoft.com/profile" data-profile-property="collectionsUrl"><!---->Collections<!----></a></li>
+				</ul>
+				<div class="has-border-top">
+					<a class="docs-sign-out" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#"><!---->Sign out<!----></a>
+				</div>
+			</div>
+		</div>
+	
+		</div>
+	
+		 <!----></div><div class="nav-bar is-content"><!----> 
+		<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://docs.microsoft.com/xamarin">
+			<span><!---->Xamarin<!----></span>
+		</a>
+	 
+		
+		<nav class="nav-bar-nav" role="navigation" aria-label="Site">
+			<ul class="nav-bar-nav-list">
+				
+				<!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/xamarin/get-started/">
+					<span><!---->Get Started<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/xamarin/android/">
+					<span><!---->Android<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/xamarin/ios/">
+					<span><!---->iOS<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/xamarin/mac/">
+					<span><!---->Mac<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/xamarin/xamarin-forms/">
+					<span><!---->Xamarin.Forms<!----></span>
+				</a>
+		  </li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button has-hover-underline" aria-controls="ax-45">
+			<span><!---->Samples<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-45" aria-label="Samples">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/xamarin-forms/samples/"><!---->Xamarin.Forms Samples<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/android/samples/"><!---->Android Samples<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/ios/samples/"><!---->iOS Samples<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/mac/samples/"><!---->Mac Samples<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/samples/browse/?products=xamarin"><!---->All Xamarin Samples<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button has-hover-underline" aria-controls="ax-46">
+			<span><!---->APIs<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-46" aria-label="APIs">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/dotnet/api/?view=xamarin-forms"><!---->Xamarin.Forms APIs<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9"><!---->Android APIs<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12"><!---->iOS APIs<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/dotnet/api/?view=xamarin-mac-sdk-14"><!---->Mac APIs<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button has-hover-underline" aria-controls="ax-47">
+			<span><!---->More<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-47" aria-label="More">
+			<!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/get-started/"><!---->Get Started<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/android/"><!---->Android<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/ios/"><!---->iOS<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/mac/"><!---->Mac<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/xamarin-forms/"><!---->Xamarin.Forms<!----></a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button " aria-controls="ax-48">
+			<span><!---->Samples<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-48" aria-label="Samples">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/xamarin-forms/samples/"><!---->Xamarin.Forms Samples<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/android/samples/"><!---->Android Samples<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/ios/samples/"><!---->iOS Samples<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/xamarin/mac/samples/"><!---->Mac Samples<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/samples/browse/?products=xamarin"><!---->All Xamarin Samples<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button " aria-controls="ax-49">
+			<span><!---->APIs<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-49" aria-label="APIs">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/dotnet/api/?view=xamarin-forms"><!---->Xamarin.Forms APIs<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9"><!---->Android APIs<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12"><!---->iOS APIs<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button" href="https://docs.microsoft.com/dotnet/api/?view=xamarin-mac-sdk-14"><!---->Mac APIs<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+		<span class="nav-bar-spacer"></span>
+		
+	 <!----></div></header>		</div>
+		<div class="content-header uhf-container has-padding has-default-focus has-border-bottom-none" data-bi-name="content-header">
+			<nav class="has-padding-none has-padding-left-medium-tablet has-padding-right-medium-tablet has-padding-left-none-uhf-tablet has-padding-left-none-uhf-tablet has-padding-none-desktop has-flex-grow" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+				<ul id="page-breadcrumbs" class="breadcrumbs"><!---->
+			<!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <a itemprop="item" href="https://docs.microsoft.com/en-us/">
+								<span itemprop="name">
+									Docs
+								</span>
+						  </a>
+					<meta itemprop="position" content="1">
+				</li><!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <a itemprop="item" href="https://docs.microsoft.com/en-us/xamarin">
+								<span itemprop="name">
+									Xamarin
+								</span>
+						  </a>
+					<meta itemprop="position" content="2">
+				</li><!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <a itemprop="item" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/">
+								<span itemprop="name">
+									Xamarin.<wbr>Forms
+								</span>
+						  </a>
+					<meta itemprop="position" content="3">
+				</li><!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <a itemprop="item" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/">
+								<span itemprop="name">
+									Application Fundamentals
+								</span>
+						  </a>
+					<meta itemprop="position" content="4">
+				</li><!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <a itemprop="item" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/">
+								<span itemprop="name">
+									Navigation
+								</span>
+						  </a>
+					<meta itemprop="position" content="5">
+				</li><!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <span itemprop="name">
+								Modal Pages
+						  </span>
+					<meta itemprop="position" content="6">
+				</li><!---->
+		<!----></ul>
+			</nav>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+				<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+				<span>Contents</span>
+			</button>
+		</div>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+				<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+				<span>Exit focus mode</span>
+			</button>
+		</div>
+		<div class="has-padding-none-tablet has-padding-medium is-size-7 is-flex-touch has-flex-justify-content-space-between-touch has-flex-grow">
+			<ul class="is-hidden-mobile action-list has-flex-justify-content-start has-flex-justify-content-end-tablet is-flex is-flex-row has-flex-wrap has-flex-grow is-unstyled">
+				<li>
+					<button type="button" class="bookmark button is-text has-inner-focus is-small is-icon-only-touch" data-list-type="bookmarks" data-bi-name="bookmark" title="Add bookmark for Xamarin.Forms Modal Pages - Xamarin | Microsoft Docs" aria-pressed="false">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-single-bookmark"></span>
+						</span>
+						<span class="bookmark-status is-visually-hidden-touch is-hidden-portrait">Bookmark</span>
+					</button>
+				</li>
+					<li id="feedback-section-link">
+						<a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#feedback" class="button is-text has-inner-focus is-small is-icon-only-touch" data-bi-name="comments" title="Send feedback about this page">
+							<span class="icon">
+								<span class="docon docon-comment-lines" aria-hidden="true"></span>
+							</span>
+							<span class="is-visually-hidden-touch is-hidden-portrait">Feedback</span>
+						</a>
+					</li>
+						<li id="contenteditbtn">
+							<a href="https://github.com/MicrosoftDocs/xamarin-docs/blob/live/docs/xamarin-forms/app-fundamentals/navigation/modal.md" class="button is-text has-inner-focus is-icon-only-touch is-small" title="Edit This Document" data-bi-name="edit" data-original_content_git_url="https://github.com/MicrosoftDocs/xamarin-docs-pr/blob/live/docs/xamarin-forms/app-fundamentals/navigation/modal.md" data-original_content_git_url_template="{repo}/blob/{branch}/docs/xamarin-forms/app-fundamentals/navigation/modal.md" data-pr_repo="" data-pr_branch="">
+							<span class="icon">
+								<span class="docon docon-edit-outline" aria-hidden="true"></span>
+							</span>
+							<span class="is-visually-hidden-touch is-hidden-portrait">Edit</span>
+						</a>
+					</li>
+				<li>
+<div class="sharing dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small is-icon-only-touch" aria-controls="sharing-menu" aria-expanded="false" title="Share This Document" data-bi-name="share">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-sharing"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Share</span>
+	</button>
+	<div class="dropdown-menu has-padding-small" id="sharing-menu">
+		<ul data-bi-name="share-links">
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal%3FWT.mc_id%3Dtwitter&amp;text=Xamarin.Forms%20Modal%20Pages%20-%20Xamarin%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal%3FWT.mc_id%3Dtwitter">
+					<span class="icon">
+						<span class="docon docon-brand-twitter has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Twitter</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal%3FWT.mc_id%3Dlinkedin">
+					<span class="icon">
+						<span class="docon docon-brand-linkedin has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>LinkedIn</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal%3FWT.mc_id%3Dfacebook">
+					<span class="icon">
+						<span class="docon docon-brand-facebook has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20Xamarin.Forms%20Modal%20Pages%20-%20Xamarin%20%7C%20Microsoft%20Docs&amp;body=Xamarin.Forms%20Modal%20Pages%20-%20Xamarin%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal%3FWT.mc_id%3Demail">
+					<span class="icon">
+						<span class="docon docon-mail-message-fill has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Email</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>				</li>
+			</ul>
+			<button type="button" class="has-border contents-button button is-small is-text is-hidden-tablet has-inner-focus" aria-label="Contents" data-bi-name="contents-expand">
+				<span class="icon">
+					<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+				</span>
+				<span>Table of contents</span>
+			</button>
+			<div class="is-invisible"></div>
+			<div class="is-hidden-tablet level-item is-flexible level-right">
+				<button type="button" class="page-actions-button button is-small is-text is-hidden-tablet has-inner-focus has-border is-full-height  has-margin-left-small" aria-label="Page Actions" data-bi-name="pageactions">
+					<span class="icon">
+						<span class="docon docon-more-vertical" aria-hidden="true"></span>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"></div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="is-fixed is-flex is-flex-column" role="navigation" aria-label="Primary" data-bi-name="left toc" style="width: 319.75px; top: 24px; bottom: 24px;"><form action="javascript:" role="search" aria-label="Search" class="has-margin-bottom-small"><label class="visually-hidden" for="ax-43">Search</label><div class="autocomplete is-block" data-bi-name="autocomplete"><!----> <div class="control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-43" class="autocomplete-input input control has-icons-left is-full-width is-small" type="text" aria-expanded="false" aria-owns="ax-44-listbox" aria-activedescendant="" placeholder="Filter by title">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-filter-settings"></span>
+				</span>
+
+				<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-44-listbox" aria-label="ax-43-suggestions" hidden="">
+				
+			</ul><!----></div></form><ul class="tree is-vertically-scrollable has-flex-grow has-flex-shrink" role="tree" aria-label="Table of contents" data-bi-name="tree"><li role="none"><a aria-setsize="16" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/">Xamarin.<wbr>Forms</a></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Get Started</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="3" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>XAML</span></li><li class="tree-item is-expanded" aria-setsize="16" aria-level="1" aria-posinset="4" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Application Fundamentals</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="19" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/">Overview</a></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Accessibility</span></li><li role="none"><a aria-setsize="19" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/application-class">App Class</a></li><li role="none"><a aria-setsize="19" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/app-lifecycle">App Lifecycle</a></li><li role="none"><a aria-setsize="19" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/deep-linking">Application Indexing and Deep Linking</a></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Behaviors</span></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="7" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Custom Renderers</span></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="8" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Data Binding</span></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="9" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>DependencyService</span></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="10" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Dual-screen</span></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="11" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Effects</span></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="12" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Gestures</span></li><li role="none"><a aria-setsize="19" aria-level="2" aria-posinset="13" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/local-notifications">Local Notifications</a></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="14" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Localization</span></li><li role="none"><a aria-setsize="19" aria-level="2" aria-posinset="15" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/messaging-center">MessagingCenter</a></li><li class="tree-item is-expanded" aria-setsize="19" aria-level="2" aria-posinset="16" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Navigation</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="6" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/">Navigation</a></li><li role="none"><a aria-setsize="6" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/hierarchical">Hierarchical Navigation</a></li><li role="none"><a aria-setsize="6" aria-level="3" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/tabbed-page">TabbedPage</a></li><li role="none"><a aria-setsize="6" aria-level="3" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/carousel-page">CarouselPage</a></li><li role="none"><a aria-setsize="6" aria-level="3" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/master-detail-page">MasterDetailPage</a></li><li role="none"><a aria-setsize="6" aria-level="3" aria-posinset="6" role="treeitem" tabindex="0" class="tree-item is-leaf is-selected" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal" aria-current="page">Modal Pages</a></li></ul></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="17" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Shell</span></li><li class="tree-item" aria-setsize="19" aria-level="2" aria-posinset="18" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Templates</span></li><li role="none"><a aria-setsize="19" aria-level="2" aria-posinset="19" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers">Triggers</a></li></ul></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="5" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>User Interface</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="6" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Platform Features</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="7" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Xamarin.<wbr>Essentials</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="8" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Data &amp; Azure Cloud Services</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="9" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Deployment &amp; Testing</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="10" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Advanced Concepts and Internals</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="11" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Troubleshooting</span></li><li role="none"><a aria-setsize="16" aria-level="1" aria-posinset="12" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/release-notes/">Release notes</a></li><li role="none"><a aria-setsize="16" aria-level="1" aria-posinset="13" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/samples/">Samples</a></li><li role="none"><a aria-setsize="16" aria-level="1" aria-posinset="14" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/creating-mobile-apps-xamarin-forms/">Creating Mobile Apps with Xamarin.<wbr>Forms Book</a></li><li role="none"><a aria-setsize="16" aria-level="1" aria-posinset="15" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/">Enterprise Application Patterns eBook</a></li><li role="none"><a aria-setsize="16" aria-level="1" aria-posinset="16" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/graphics/skiasharp/">SkiaSharp Graphics in Xamarin.<wbr>Forms</a></li></ul><a class="button is-small is-text has-flex-justify-content-start has-inner-focus has-margin-top-small has-border-top has-border-bottom has-flex-shrink-none" href="https://docs.microsoft.com/en-us/xamarin/opbuildpdf/xamarin-forms/toc.pdf?branch=live" data-bi-name="downloadPdf" rel="nofollow"><!----> <span class="icon is-size-8 has-text-subtle">
+				<span aria-hidden="true" class="docon docon-dictionary-download"></span>
+			</span>
+			<span><!---->Download PDF<!----></span><!----></a></nav>
+			</div>
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+
+					<main id="main" role="main" class="content " data-bi-name="content" lang="en-us" dir="ltr">
+
+
+
+						<h1 id="xamarinforms-modal-pages">Xamarin.Forms Modal Pages</h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+							<li>
+								<time class="" data-article-date="" aria-label="Article review date" datetime="2017-12-01T00:00:00.000Z" data-article-date-source="ms.date">12/01/2017</time>
+							</li>
+								<li class="readingTime">6 minutes to read</li>
+								<li class="contributors-holder">
+									<a href="https://github.com/MicrosoftDocs/xamarin-docs/blob/live/docs/xamarin-forms/app-fundamentals/navigation/modal.md" title="5 Contributors" aria-label="5 Contributors">
+										<ul class="contributors" data-bi-name="contributors" aria-hidden="true">
+													<li><img src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/davidbritch.png" data-src="https://github.com/davidbritch.png?size=32" role="presentation"></li>
+													<li><img src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/nschonni.png" data-src="https://github.com/nschonni.png?size=32" role="presentation"></li>
+													<li><img src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/conceptdev.png" data-src="https://github.com/conceptdev.png?size=32" role="presentation"></li>
+													<li><img src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/lobrien.png" data-src="https://github.com/lobrien.png?size=32" role="presentation"></li>
+													<li><img src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/charlespetzold.png" data-src="https://github.com/charlespetzold.png?size=32" role="presentation"></li>
+										</ul>
+									</a>
+								</li>
+						</ul>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline">
+							<h3>In this article</h3>
+						<ol><li><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#overview">Overview</a></li><li><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#performing-navigation">Performing Navigation</a></li><li><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#passing-data-when-navigating">Passing Data when Navigating</a></li><li><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#summary">Summary</a></li><li><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#related-links">Related Links</a></li></ol></nav>
+
+						<!-- <content> -->
+							<p><a href="https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/navigation-modal" data-linktype="absolute-path"><img src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/download.png" alt="Download Sample" data-linktype="relative-path"> Download the sample</a></p>
+<p><em>Xamarin.Forms provides support for modal pages. A modal page encourages users to complete a self-contained task that cannot be navigated away from until the task is completed or cancelled. This article demonstrates how to navigate to modal pages.</em></p>
+<p>This article discusses the following topics:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#performing-navigation" data-linktype="self-bookmark">Performing navigation</a> – pushing pages to the modal stack, popping pages from the modal stack, disabling the back button, and animating page transitions.</li>
+<li><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#passing-data-when-navigating" data-linktype="self-bookmark">Passing data when navigating</a> – passing data through a page constructor, and through a <code>BindingContext</code>.</li>
+</ul>
+<h2 id="overview" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#overview" aria-labelledby="overview"></a>Overview</h2>
+<p>A modal page can be any of the <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/controls/pages" data-linktype="relative-path">Page</a> types supported by Xamarin.Forms. To display a modal page the application will push it onto the modal stack, where it will become the active page, as shown in the following diagram:</p>
+<p><img src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/pushing.png" alt="" title="Pushing a Page to the Modal Stack" data-linktype="relative-path"></p>
+<p>To return to the previous page the application will pop the current page from the modal stack, and the new topmost page becomes the active page, as shown in the following diagram:</p>
+<p><img src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/popping.png" alt="" title="Popping a Page from the Modal Stack" data-linktype="relative-path"></p>
+<h2 id="performing-navigation" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#performing-navigation" aria-labelledby="performing-navigation"></a>Performing Navigation</h2>
+<p>Modal navigation methods are exposed by the <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.navigableelement.navigation#Xamarin_Forms_NavigableElement_Navigation" data-linktype="absolute-path"><code>Navigation</code></a> property on any <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.page" data-linktype="absolute-path"><code>Page</code></a> derived types. These methods provide the ability to <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#pushing-pages-to-the-modal-stack" data-linktype="self-bookmark">push modal pages</a> onto the modal stack, and <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#popping-pages-from-the-modal-stack" data-linktype="self-bookmark">pop modal pages</a> from the modal stack.</p>
+<p>The <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.navigableelement.navigation#Xamarin_Forms_NavigableElement_Navigation" data-linktype="absolute-path"><code>Navigation</code></a> property also exposes a <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.inavigation.modalstack#Xamarin_Forms_INavigation_ModalStack" data-linktype="absolute-path"><code>ModalStack</code></a> property from which the modal pages in the modal stack can be obtained. However, there is no concept of performing modal stack manipulation, or popping to the root page in modal navigation. This is because these operations are not universally supported on the underlying platforms.</p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>A <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.navigationpage" data-linktype="absolute-path"><code>NavigationPage</code></a> instance is not required for performing modal page navigation.</p>
+</div>
+<h3 id="pushing-pages-to-the-modal-stack" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#pushing-pages-to-the-modal-stack" aria-labelledby="pushing-pages-to-the-modal-stack"></a>Pushing Pages to the Modal Stack</h3>
+<p>To navigate to the <code>ModalPage</code> it is necessary to invoke the <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.inavigation.pushmodalasync" data-linktype="absolute-path"><code>PushModalAsync</code></a> method on the <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.navigableelement.navigation#Xamarin_Forms_NavigableElement_Navigation" data-linktype="absolute-path"><code>Navigation</code></a> property of the current page, as demonstrated in the following code example:</p>
+<div class="codeHeader" id="code-try-0" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
+{
+  if (listView.SelectedItem != null) {
+    var detailPage = new DetailPage ();
+    ...
+    await Navigation.PushModalAsync (detailPage);
+  }
+}
+"><span><span class="hljs-function"><span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnItemSelected</span> (<span class="hljs-params"><span class="hljs-keyword">object</span> sender, SelectedItemChangedEventArgs e</span>)</span>
+{
+  <span class="hljs-keyword">if</span> (listView.SelectedItem != <span class="hljs-literal">null</span>) {
+    <span class="hljs-keyword">var</span> detailPage = <span class="hljs-keyword">new</span> DetailPage ();
+    ...
+    <span class="hljs-keyword">await</span> Navigation.PushModalAsync (detailPage);
+  }
+}
+</span></code></pre>
+<p>This causes the <code>ModalPage</code> instance to be pushed onto the modal stack, where it becomes the active page, provided that an item has been selected in the <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.listview" data-linktype="absolute-path"><code>ListView</code></a> on the <code>MainPage</code> instance. The <code>ModalPage</code> instance is shown in the following screenshots:</p>
+<p><img src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/modalpage.png" alt="" title="Modal Page Example" data-linktype="relative-path"></p>
+<p>When <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.inavigation.pushmodalasync" data-linktype="absolute-path"><code>PushModalAsync</code></a> is invoked, the following events occur:</p>
+<ul>
+<li>The page calling <code>PushModalAsync</code> has its <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.page.ondisappearing#Xamarin_Forms_Page_OnDisappearing" data-linktype="absolute-path"><code>OnDisappearing</code></a> override invoked, provided that the underlying platform isn't Android.</li>
+<li>The page being navigated to has its <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.page.onappearing#Xamarin_Forms_Page_OnAppearing" data-linktype="absolute-path"><code>OnAppearing</code></a> override invoked.</li>
+<li>The <code>PushAsync</code> task completes.</li>
+</ul>
+<p>However, the precise order that these events occur is platform dependent. For more information, see <a href="https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf" data-linktype="external">Chapter 24</a> of Charles Petzold's Xamarin.Forms book.</p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>Calls to the <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.page.ondisappearing#Xamarin_Forms_Page_OnDisappearing" data-linktype="absolute-path"><code>OnDisappearing</code></a> and <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.page.onappearing#Xamarin_Forms_Page_OnAppearing" data-linktype="absolute-path"><code>OnAppearing</code></a> overrides cannot be treated as guaranteed indications of page navigation. For example, on iOS, the <code>OnDisappearing</code> override is called on the active page when the application terminates.</p>
+</div>
+<h3 id="popping-pages-from-the-modal-stack" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#popping-pages-from-the-modal-stack" aria-labelledby="popping-pages-from-the-modal-stack"></a>Popping Pages from the Modal Stack</h3>
+<p>The active page can be popped from the modal stack by pressing the <em>Back</em> button on the device, regardless of whether this is a physical button on the device or an on-screen button.</p>
+<p>To programmatically return to the original page, the <code>ModalPage</code> instance must invoke the <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.inavigation.popmodalasync#Xamarin_Forms_INavigation_PopModalAsync" data-linktype="absolute-path"><code>PopModalAsync</code></a> method, as demonstrated in the following code example:</p>
+<div class="codeHeader" id="code-try-1" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="async void OnDismissButtonClicked (object sender, EventArgs args)
+{
+  await Navigation.PopModalAsync ();
+}
+"><span><span class="hljs-function"><span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnDismissButtonClicked</span> (<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs args</span>)</span>
+{
+  <span class="hljs-keyword">await</span> Navigation.PopModalAsync ();
+}
+</span></code></pre>
+<p>This causes the <code>ModalPage</code> instance to be removed from the modal stack, with the new topmost page becoming the active page. When <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.inavigation.popmodalasync#Xamarin_Forms_INavigation_PopModalAsync" data-linktype="absolute-path"><code>PopModalAsync</code></a> is invoked, the following events occur:</p>
+<ul>
+<li>The page calling <code>PopModalAsync</code> has its <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.page.ondisappearing#Xamarin_Forms_Page_OnDisappearing" data-linktype="absolute-path"><code>OnDisappearing</code></a> override invoked.</li>
+<li>The page being returned to has its <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.page.onappearing#Xamarin_Forms_Page_OnAppearing" data-linktype="absolute-path"><code>OnAppearing</code></a> override invoked, provided that the underlying platform isn't Android.</li>
+<li>The <code>PopModalAsync</code> task returns.</li>
+</ul>
+<p>However, the precise order that these events occur is platform dependent. For more information, see <a href="https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf" data-linktype="external">Chapter 24</a> of Charles Petzold's Xamarin.Forms book.</p>
+<h3 id="disabling-the-back-button" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#disabling-the-back-button" aria-labelledby="disabling-the-back-button"></a>Disabling the Back Button</h3>
+<p>On Android, the user can always return to the previous page by pressing the standard <em>Back</em> button on the device. If the modal page requires the user to complete a self-contained task before leaving the page, the application must disable the <em>Back</em> button. This can be accomplished by overriding the <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.page.onbackbuttonpressed#Xamarin_Forms_Page_OnBackButtonPressed" data-linktype="absolute-path"><code>Page.OnBackButtonPressed</code></a> method on the modal page. For more information see <a href="https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf" data-linktype="external">Chapter 24</a> of Charles Petzold's Xamarin.Forms book.</p>
+<h3 id="animating-page-transitions" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#animating-page-transitions" aria-labelledby="animating-page-transitions"></a>Animating Page Transitions</h3>
+<p>The <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.navigableelement.navigation#Xamarin_Forms_NavigableElement_Navigation" data-linktype="absolute-path"><code>Navigation</code></a> property of each page also provides overridden push and pop methods that include a <code>boolean</code> parameter that controls whether to display a page animation during navigation, as shown in the following code example:</p>
+<div class="codeHeader" id="code-try-2" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="async void OnNextPageButtonClicked (object sender, EventArgs e)
+{
+  // Page appearance not animated
+  await Navigation.PushModalAsync (new DetailPage (), false);
+}
+
+async void OnDismissButtonClicked (object sender, EventArgs args)
+{
+  // Page appearance not animated
+  await Navigation.PopModalAsync (false);
+}
+"><span><span class="hljs-function"><span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnNextPageButtonClicked</span> (<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)</span>
+{
+  <span class="hljs-comment">// Page appearance not animated</span>
+  <span class="hljs-keyword">await</span> Navigation.PushModalAsync (<span class="hljs-keyword">new</span> DetailPage (), <span class="hljs-literal">false</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnDismissButtonClicked</span> (<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs args</span>)</span>
+{
+  <span class="hljs-comment">// Page appearance not animated</span>
+  <span class="hljs-keyword">await</span> Navigation.PopModalAsync (<span class="hljs-literal">false</span>);
+}
+</span></code></pre>
+<p>Setting the <code>boolean</code> parameter to <code>false</code> disables the page-transition animation, while setting the parameter to <code>true</code> enables the page-transition animation, provided that it is supported by the underlying platform. However, the push and pop methods that lack this parameter enable the animation by default.</p>
+<h2 id="passing-data-when-navigating" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#passing-data-when-navigating" aria-labelledby="passing-data-when-navigating"></a>Passing Data when Navigating</h2>
+<p>Sometimes it's necessary for a page to pass data to another page during navigation. Two techniques for accomplishing this are by passing data through a page constructor, and by setting the new page's <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.bindableobject.bindingcontext#Xamarin_Forms_BindableObject_BindingContext" data-linktype="absolute-path"><code>BindingContext</code></a> to the data. Each will now be discussed in turn.</p>
+<h3 id="passing-data-through-a-page-constructor" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#passing-data-through-a-page-constructor" aria-labelledby="passing-data-through-a-page-constructor"></a>Passing Data through a Page Constructor</h3>
+<p>The simplest technique for passing data to another page during navigation is through a page constructor parameter, which is shown in the following code example:</p>
+<div class="codeHeader" id="code-try-3" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="public App ()
+{
+  MainPage = new MainPage (DateTime.Now.ToString (&quot;u&quot;)));
+}
+"><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">App</span> (<span class="hljs-params"></span>)</span>
+{
+  MainPage = <span class="hljs-keyword">new</span> MainPage (DateTime.Now.ToString (<span class="hljs-string">"u"</span>)));
+}
+</span></code></pre>
+<p>This code creates a <code>MainPage</code> instance, passing in the current date and time in ISO8601 format.</p>
+<p>The <code>MainPage</code> instance receives the data through a constructor parameter, as shown in the following code example:</p>
+<div class="codeHeader" id="code-try-4" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="public MainPage (string date)
+{
+  InitializeComponent ();
+  dateLabel.Text = date;
+}
+"><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MainPage</span> (<span class="hljs-params"><span class="hljs-keyword">string</span> date</span>)</span>
+{
+  InitializeComponent ();
+  dateLabel.Text = date;
+}
+</span></code></pre>
+<p>The data is then displayed on the page by setting the <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.label.text#Xamarin_Forms_Label_Text" data-linktype="absolute-path"><code>Label.Text</code></a> property.</p>
+<h3 id="passing-data-through-a-bindingcontext" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#passing-data-through-a-bindingcontext" aria-labelledby="passing-data-through-a-bindingcontext"></a>Passing Data through a BindingContext</h3>
+<p>An alternative approach for passing data to another page during navigation is by setting the new page's <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.bindableobject.bindingcontext#Xamarin_Forms_BindableObject_BindingContext" data-linktype="absolute-path"><code>BindingContext</code></a> to the data, as shown in the following code example:</p>
+<div class="codeHeader" id="code-try-5" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
+{
+  if (listView.SelectedItem != null) {
+    var detailPage = new DetailPage ();
+    detailPage.BindingContext = e.SelectedItem as Contact;
+    listView.SelectedItem = null;
+    await Navigation.PushModalAsync (detailPage);
+  }
+}
+"><span><span class="hljs-function"><span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnItemSelected</span> (<span class="hljs-params"><span class="hljs-keyword">object</span> sender, SelectedItemChangedEventArgs e</span>)</span>
+{
+  <span class="hljs-keyword">if</span> (listView.SelectedItem != <span class="hljs-literal">null</span>) {
+    <span class="hljs-keyword">var</span> detailPage = <span class="hljs-keyword">new</span> DetailPage ();
+    detailPage.BindingContext = e.SelectedItem <span class="hljs-keyword">as</span> Contact;
+    listView.SelectedItem = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">await</span> Navigation.PushModalAsync (detailPage);
+  }
+}
+</span></code></pre>
+<p>This code sets the <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.bindableobject.bindingcontext#Xamarin_Forms_BindableObject_BindingContext" data-linktype="absolute-path"><code>BindingContext</code></a> of the <code>DetailPage</code> instance to the <code>Contact</code> instance, and then navigates to the <code>DetailPage</code>.</p>
+<p>The <code>DetailPage</code> then uses data binding to display the <code>Contact</code> instance data, as shown in the following XAML code example:</p>
+<div class="codeHeader" id="code-try-6" data-bi-name="code-header"><span class="language">XAML</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-xaml" data-author-content="&lt;ContentPage xmlns=&quot;http://xamarin.com/schemas/2014/forms&quot;
+             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+             x:Class=&quot;ModalNavigation.DetailPage&quot;&gt;
+    &lt;ContentPage.Padding&gt;
+      &lt;OnPlatform x:TypeArguments=&quot;Thickness&quot;&gt;
+        &lt;On Platform=&quot;iOS&quot; Value=&quot;0,40,0,0&quot; /&gt;
+      &lt;/OnPlatform&gt;
+    &lt;/ContentPage.Padding&gt;
+    &lt;ContentPage.Content&gt;
+        &lt;StackLayout HorizontalOptions=&quot;Center&quot; VerticalOptions=&quot;Center&quot;&gt;
+            &lt;StackLayout Orientation=&quot;Horizontal&quot;&gt;
+                &lt;Label Text=&quot;Name:&quot; FontSize=&quot;Medium&quot; HorizontalOptions=&quot;FillAndExpand&quot; /&gt;
+                &lt;Label Text=&quot;{Binding Name}&quot; FontSize=&quot;Medium&quot; FontAttributes=&quot;Bold&quot; /&gt;
+            &lt;/StackLayout&gt;
+              ...
+            &lt;Button x:Name=&quot;dismissButton&quot; Text=&quot;Dismiss&quot; Clicked=&quot;OnDismissButtonClicked&quot; /&gt;
+        &lt;/StackLayout&gt;
+    &lt;/ContentPage.Content&gt;
+&lt;/ContentPage&gt;
+"><span><span class="hljs-tag">&lt;<span class="hljs-name">ContentPage</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://xamarin.com/schemas/2014/forms"</span>
+             <span class="hljs-attr">xmlns:x</span>=<span class="hljs-string">"http://schemas.microsoft.com/winfx/2009/xaml"</span>
+             <span class="hljs-attr">x:Class</span>=<span class="hljs-string">"ModalNavigation.DetailPage"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ContentPage.Padding</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">OnPlatform</span> <span class="hljs-attr">x:TypeArguments</span>=<span class="hljs-string">"Thickness"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">On</span> <span class="hljs-attr">Platform</span>=<span class="hljs-string">"iOS"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"0,40,0,0"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">OnPlatform</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ContentPage.Padding</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ContentPage.Content</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StackLayout</span> <span class="hljs-attr">HorizontalOptions</span>=<span class="hljs-string">"Center"</span> <span class="hljs-attr">VerticalOptions</span>=<span class="hljs-string">"Center"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">StackLayout</span> <span class="hljs-attr">Orientation</span>=<span class="hljs-string">"Horizontal"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">Text</span>=<span class="hljs-string">"Name:"</span> <span class="hljs-attr">FontSize</span>=<span class="hljs-string">"Medium"</span> <span class="hljs-attr">HorizontalOptions</span>=<span class="hljs-string">"FillAndExpand"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">Text</span>=<span class="hljs-string">"{Binding Name}"</span> <span class="hljs-attr">FontSize</span>=<span class="hljs-string">"Medium"</span> <span class="hljs-attr">FontAttributes</span>=<span class="hljs-string">"Bold"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">StackLayout</span>&gt;</span>
+              ...
+            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">x:Name</span>=<span class="hljs-string">"dismissButton"</span> <span class="hljs-attr">Text</span>=<span class="hljs-string">"Dismiss"</span> <span class="hljs-attr">Clicked</span>=<span class="hljs-string">"OnDismissButtonClicked"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">StackLayout</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ContentPage.Content</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ContentPage</span>&gt;</span>
+</span></code></pre>
+<p>The following code example shows how the data binding can be accomplished in C#:</p>
+<div class="codeHeader" id="code-try-7" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="public class DetailPageCS : ContentPage
+{
+  public DetailPageCS ()
+  {
+    var nameLabel = new Label {
+      FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
+      FontAttributes = FontAttributes.Bold
+    };
+    nameLabel.SetBinding (Label.TextProperty, &quot;Name&quot;);
+    ...
+    var dismissButton = new Button { Text = &quot;Dismiss&quot; };
+    dismissButton.Clicked += OnDismissButtonClicked;
+
+    Thickness padding;
+    switch (Device.RuntimePlatform)
+    {
+        case Device.iOS:
+            padding = new Thickness(0, 40, 0, 0);
+            break;
+        default:
+            padding = new Thickness();
+            break;
+    }
+
+    Padding = padding;
+    Content = new StackLayout {
+      HorizontalOptions = LayoutOptions.Center,
+      VerticalOptions = LayoutOptions.Center,
+      Children = {
+        new StackLayout {
+          Orientation = StackOrientation.Horizontal,
+          Children = {
+            new Label{ Text = &quot;Name:&quot;, FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)), HorizontalOptions = LayoutOptions.FillAndExpand },
+            nameLabel
+          }
+        },
+        ...
+        dismissButton
+      }
+    };
+  }
+
+  async void OnDismissButtonClicked (object sender, EventArgs args)
+  {
+    await Navigation.PopModalAsync ();
+  }
+}
+"><span><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DetailPageCS</span> : <span class="hljs-title">ContentPage</span>
+{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DetailPageCS</span> (<span class="hljs-params"></span>)</span>
+  {
+    <span class="hljs-keyword">var</span> nameLabel = <span class="hljs-keyword">new</span> Label {
+      FontSize = Device.GetNamedSize (NamedSize.Medium, <span class="hljs-keyword">typeof</span>(Label)),
+      FontAttributes = FontAttributes.Bold
+    };
+    nameLabel.SetBinding (Label.TextProperty, <span class="hljs-string">"Name"</span>);
+    ...
+    <span class="hljs-keyword">var</span> dismissButton = <span class="hljs-keyword">new</span> Button { Text = <span class="hljs-string">"Dismiss"</span> };
+    dismissButton.Clicked += OnDismissButtonClicked;
+
+    Thickness padding;
+    <span class="hljs-keyword">switch</span> (Device.RuntimePlatform)
+    {
+        <span class="hljs-keyword">case</span> Device.iOS:
+            padding = <span class="hljs-keyword">new</span> Thickness(<span class="hljs-number">0</span>, <span class="hljs-number">40</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">default</span>:
+            padding = <span class="hljs-keyword">new</span> Thickness();
+            <span class="hljs-keyword">break</span>;
+    }
+
+    Padding = padding;
+    Content = <span class="hljs-keyword">new</span> StackLayout {
+      HorizontalOptions = LayoutOptions.Center,
+      VerticalOptions = LayoutOptions.Center,
+      Children = {
+        <span class="hljs-keyword">new</span> StackLayout {
+          Orientation = StackOrientation.Horizontal,
+          Children = {
+            <span class="hljs-keyword">new</span> Label{ Text = <span class="hljs-string">"Name:"</span>, FontSize = Device.GetNamedSize (NamedSize.Medium, <span class="hljs-keyword">typeof</span>(Label)), HorizontalOptions = LayoutOptions.FillAndExpand },
+            nameLabel
+          }
+        },
+        ...
+        dismissButton
+      }
+    };
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">async</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnDismissButtonClicked</span> (<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs args</span>)</span>
+  {
+    <span class="hljs-keyword">await</span> Navigation.PopModalAsync ();
+  }
+}
+</span></code></pre>
+<p>The data is then displayed on the page by a series of <a href="https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.label" data-linktype="absolute-path"><code>Label</code></a> controls.</p>
+<p>For more information about data binding, see <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/xaml-basics/" data-linktype="relative-path">Data Binding Basics</a>.</p>
+<h2 id="summary" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#summary" aria-labelledby="summary"></a>Summary</h2>
+<p>This article demonstrated how to navigate to modal pages. A modal page encourages users to complete a self-contained task that cannot be navigated away from until the task is completed or cancelled.</p>
+<h2 id="related-links" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#related-links" aria-labelledby="related-links"></a>Related Links</h2>
+<ul>
+<li><a href="https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf" data-linktype="external">Page Navigation</a></li>
+<li><a href="https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/navigation-modal" data-linktype="absolute-path">Modal (sample)</a></li>
+<li><a href="https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/navigation-passingdata" data-linktype="absolute-path">PassingData (sample)</a></li>
+</ul>
+
+						<!-- </content> -->
+
+						</main>
+
+						<!-- recommended content page section -->
+
+							<nav data-bi-name="recommendation-bottom" hidden="" id="recommended-content-center" class="is-hidden-desktop" aria-labelledby="recommended-content-center-title">
+								<h3 id="recommended-content-center-title" class="is-size-2 has-margin-top-large has-margin-bottom-small">Related Articles</h3>
+							</nav>
+
+						<!-- end recommended content page section -->
+
+						<!-- page rating section -->
+								<div class="is-hidden-desktop has-border-top has-margin-top-large has-padding-top-small">
+									
+									
+<div class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small" data-bi-name="rating">
+    <div class="binary-rating">
+        <div class="binary-rating-buttons">
+            <h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Is this page helpful?</h3>
+            <div>
+                <button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Yes" data-bi-name="rating-yes" aria-expanded="false" data-bi-sat="1" aria-controls="rating-container-mobile">
+                    <span aria-hidden="true" class="icon docon docon-like"></span>
+                    <span>Yes</span>
+                </button>
+                <button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="No" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-controls="rating-container-mobile">
+                    <span aria-hidden="true" class="icon docon docon-dislike"></span>
+                    <span>No</span>
+                </button>
+            </div>
+        </div>
+        <form class="feedback-verbatim-form is-hidden" id="rating-container-mobile">
+            <div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-8">
+                <label for="rating-textarea-mobile" class="visually-hidden">Any additional feedback?</label>
+                <textarea id="rating-textarea-mobile" rows="4" maxlength="999" placeholder="Any additional feedback?" required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+            </div>
+            <div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+                <button class="skip-rating button is-text is-link is-small" type="button">Skip</button>
+                <button class="submit-rating button is-primary is-small" data-bi-name="rating-verbatim" disabled="" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="thankyou-rating is-hidden" tabindex="-1">
+        <p>Thank you.</p>
+    </div>
+</div>								</div>
+						<!-- end page rating section -->
+
+
+						<!-- feedback section -->
+<section class="feedback-section is-relative" data-bi-name="feedback-section">
+
+    <h2 id="feedback" class="is-size-2 has-margin-top-large">Feedback</h2>
+
+    <div class="alert choose-feedback-type has-margin-top-small has-margin-bottom-none">
+        <p aria-hidden="true" id="send-feedback-about" class="has-margin-top-none has-margin-bottom-none">Submit and view feedback for</p>
+
+        <div class="choose-feedback-buttons has-margin-top-large has-margin-bottom-none">
+                <a class="button feedback-type-product has-margin-bottom-small" aria-label="Send feedback about this product" href="https://developercommunity.visualstudio.com/" data-bi-name="product-feedback">
+                    <span>This product</span>
+                    <span aria-hidden="true" class="icon docon docon-navigate-external is-size-2 has-margin-left-none"></span>
+                </a>
+
+			<a class="button feedback-type-product has-margin-bottom-small github-link" aria-label="Send feedback about this page" data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%204dbd0d0d-484d-ea90-3a8c-e0780a058017%0A*%20Version%20Independent%20ID%3A%20cf200dae-4d45-cc32-e323-c317e969ac64%0A*%20Content%3A%20%5BXamarin.Forms%20Modal%20Pages%20-%20Xamarin%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal)%0A*%20Content%20Source%3A%20%5Bdocs%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fxamarin-docs%2Fblob%2Flive%2Fdocs%2Fxamarin-forms%2Fapp-fundamentals%2Fnavigation%2Fmodal.md)%0A*%20Product%3A%20**xamarin**%0A*%20Technology%3A%20**xamarin-forms**%0A*%20GitHub%20Login%3A%20%40davidbritch%0A*%20Microsoft%20Alias%3A%20**dabritch**">
+				<span aria-hidden="true" class="docon docon-brand-github has-padding-right-extra-small"></span>
+				<span>This page</span>
+			</a>
+        </div>
+    </div>
+
+    <div class="action-container is-flex has-flex-justify-content-end has-margin-top-small has-margin-bottom-small">
+        <a class="view-on-github" data-bi-name="view-on-github" href="https://github.com/MicrosoftDocs/xamarin-docs/issues?utf8=%E2%9C%93&amp;q=%22cf200dae-4d45-cc32-e323-c317e969ac64%22&amp;in=body">
+            <span aria-hidden="true" class="docon docon-brand-github"></span>
+            <span>View all page feedback</span>
+            <span aria-hidden="true" class="icon docon docon-navigate-external is-size-3"></span>
+        </a>
+    </div>
+</section>
+
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <div class="is-flex is-full-height has-padding-right-extra-large-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link has-flex-shrink-none" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">English (United States)</span></a>
+		<div class="has-margin-left-medium has-margin-right-medium has-flex-shrink-none">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button is-transparent is-small is-icon-only-touch has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="light" aria-pressed="false">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Light					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="dark" aria-pressed="true">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>		</div>
+	</div>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+				<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+			<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>© Microsoft 2020</li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+					<div class="is-size-7 right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Page Actions">
+						<div id="affixed-right-container" class="doc-outline is-fixed is-vertically-scrollable" style="width: 172.641px; top: 24px; bottom: 24px;">
+								
+								
+<div class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small" data-bi-name="rating">
+    <div class="binary-rating">
+        <div class="binary-rating-buttons">
+            <h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Is this page helpful?</h3>
+            <div>
+                <button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Yes" data-bi-name="rating-yes" aria-expanded="false" data-bi-sat="1" aria-controls="rating-container-desktop">
+                    <span aria-hidden="true" class="icon docon docon-like"></span>
+                    <span>Yes</span>
+                </button>
+                <button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="No" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-controls="rating-container-desktop">
+                    <span aria-hidden="true" class="icon docon docon-dislike"></span>
+                    <span>No</span>
+                </button>
+            </div>
+        </div>
+        <form class="feedback-verbatim-form is-hidden" id="rating-container-desktop">
+            <div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-8">
+                <label for="rating-textarea-desktop" class="visually-hidden">Any additional feedback?</label>
+                <textarea id="rating-textarea-desktop" rows="4" maxlength="999" placeholder="Any additional feedback?" required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+            </div>
+            <div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+                <button class="skip-rating button is-text is-link is-small" type="button">Skip</button>
+                <button class="submit-rating button is-primary is-small" data-bi-name="rating-verbatim" disabled="" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="thankyou-rating is-hidden" tabindex="-1">
+        <p>Thank you.</p>
+    </div>
+</div>								<nav data-bi-name="recommendation-sidebar" hidden="" id="recommended-content-nav" role="navigation" aria-labelledby="recommended-content-nav-title">
+									<h3 id="recommended-content-nav-title">Related Articles</h3>
+								</nav>
+							<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline">
+								<h3>In this article</h3>
+							<ol><li class=""><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#overview">Overview</a></li><li class="selected"><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#performing-navigation">Performing Navigation</a></li><li class=""><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#passing-data-when-navigating">Passing Data when Navigating</a></li><li class=""><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#summary">Summary</a></li><li class=""><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal#related-links">Related Links</a></li></ol></nav>
+						</div>
+					</div>
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <div class="is-flex is-full-height has-padding-right-extra-large-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link has-flex-shrink-none" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/modal" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">English (United States)</span></a>
+		<div class="has-margin-left-medium has-margin-right-medium has-flex-shrink-none">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button is-transparent is-small is-icon-only-touch has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="light" aria-pressed="false">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Light					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="dark" aria-pressed="true">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>		</div>
+	</div>
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+				<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+			<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>© Microsoft 2020</li>
+    </ul>
+</footer>
+	</div>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+	<span id="adobe-target-experiment-container" hidden=""></span>
+
+
+<div class="usabilla_live_button_container" role="button" tabindex="0" style="z-index: 99999990; right: 0px; top: 50%; margin-top: 0px; position: fixed; width: 0px; height: 0px; display: none;" aria-label="Usabilla Feedback Button"><iframe src="./Xamarin.Forms Modal Pages - Xamarin _ Microsoft Docs_files/saved_resource(1).html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" data-tags="right" title="Usabilla Feedback Button" style="width: 0px; height: 0px; margin: 0px; padding: 0px; border: 0px; overflow: hidden; z-index: 9998; position: absolute; left: 0px; top: 0px; box-shadow: 0px 0px 0px; background-color: transparent;"></iframe></div></body></html>

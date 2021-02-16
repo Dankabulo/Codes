@@ -1,0 +1,64 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{BA9E6A61-3143-42DF-9669-97F7F557B7A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{277A4FFB-91D3-4028-A47C-C39726594FC1}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitTrends", "GitTrends\GitTrends.csproj", "{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitTrends.Android", "GitTrends.Android\GitTrends.Android.csproj", "{E5785129-AB94-4359-9947-B600D33A9958}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AppStore|Any CPU = AppStore|Any CPU
+		AppStore|iPhone = AppStore|iPhone
+		Debug|Any CPU = Debug|Any CPU
+		Debug|iPhone = Debug|iPhone
+		Release|Any CPU = Release|Any CPU
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.AppStore|Any CPU.ActiveCfg = AppStore|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.AppStore|Any CPU.Build.0 = AppStore|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.AppStore|iPhone.ActiveCfg = AppStore|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.AppStore|iPhone.Build.0 = AppStore|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE}.Release|iPhone.Build.0 = Release|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.AppStore|Any CPU.ActiveCfg = AppStore|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.AppStore|Any CPU.Build.0 = AppStore|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.AppStore|Any CPU.Deploy.0 = AppStore|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.AppStore|iPhone.ActiveCfg = AppStore|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Debug|iPhone.Deploy.0 = Debug|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{E5785129-AB94-4359-9947-B600D33A9958}.Release|iPhone.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4E7B0399-BAD2-48AF-B7FA-02EC17338FAE} = {BA9E6A61-3143-42DF-9669-97F7F557B7A2}
+		{E5785129-AB94-4359-9947-B600D33A9958} = {BA9E6A61-3143-42DF-9669-97F7F557B7A2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9CC4446-8D01-4DD5-90B3-0A650B0DE0DD}
+	EndGlobalSection
+EndGlobal

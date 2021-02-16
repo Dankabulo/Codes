@@ -1,0 +1,196 @@
+/* General Overrides of Metronic */
+/*Font faces*/
+/*@font-face {
+  font-family: "Open Sans";
+  src: url('https://fonts.googleapis.com/css?family=Open+Sans');
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+}
+
+@font-face {
+  font-family: "Acme";
+  src: url('https://fonts.googleapis.com/css?family=Acme');
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url('https://fonts.googleapis.com/css?family=PT+Sans');
+}*/
+.content-page {
+  margin-right: 0px !important;
+}
+/* Paginator styles */
+.pagination > a,
+.pagination > span {
+  display: inline-block;
+  margin-left: 5px;
+  border-radius: 25px !important;
+  border: none;
+  color: #868c93;
+  padding: 6px 12px;
+  position: relative;
+  float: left;
+  margin-left: -12px;
+  margin-right: 17px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  background-color: #fff;
+}
+.pagination > a:hover {
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+  z-index: 3;
+}
+.pagination > a:first-child,
+.pagination > a:last-child {
+  padding: 4px 12px 8px;
+}
+.pagination span {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+#page-nav {
+  float: none !important;
+  margin-bottom: 20px !important;
+  margin-left: 5px;
+}
+/* Extra info topbar tweaks */
+@media (max-width: 480px) {
+  .pre-header .list-inline li {
+    margin-bottom: 2px;
+  }
+  .page-header-fixed .pre-header {
+    opacity: 0;
+  }
+}
+@media (max-width: 767px) {
+  .pre-header .pull-right {
+    float: right !important;
+  }
+}
+/* Menu tweak */
+@media (max-width: 1024px) {
+  .page-header-fixed .header-navigation {
+    height: auto !important;
+  }
+}
+.header-navigation {
+  font-family: 'Source Sans Pro' !important;
+  font-size: 16px;
+}
+.list-unstyled {
+  font-family: 'Acme' !important;
+  font-size: 16px;
+}
+/* Typography and Posts */
+p {
+  line-height: 1.5;
+}
+h4 {
+  line-height: 1.5 !important;
+}
+.article-entry p,
+.article-entry li {
+  text-align: justify !important;
+  line-height: 1.75em !important;
+  font-size: 18px;
+/*max-width: 42em;*/
+  color: #333;
+  font-family: 'Source Sans Pro';
+}
+.article-entry h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 20px;
+}
+.blog-item .blog-info {
+  margin-top: 10px !important;
+}
+.blog-item img {
+  width: 100%;
+  margin: 16px 0px;
+}
+.article-entry .phone {
+  width: 300px;
+  height: 500px;
+}
+#share-buttons img {
+  width: 45px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0;
+  display: inline;
+}
+/* Index styles */
+.row-corporate {
+  height: 500px;
+  background-size: cover !important;
+}
+.flush-with-header {
+  margin-top: -23px;
+  vertical-align: middle;
+}
+.row-corporate img {
+  margin-top: 100px;
+}
+.row-corporate-text-container {
+  height: 500px;
+}
+.bg-light-1 {
+  background: url("/metronic/assets/pages/img/frontend-slider/bg5.jpg") no-repeat center;
+}
+.bg-light-2 {
+  background: url("/metronic/assets/pages/img/frontend-slider/bg4.jpg") no-repeat center;
+}
+/* Pseudo-element used to push text to center */
+.row-corporate-text-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.row-corporate-text {
+  display: inline-block;
+  vertical-align: middle;
+  width: 99%;
+}
+/* Project Page Styles */
+.mix-info {
+  display: none;
+}
+.mix_all {
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+.mix_all img {
+  width: 100%;
+}
+.btn-primary {
+  color: #fff !important;
+  border: 1px solid #e94d1c !important;
+}
+pre {
+  border: none !important;
+  font-size: 17px;
+}
+.recent-work-description strong,
+b {
+  font-weight: bold !important;
+}

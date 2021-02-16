@@ -1,0 +1,15 @@
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\bin\Debug\netstandard2.0\ThemingDemo.deps.json
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\bin\Debug\netstandard2.0\ThemingDemo.dll
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\bin\Debug\netstandard2.0\ThemingDemo.pdb
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\ThemingDemo.csprojAssemblyReference.cache
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\Themes\DarkTheme.xaml.g.cs
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\Themes\LightTheme.xaml.g.cs
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\Views\ThemeSelectionPage.xaml.g.cs
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\Views\UserDetailsPage.xaml.g.cs
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\Views\UserSummaryPage.xaml.g.cs
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\ThemingDemo.AssemblyInfoInputs.cache
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\ThemingDemo.AssemblyInfo.cs
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\ThemingDemo.dll
+C:\Users\Dan kabulo\Desktop\Project\ThemingDemo\ThemingDemo\obj\Debug\netstandard2.0\ThemingDemo.pdb

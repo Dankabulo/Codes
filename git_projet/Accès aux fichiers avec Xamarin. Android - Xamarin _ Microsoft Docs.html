@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/ -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus js-focus-visible theme-dark" lang="fr-fr" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Accès aux fichiers avec Xamarin. Android - Xamarin">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/">
+			<meta property="og:description" content="Ce guide explique l’accès aux fichiers dans Xamarin. Android">
+		<meta property="og:image" content="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png">
+		<meta property="og:image:alt" content="Microsoft Logo">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@docsmsft">
+
+
+	<meta name="audience" content="developer">
+<meta name="author" content="davidortinau">
+<meta name="bilingual_type" content="hover over">
+<meta name="breadcrumb_path" content="/xamarin/breadcrumb/toc.json">
+<meta name="depot_name" content="MSDN.xamarin-docs">
+<meta name="description" content="Ce guide explique l’accès aux fichiers dans Xamarin. Android">
+<meta name="document_id" content="cdfb32ba-3510-a171-c451-4b3bac673c7c">
+<meta name="document_version_independent_id" content="7299b788-36f9-f4e2-2ba2-45893f466c19">
+<meta name="enable_loc_sxs" content="true">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/xamarin-docs-pr.fr-FR/blob/3b961d4c9eff02d3f82e2a68c170fbe17817618f/docs/android/platform/files/index.md">
+<meta name="locale" content="fr-fr">
+<meta name="manager" content="crdun">
+<meta name="ms.assetid" content="FC1CFC58-B799-4DD6-8ED1-DE36B0E56856">
+<meta name="ms.author" content="daortin">
+<meta name="ms.contentlocale" content="fr-FR">
+<meta name="ms.date" content="07/23/2018">
+<meta name="ms.lasthandoff" content="09/29/2020">
+<meta name="ms.locfileid" content="91453920">
+<meta name="ms.openlocfilehash" content="69c99d6aa132bb5326085f752b9220054e9f3e69">
+<meta name="ms.prod" content="xamarin">
+<meta name="ms.sourcegitcommit" content="4e399f6fa72993b9580d41b93050be935544ffaa">
+<meta name="ms.technology" content="xamarin-android">
+<meta name="ms.topic" content="conceptual">
+<meta name="ms.translationtype" content="MT">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/xamarin-docs-pr.fr-FR/blob/live-sxs/docs/android/platform/files/index.md">
+<meta name="search.ms_docsetname" content="xamarin-docs">
+<meta name="search.ms_product" content="MSDN">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="site_name" content="Docs">
+<meta name="uhfHeaderId" content="MSDocsHeader-Xamarin">
+<meta name="updated_at" content="2020-09-29 08:13 PM">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="../../toc.json">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/fr-fr/MSDN.xamarin-docs/{branchName}{pdfName}">
+<meta name="word_count" content="3107">
+
+
+	<meta name="scope" content="Xamarin, Xamarin.Android">
+<link href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/" rel="canonical">
+	<title>Accès aux fichiers avec Xamarin. Android - Xamarin | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/d074d466.site-ltr.css">
+
+	<link rel="stylesheet" href="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/55917fe3.conceptual.css">
+
+
+	<script async="" defer="" crossorigin="anonymous" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/lux.js.téléchargement"></script><script async="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/analytics.js.téléchargement"></script><script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'fr-fr',
+			contentDir: 'ltr',
+			userLocale: 'fr-fr',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: true,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/xamarin-docs.fr-fr',
+			feedbackProductUrl: 'https://developercommunity.visualstudio.com/',
+			contentGitUrl: 'https://github.com/MicrosoftDocs/xamarin-docs.fr-fr/blob/live/docs/android/platform/files/index.md',
+			extendBreadcrumb: true,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasBookmark: true,
+			hasShare: true
+		},
+		functions:{}
+	};
+	</script>
+	<script nomodule="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/bluebird.min.js.téléchargement" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"></script>
+	<script nomodule="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/fetch.umd.min.js.téléchargement" integrity="sha384-EQIXrC5K2+7X8nGgLkB995I0/6jfAvvyG1ieZ+WYGxgJHFMD/alsG9fSDWvzb5Y1" crossorigin="anonymous"></script>
+	<script nomodule="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/template.min.js.téléchargement" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"></script>
+	<script nomodule="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/url.min.js.téléchargement" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"></script>
+	<script src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/907a92b7.index-polyfills.js.téléchargement"></script>
+		<script src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/59b0c5ee.index-docs.js.téléchargement"></script><style></style><script src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/jsll-4.js.téléchargement" async="" defer=""></script><script src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/wcp-consent.js.téléchargement" async="" defer=""></script>
+<script async="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/t.js.téléchargement"></script><script async="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/t.js(1).téléchargement"></script><script async="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/t.js(2).téléchargement"></script><style type="text/css" media="print">.usabilla_live_button_container { display: none; }</style><script async="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/t.js(3).téléchargement"></script><script async="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/t.js(4).téléchargement"></script><script async="" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/t.js(5).téléchargement"></script></head>
+
+<body lang="fr-fr" dir="ltr"><div style="display: none;" id="lightningjs-usabilla_live"><div><iframe frameborder="0" id="lightningjs-frame-usabilla_live" src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/saved_resource.html"></iframe></div></div>
+<div class="header-holder has-default-focus">
+	<a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused is-fixed has-inner-focus focus-visible has-top-zero has-left-zero has-right-zero has-padding-medium has-text-centered has-body-background-medium" tabindex="1">Passer au contenu principal</a>
+	<div hidden="" id="cookie-consent-holder"></div>
+	<!-- liquid-tag banners global -->
+	<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!----> <div class="nav-bar"><!---->  <div class="nav-bar-brand">
+		<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft">
+			<div class="nav-bar-logo" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope">
+				<svg xmlns="http://www.w3.org/2000/svg" width="108" height="23" viewBox="72 72 337 74" preserveAspectRatio="xMidYMin slice">
+					<g data-name="MS-symbol">
+						<clippath id="a">
+							<path transform="matrix(1 0 0 -1 0 216)" d="M0 216h482V0H0z"></path>
+						</clippath>
+						<g clip-path="url(#a)">
+							<path class="has-fill-current-color has-text-subtle" d="M394.942 104.59h-10.858v25.003h-7.38V104.59h-5.182v-5.965h5.182v-4.308c0-3.254 1.06-5.92 3.178-7.998 2.12-2.079 4.835-3.118 8.15-3.118.882 0 1.666.045 2.35.135a9.37 9.37 0 011.806.407v6.296c-.24-.14-.663-.31-1.265-.512-.603-.2-1.296-.3-2.078-.3-1.528 0-2.702.476-3.526 1.43-.824.954-1.235 2.365-1.235 4.232v3.736h10.858v-6.959l7.321-2.229v9.188h7.381v5.965h-7.38v14.49c0 1.91.345 3.254 1.038 4.037.693.783 1.782 1.175 3.27 1.175.42 0 .927-.1 1.52-.3a7.178 7.178 0 001.552-.724v6.025c-.463.261-1.23.502-2.305.723a15.742 15.742 0 01-3.178.331c-3.073 0-5.378-.817-6.914-2.455-1.537-1.637-2.305-4.102-2.305-7.396zm-48.407 9.73c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.45-2.545-6.04-2.545-2.67 0-4.745.888-6.22 2.666-1.477 1.777-2.215 4.313-2.215 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.892-2.993 6.91-4.489 12.05-4.489 4.841 0 8.621 1.441 11.343 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.447 9.018-4.338 11.99-2.892 2.973-6.829 4.458-11.81 4.458-4.8 0-8.61-1.41-11.432-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-16.417-7.802c0 1.045.331 1.863.994 2.456.662.592 2.128 1.34 4.398 2.243 2.912 1.166 4.956 2.476 6.131 3.932 1.175 1.456 1.762 3.22 1.762 5.287 0 2.912-1.12 5.252-3.359 7.02-2.24 1.767-5.267 2.65-9.083 2.65-1.285 0-2.706-.155-4.263-.467-1.556-.31-2.877-.707-3.96-1.19v-7.169a17.945 17.945 0 004.277 2.198c1.526.543 2.911.814 4.157.814 1.647 0 2.862-.23 3.645-.693.784-.46 1.175-1.235 1.175-2.319 0-1.005-.406-1.853-1.22-2.546-.813-.693-2.355-1.492-4.624-2.395-2.69-1.125-4.599-2.39-5.724-3.796-1.125-1.406-1.687-3.193-1.687-5.362 0-2.792 1.11-5.086 3.33-6.884 2.217-1.797 5.095-2.696 8.63-2.696 1.084 0 2.3.12 3.645.361 1.346.242 2.47.553 3.374.934v6.93c-.964-.644-2.089-1.195-3.374-1.658-1.286-.462-2.56-.693-3.826-.693-1.386 0-2.465.271-3.238.813-.774.543-1.16 1.286-1.16 2.23m-35.066 7.562c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.449-2.545-6.039-2.545-2.672 0-4.745.888-6.222 2.666-1.476 1.777-2.214 4.313-2.214 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.893-2.993 6.91-4.489 12.051-4.489 4.84 0 8.621 1.441 11.342 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.446 9.018-4.338 11.99-2.892 2.973-6.828 4.458-11.809 4.458-4.8 0-8.61-1.41-11.433-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-3.136-16.448c.582 0 1.105.041 1.567.121.462.08.853.18 1.175.301v7.38c-.382-.28-.939-.546-1.672-.798-.733-.25-1.622-.376-2.666-.376-1.788 0-3.299.753-4.534 2.26-1.235 1.505-1.853 3.825-1.853 6.958v15.635h-7.29V98.624h7.29v4.88h.12c.663-1.687 1.667-3.007 3.013-3.96 1.346-.954 2.962-1.432 4.85-1.432m-27.956 26.18c1.084 0 2.28-.25 3.585-.754a15.06 15.06 0 003.615-1.988v6.778c-1.165.663-2.485 1.165-3.962 1.506-1.475.342-3.098.512-4.865.512-4.559 0-8.265-1.44-11.116-4.323-2.852-2.88-4.278-6.562-4.278-11.04 0-4.98 1.456-9.083 4.37-12.307 2.91-3.224 7.037-4.835 12.38-4.835 1.366 0 2.746.176 4.143.527 1.395.352 2.504.758 3.328 1.22v6.99c-1.125-.824-2.274-1.462-3.45-1.914a9.966 9.966 0 00-3.599-.678c-2.872 0-5.192.934-6.959 2.802-1.768 1.868-2.652 4.388-2.652 7.562 0 3.132.85 5.573 2.546 7.32 1.697 1.748 4.002 2.621 6.914 2.621m-22.112 5.302h-7.29V98.624h7.29zm-8.044-39.916c0-1.205.437-2.214 1.311-3.028.874-.813 1.913-1.22 3.118-1.22 1.285 0 2.35.417 3.193 1.25.844.834 1.266 1.833 1.266 2.998 0 1.185-.432 2.18-1.296 2.982-.864.804-1.918 1.205-3.163 1.205-1.246 0-2.295-.406-3.148-1.219-.854-.815-1.28-1.803-1.28-2.968m-6.274-3.284v43.2h-7.5v-33.86h-.12l-13.408 33.86h-4.97l-13.738-33.86h-.09v33.86h-6.929v-43.2h10.755l12.412 32.024h.18l13.105-32.024z"></path>
+							<path d="M106.214 106.214H71.996V71.996h34.218z" fill="#f25022"></path>
+							<path d="M143.993 106.214h-34.218V71.996h34.218z" fill="#7fba00"></path>
+							<path d="M106.214 143.993H71.996v-34.218h34.218z" fill="#00a4ef"></path>
+							<path d="M143.993 143.993h-34.218v-34.218h34.218z" fill="#ffb900"></path>
+						</g>
+					</g>
+				</svg>
+			</div>
+		</a>
+	</div> 
+			
+		<div class="nav-bar-item is-hidden-tablet">
+			<div class="nav-bar-menu">
+				<button class="nav-bar-button is-title" title="Navigation globale" aria-expanded="false">
+					<span class="nav-bar-menu-title"><!---->Documentation<!----></span>
+					<div class="nav-bar-burger">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span class="nav-bar-burger-label"><!---->Navigation globale<!----></span>
+					</div>
+				</button>
+			</div>
+		</div>
+	
+			
+		<nav class="nav-bar-nav" role="navigation" aria-label="Global">
+			<ul class="nav-bar-nav-list">
+				
+		<li class="nav-bar-item is-category">
+			<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://docs.microsoft.com/fr-fr/">
+				<span><!---->Docs<!----></span>
+			</a>
+		</li>
+	
+				<!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline is-active" href="https://docs.microsoft.com/fr-fr/documentation">
+					<span><!---->Documentation<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/learn/">
+					<span><!---->Learn<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/answers/products/">
+					<span><!---->Q&amp;A<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/samples/browse/">
+					<span><!---->Exemples de code<!----></span>
+				</a>
+		  </li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-71">
+			<span><!---->Plus<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-71" aria-label="Plus">
+			<!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/documentation"><!---->Documentation<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/learn/"><!---->Learn<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/answers/products/"><!---->Q&amp;A<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/samples/browse/"><!---->Exemples de code<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+			<span class="nav-bar-spacer"></span>
+			
+		<div class="nav-bar-search " id="ax-72" hidden="">
+			
+		<form class="nav-bar-search-form" method="GET" name="searchForm" role="search" id="searchForm" aria-label="Rechercher" aria-expanded="false" action="https://docs.microsoft.com/fr-fr/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!----> <div class="control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-search-input" class="autocomplete-input input   is-small" type="search" name="terms" aria-expanded="false" aria-owns="ax-73-listbox" aria-activedescendant="" aria-label="Rechercher" placeholder="Rechercher">
+
+				<span aria-hidden="true" class="icon is-small is-left" hidden="">
+					<span class="has-text-primary docon docon-undefined"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-73-listbox" aria-label="site-search-input-suggestions" hidden="">
+				
+			</ul><!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value="Xamarin.Android">
+			
+			
+		</form>
+	
+		</div>
+		
+					<div class="nav-bar-search">
+						<!-- hidden when the width drops to tablet -->
+						
+		<form class="nav-bar-search-form" method="GET" name="searchForm" role="search" id="searchFormDesktop" aria-label="Rechercher" aria-expanded="false" action="https://docs.microsoft.com/fr-fr/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!----> <div class="control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-74" class="autocomplete-input input control has-icons-left  is-small" type="search" name="terms" aria-expanded="false" aria-owns="ax-75-listbox" aria-activedescendant="" aria-label="Rechercher" placeholder="Rechercher">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-search"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-75-listbox" aria-label="ax-74-suggestions" hidden="">
+				
+			</ul><!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value="Xamarin.Android">
+			
+			
+		</form>
+	
+					</div>
+			  
+		<div class="nav-bar-search " hidden="">
+			<div class="nav-bar-search-form-expander">
+				<button id="form-expander" class="nav-bar-button has-hover-underline " title="Rechercher" aria-expanded="false" aria-controls="ax-72">
+					
+		<span class="is-visually-hidden-mobile"><!---->Rechercher<!----></span>
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-search"></span>
+		</span>
+	
+				</button>
+			</div>
+		</div>
+	
+			
+		<div class="nav-bar-profile">
+			
+		<a class="docs-sign-in auth-status-determined not-authenticated" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#"> Se connecter </a>
+	 
+		<div class="dropdown has-caret auth-status-determined authenticated">
+			<button class="dropdown-trigger button-reset" aria-controls="user-menu" aria-expanded="false" aria-label="Votre compte">
+				<figure class="image is-36x36">
+					<img class="has-body-background-medium is-rounded" alt="" data-profile-property="avatarUrl">
+				</figure>
+			</button>
+			<div class="dropdown-menu box has-flex-justify-content-start has-body-background" id="user-menu" role="menu">
+				<div class="media is-user-dir">
+					<div class="media-left">
+						<figure class="image is-48x48" aria-hidden="true">
+							<img class="has-body-background-medium is-rounded" aria-labelledby="displayName" data-profile-property="avatarUrl">
+						</figure>
+					</div>
+					<div class="media-content">
+						<p class="title is-size-large">
+							<span id="displayName" class="is-inline-truncated has-max-width-200" data-profile-property="displayName"></span>
+						</p>
+						<p class="subtitle is-size-small has-margin-bottom-none">
+							<span class="is-inline-truncated has-max-width-200" data-profile-property="upn"></span>
+						</p>
+					</div>
+				</div>
+				<ul class="has-padding-top-small has-padding-bottom-medium">
+					<li class="has-padding-top-extra-small has-padding-bottom-extra-small">
+						<a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl"><!---->Profil<!----></a>
+					</li>
+					<li class="has-padding-top-extra-small has-padding-bottom-extra-small">
+						<a href="https://docs.microsoft.com/profile" data-profile-property="bookmarksUrl"><!---->Signets<!----></a>
+					</li>
+					<li class="has-padding-top-extra-small has-padding-bottom-extra-small">
+						<a href="https://docs.microsoft.com/profile" data-profile-property="collectionsUrl"><!---->Collections<!----></a>
+					</li>
+					<li class="has-padding-top-extra-small">
+						<a href="https://docs.microsoft.com/profile" data-profile-property="challengesUrl"><!---->Défis<!----></a>
+					</li>
+				</ul>
+				<div class="has-border-top has-padding-top-medium">
+					<a class="docs-sign-out" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#"><!---->Se déconnecter<!----></a>
+				</div>
+			</div>
+		</div>
+	
+		</div>
+	
+		 <!----></div> <div class="nav-bar has-border-top is-hidden-mobile"><!----> 
+		<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://docs.microsoft.com/xamarin">
+			<span>
+				Xamarin
+				
+			</span>
+		</a>
+	 
+		
+		<nav class="nav-bar-nav" role="navigation" aria-label="Site">
+			<ul class="nav-bar-nav-list">
+				
+				<!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/xamarin/get-started/">
+					<span><!---->Bien démarrer<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/xamarin/android/">
+					<span><!---->Android<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/xamarin/ios/">
+					<span><!---->iOS<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/xamarin/mac/">
+					<span><!---->Mac<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class="nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/xamarin/xamarin-forms/">
+					<span><!---->Xamarin.Forms<!----></span>
+				</a>
+		  </li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-76">
+			<span><!---->Exemples<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-76" aria-label="Exemples">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/xamarin-forms/samples/"><!---->Exemples Xamarin.Forms<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/android/samples/"><!---->Exemples Android<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/ios/samples/"><!---->Exemples iOS<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/mac/samples/"><!---->Exemples Mac<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/samples/browse/?products=xamarin"><!---->Tous les exemples Xamarin<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-77">
+			<span><!---->API<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-77" aria-label="API">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=xamarin-forms"><!---->API Xamarin.Forms<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=xamarin-android-sdk-9"><!---->API Android<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=xamarin-ios-sdk-12"><!---->API iOS<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=xamarin-mac-sdk-14"><!---->API Mac<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-78">
+			<span><!---->Plus<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-78" aria-label="Plus">
+			<!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/get-started/"><!---->Bien démarrer<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/android/"><!---->Android<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/ios/"><!---->iOS<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/mac/"><!---->Mac<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/xamarin-forms/"><!---->Xamarin.Forms<!----></a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-79">
+			<span><!---->Exemples<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-79" aria-label="Exemples">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/xamarin-forms/samples/"><!---->Exemples Xamarin.Forms<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/android/samples/"><!---->Exemples Android<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/ios/samples/"><!---->Exemples iOS<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/mac/samples/"><!---->Exemples Mac<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/samples/browse/?products=xamarin"><!---->Tous les exemples Xamarin<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-80">
+			<span><!---->API<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-80" aria-label="API">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=xamarin-forms"><!---->API Xamarin.Forms<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=xamarin-android-sdk-9"><!---->API Android<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=xamarin-ios-sdk-12"><!---->API iOS<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=xamarin-mac-sdk-14"><!---->API Mac<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+		<span class="nav-bar-spacer"></span>
+		 
+	 <!----></div> <!----></header>	</div>
+
+				<div class="content-header uhf-container has-padding has-default-focus has-border-bottom-none" data-bi-name="content-header">
+				<nav class="has-padding-none has-padding-left-medium-tablet has-padding-right-medium-tablet has-padding-left-none-uhf-tablet has-padding-left-none-uhf-tablet has-padding-none-desktop has-flex-grow" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Chemin de navigation">
+					<ul id="page-breadcrumbs" class="breadcrumbs"><!---->
+			<!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <a itemprop="item" href="https://docs.microsoft.com/fr-fr/">
+								<span itemprop="name"> Docs </span>
+						  </a>
+					<meta itemprop="position" content="1">
+				</li><!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <a itemprop="item" href="https://docs.microsoft.com/fr-fr/xamarin">
+								<span itemprop="name"> Xamarin </span>
+						  </a>
+					<meta itemprop="position" content="2">
+				</li><!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <a itemprop="item" href="https://docs.microsoft.com/fr-fr/xamarin/android/">
+								<span itemprop="name"> Xamarin.<wbr>Android </span>
+						  </a>
+					<meta itemprop="position" content="3">
+				</li><!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <a itemprop="item" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/">
+								<span itemprop="name"> Fonctionnalités de la plateforme </span>
+						  </a>
+					<meta itemprop="position" content="4">
+				</li><!----> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					 <span itemprop="name"> Accès aux fichiers avec Xamarin.<wbr>Android<!----></span> 
+					<meta itemprop="position" content="5">
+				</li><!---->
+		<!----></ul>
+				</nav>
+			<div class="content-header-controls">
+				<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+					<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+					<span class="contents-expand-title">Contenu</span>
+				</button>
+				<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+					<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+					<span>Quitter le mode focus</span>
+				</button>
+			</div>
+			<div class="has-padding-none-tablet has-padding-medium is-size-small is-flex-touch has-flex-justify-content-space-between-touch has-flex-grow">
+				<ul class="is-hidden-mobile action-list has-flex-justify-content-start has-flex-justify-content-end-tablet is-flex is-flex-row has-flex-wrap has-flex-grow is-unstyled">
+					<li>
+						<button type="button" class="bookmark button is-text has-inner-focus is-small is-icon-only-touch" data-list-type="bookmarks" data-bi-name="bookmark" title="Ajouter un signet pour Accès aux fichiers avec Xamarin. Android - Xamarin | Microsoft Docs" aria-pressed="false">
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-single-bookmark"></span>
+							</span>
+							<span class="bookmark-status is-visually-hidden-touch is-hidden-portrait">Signet</span>
+						</button>
+					</li>
+						<li id="feedback-section-link">
+							<a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#feedback" class="button is-text has-inner-focus is-small is-icon-only-touch" data-bi-name="comments" title="Envoyer des commentaires à propos de cette page">
+								<span class="icon" aria-hidden="true">
+									<span class="docon docon-comment-lines"></span>
+								</span>
+								<span class="is-visually-hidden-touch is-hidden-portrait">Commentaires</span>
+							</a>
+						</li>
+							<li id="contenteditbtn" hidden="">
+								<a href="https://github.com/MicrosoftDocs/xamarin-docs.fr-fr/blob/live/docs/android/platform/files/index.md" class="button is-text has-inner-focus is-icon-only-touch is-small" title="Modifier ce document" data-bi-name="edit" data-original_content_git_url="https://github.com/MicrosoftDocs/xamarin-docs-pr.fr-FR/blob/live-sxs/docs/android/platform/files/index.md" data-original_content_git_url_template="{repo}/blob/{branch}/docs/android/platform/files/index.md" data-pr_repo="" data-pr_branch="">
+								<span class="icon" aria-hidden="true">
+									<span class="docon docon-edit-outline"></span>
+								</span>
+								<span class="is-visually-hidden-touch is-hidden-portrait">Modifier</span>
+							</a>
+						</li>
+					<li>
+<div class="sharing dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small is-icon-only-touch" aria-controls="sharing-menu" aria-expanded="false" title="Partager ce document" data-bi-name="share">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-sharing"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Partager</span>
+	</button>
+	<div class="dropdown-menu has-padding-small" id="sharing-menu">
+		<ul data-bi-name="share-links">
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fxamarin%2Fandroid%2Fplatform%2Ffiles%2F%3FWT.mc_id%3Dtwitter&amp;text=Acc%C3%A8s%20aux%20fichiers%20avec%20Xamarin.%20Android%20-%20Xamarin%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fxamarin%2Fandroid%2Fplatform%2Ffiles%2F%3FWT.mc_id%3Dtwitter">
+					<span class="icon">
+						<span class="docon docon-brand-twitter has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Twitter</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fxamarin%2Fandroid%2Fplatform%2Ffiles%2F%3FWT.mc_id%3Dlinkedin">
+					<span class="icon">
+						<span class="docon docon-brand-linkedin has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>LinkedIn</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fxamarin%2Fandroid%2Fplatform%2Ffiles%2F%3FWT.mc_id%3Dfacebook">
+					<span class="icon">
+						<span class="docon docon-brand-facebook has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20Acc%C3%A8s%20aux%20fichiers%20avec%20Xamarin.%20Android%20-%20Xamarin%20%7C%20Microsoft%20Docs&amp;body=Acc%C3%A8s%20aux%20fichiers%20avec%20Xamarin.%20Android%20-%20Xamarin%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fxamarin%2Fandroid%2Fplatform%2Ffiles%2F%3FWT.mc_id%3Demail">
+					<span class="icon">
+						<span class="docon docon-mail-message-fill has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Courrier</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>					</li>
+					<li>
+
+<div class="lang-toggle-container" style="display: flex;">
+	<label for="language-toggle" aria-hidden="true" tabindex="-1">Lire en anglais</label>
+	<div class="checkbox-toggle-wrapper">
+		<input type="checkbox" id="language-toggle" aria-label="Lire en anglais" data-m="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+		<label for="language-toggle" class="switch"></label>
+	</div>
+</div>					</li>
+				</ul>
+				<button type="button" class="has-border contents-button button is-small is-text is-hidden-tablet has-inner-focus" aria-label="Contenu" data-bi-name="contents-expand">
+					<span class="icon">
+						<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+					</span>
+					<span class="contents-expand-title">Table des matières</span>
+				</button>
+				<div class="is-invisible"></div>
+				<div class="is-hidden-tablet level-item is-flexible level-right">
+					<button type="button" class="page-actions-button button is-small is-text is-hidden-tablet has-inner-focus has-border is-full-height  has-margin-left-small" aria-label="Actions sur la page" data-bi-name="pageactions">
+						<span class="icon">
+							<span class="docon docon-more-vertical" aria-hidden="true"></span>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<section data-dismissable="disappearing" class="uhf-container has-padding has-padding-top-small has-padding-bottom-small is-info alert is-banner">
+				<button data-dismiss="" type="button" class="delete is-absolute has-top-zero has-right-zero has-margin-extra-small is-large"><span class="visually-hidden">Ignorer l’alerte</span></button>
+				<div class="columns">
+					<div class="column is-12">
+						<div class="level">
+							<div class="level-left has-flex-shrink">
+								<div class="level-item has-flex-shrink">
+									<p class="has-text-white-static disclaimer-title has-margin-top-extra-small has-margin-right-medium has-line-height-reset">
+										<span class="icon">
+											<span class="docon docon-status-error-outline" aria-hidden="true"></span>
+										</span>
+										<span>Certaines parties de cette rubrique sont traduites automatiquement.</span>
+									</p>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+			
+		<!-- liquid-tag banners sectional -->
+	</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="is-fixed is-flex is-flex-column" role="navigation" aria-label="Principal" data-bi-name="left toc" style="width: 319.75px; top: 24px; bottom: 179px;"><form action="javascript:" role="search" aria-label="Rechercher" class="has-margin-bottom-small"><label class="visually-hidden" for="ax-81">Rechercher</label><div class="autocomplete is-block" data-bi-name="autocomplete"><!----> <div class="control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-81" class="autocomplete-input input control has-icons-left is-full-width is-small" type="text" aria-expanded="false" aria-owns="ax-82-listbox" aria-activedescendant="" placeholder="Filtrer par titre">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-filter-settings"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-82-listbox" aria-label="ax-81-suggestions" hidden="">
+				
+			</ul><!----></div></form><ul class="tree is-vertically-scrollable has-flex-grow has-flex-shrink" role="tree" aria-label="Table des matières" data-bi-name="tree" data-is-collapsible="true"><li role="none"><a aria-setsize="13" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/">Xamarin.<wbr>Android</a></li><li class="tree-item is-expanded" aria-setsize="13" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Bien démarrer</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="5" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/get-started/">Bien démarrer</a></li><li class="tree-item" aria-setsize="5" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1_2-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Installation et configuration</span></li><li class="tree-item" aria-setsize="5" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" id="title-2-1_3-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Hello, Android</span></li><li class="tree-item" aria-setsize="5" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" id="title-2-1_4-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Hello, Android multi-écran</span></li><li role="none"><a aria-setsize="5" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/get-started/java-developers">Xamarin pour les développeurs Java</a></li></ul></li><li class="tree-item" aria-setsize="13" aria-level="1" aria-posinset="3" role="treeitem" tabindex="-1" id="title-3-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Notions de base des applications</span></li><li class="tree-item" aria-setsize="13" aria-level="1" aria-posinset="4" role="treeitem" tabindex="-1" id="title-4-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Interface utilisateur</span></li><li class="tree-item is-expanded" aria-setsize="13" aria-level="1" aria-posinset="5" role="treeitem" tabindex="-1" id="title-5-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Fonctionnalités de la plateforme</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/">Fonctionnalités de la plateforme</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/android-beam">Android Beam</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/android-manifest">Manifeste Android</a></li><li class="tree-item is-expanded" aria-setsize="27" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" id="title-5-1_4-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Accès aux fichiers avec Xamarin.<wbr>Android</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="1" role="treeitem" tabindex="0" class="tree-item is-leaf is-selected" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/" aria-current="page">Accès aux fichiers avec Xamarin.<wbr>Android</a></li><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/external-storage">Stockage externe</a></li></ul></li><li class="tree-item" aria-setsize="27" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" id="title-5-1_5-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Authentification par empreinte digitale</span></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/android-job-scheduler">Planificateur de travaux Android</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/firebase-job-dispatcher">Répartiteur de travail Firebase</a></li><li class="tree-item" aria-setsize="27" aria-level="2" aria-posinset="8" role="treeitem" tabindex="-1" id="title-5-1_8-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Fragments</span></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="9" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/app-linking">Liaison d’applications</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="10" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/androidx">AndroidX</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="11" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/android-10">Android 10</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="12" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/pie">Android 9 Pie</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="13" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/oreo">Android 8 Oreo</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="14" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/nougat">Android 7 Nougat</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="15" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/marshmallow">Android 6 Marshmallow</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="16" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/lollipop">Android 5 Lollipop</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="17" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/kitkat">Android 4.4 KitKat</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="18" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/jelly-bean">Android 4.1 Jelly Bean</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="19" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/ice-cream-sandwich">Android 4.0 Ice Cream Sandwich</a></li><li class="tree-item" aria-setsize="27" aria-level="2" aria-posinset="20" role="treeitem" tabindex="-1" id="title-5-1_20-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Fournisseurs de contenu</span></li><li class="tree-item" aria-setsize="27" aria-level="2" aria-posinset="21" role="treeitem" tabindex="-1" id="title-5-1_21-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Cartes et emplacement</span></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="22" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/speech">Utilisation d’Android.<wbr>Speech</a></li><li class="tree-item" aria-setsize="27" aria-level="2" aria-posinset="23" role="treeitem" tabindex="-1" id="title-5-1_23-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Intégration Java</span></li><li class="tree-item" aria-setsize="27" aria-level="2" aria-posinset="24" role="treeitem" tabindex="-1" id="title-5-1_24-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Liaison d’une bibliothèque Java</span></li><li class="tree-item" aria-setsize="27" aria-level="2" aria-posinset="25" role="treeitem" tabindex="-1" id="title-5-1_25-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Lier une bibliothèque Kotlin</span></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="26" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/native-libraries">Utilisation de bibliothèques natives</a></li><li role="none"><a aria-setsize="27" aria-level="2" aria-posinset="27" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/renderscript">Renderscript</a></li></ul></li><li class="tree-item" aria-setsize="13" aria-level="1" aria-posinset="6" role="treeitem" tabindex="-1" id="title-6-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Xamarin.<wbr>Essentials</span></li><li class="tree-item" aria-setsize="13" aria-level="1" aria-posinset="7" role="treeitem" tabindex="-1" id="title-7-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Services de données et cloud</span></li><li class="tree-item" aria-setsize="13" aria-level="1" aria-posinset="8" role="treeitem" tabindex="-1" id="title-8-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Déploiement et tests</span></li><li class="tree-item" aria-setsize="13" aria-level="1" aria-posinset="9" role="treeitem" tabindex="-1" id="title-9-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Concepts avancés et éléments internes</span></li><li class="tree-item" aria-setsize="13" aria-level="1" aria-posinset="10" role="treeitem" tabindex="-1" id="title-10-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Dépannage</span></li><li class="tree-item" aria-setsize="13" aria-level="1" aria-posinset="11" role="treeitem" tabindex="-1" id="title-11-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Wear</span></li><li role="none"><a aria-setsize="13" aria-level="1" aria-posinset="12" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/release-notes/">Notes de publication</a></li><li role="none"><a aria-setsize="13" aria-level="1" aria-posinset="13" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/xamarin/android/samples/">Exemples</a></li></ul><a class="button is-small is-text has-flex-justify-content-start has-inner-focus has-margin-top-small has-border-top has-border-bottom has-flex-shrink-none" href="https://docs.microsoft.com/fr-fr/xamarin/opbuildpdf/android/toc.pdf?branch=live" data-bi-name="downloadPdf" rel="nofollow"><!----> <span class="icon is-size-extra-small has-text-subtle">
+				<span aria-hidden="true" class="docon docon-dictionary-download"></span>
+			</span>
+			<span><!---->Télécharger le PDF<!----></span><!----></a></nav>
+			</div>
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+
+					<main id="main" role="main" class="content " data-bi-name="content" lang="fr-fr" dir="ltr">
+
+
+
+						<h1 id="file-storage-and-access-with-xamarinandroid"><span data-ttu-id="3bf3d-103">Stockage de fichiers et accès avec Xamarin. Android</span><span class="sxs-lookup"><span data-stu-id="3bf3d-103">File Storage and Access with Xamarin.Android</span></span></h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" lang="fr-fr" dir="ltr">
+							<li>
+								<time class="" data-article-date="" aria-label="Date de révision de l’article" datetime="2018-07-23T00:00:00.000Z" data-article-date-source="ms.date">23/07/2018</time>
+							</li>
+								<li class="readingTime">7 minutes de lecture</li>
+								<li class="contributors-holder">
+									<ul class="contributors" data-bi-name="contributors" aria-hidden="true">
+												<li><img src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/davidortinau.png" data-src="https://github.com/davidortinau.png?size=32" role="presentation"></li>
+												<li><img src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/olprod.png" data-src="https://github.com/olprod.png?size=32" role="presentation"></li>
+									</ul>
+								</li>
+						</ul>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Plan de l&#39;article">
+							<h3>Dans cet article</h3>
+						<ol><li><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#internal-vs-external-storage">Stockage interne et externe</a></li><li><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#working-with-internal-storage">Utilisation du stockage interne</a></li><li><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#using--xamarinessentials-ndash-file-system-helpers">Utilisation des – applications auxiliaires du système de fichiers Xamarin. Essentials</a></li><li><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#hiding-files-from-the-mediastore">Masquage des fichiers du MediaStore</a></li><li><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#related-links">Liens associés</a></li></ol></nav>
+
+						<!-- <content> -->
+							<p><span data-ttu-id="3bf3d-104">Une exigence courante pour les applications Android consiste à manipuler des fichiers pour – enregistrer des images, télécharger des documents ou exporter des données à partager avec d’autres programmes.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-104">A common requirement for Android apps is to manipulate files – saving pictures, downloading documents, or exporting data to share with other programs.</span></span> <span data-ttu-id="3bf3d-105">Android (basé sur Linux) le prend en charge en fournissant de l’espace pour le stockage des fichiers.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-105">Android (which is based on Linux) supports this by providing space for file storage.</span></span> <span data-ttu-id="3bf3d-106">Android regroupe le système de fichiers en deux types de stockage différents&nbsp;:</span><span class="sxs-lookup"><span data-stu-id="3bf3d-106">Android groups the filesystem into two different types of storage:</span></span></p>
+<ul>
+<li><span data-ttu-id="3bf3d-107"><strong>Stockage interne</strong> – Il s’agit d’une partie du système de fichiers accessible uniquement par l’application ou le système d’exploitation.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-107"><strong>Internal Storage</strong> – this is a portion of the file system that can be accessed only by the application or the operating system.</span></span></li>
+<li><span data-ttu-id="3bf3d-108"><strong>Stockage externe</strong> – Il s’agit d’une partition pour le stockage des fichiers accessibles par toutes les applications, l’utilisateur et éventuellement d’autres appareils.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-108"><strong>External Storage</strong> – this is a partition for the storage of files that is accessible by all apps, the user, and possibly other devices.</span></span> <span data-ttu-id="3bf3d-109">Sur certains appareils, le stockage externe peut être amovible (par exemple, une carte SD).</span><span class="sxs-lookup"><span data-stu-id="3bf3d-109">On some devices, external storage may be removable (such as an SD card).</span></span></li>
+</ul>
+<p><span data-ttu-id="3bf3d-110">Ces regroupements sont conceptuels uniquement et ne font pas nécessairement référence à une partition ou un répertoire unique sur l’appareil.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-110">These groupings are conceptual only, and don't necessarily refer to a single partition or directory on the device.</span></span> <span data-ttu-id="3bf3d-111">Un appareil Android fournira toujours une partition pour le stockage interne et le stockage externe.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-111">An Android device will always provide partition for internal storage and external storage.</span></span> <span data-ttu-id="3bf3d-112">Il est possible que certains appareils puissent avoir plusieurs partitions qui sont considérées comme du stockage externe.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-112">It is possible that certain devices may have multiple partitions that are considered to be external storage.</span></span> <span data-ttu-id="3bf3d-113">Quelle que soit la partition, les API pour la lecture, l’écriture ou la création de fichiers sont les mêmes.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-113">Regardless of the partition the APIs for reading, writing, or creating files is the same.</span></span> <span data-ttu-id="3bf3d-114">Il existe deux ensembles d’API qui peuvent être utilisés par une application Xamarin. Android pour accéder aux fichiers&nbsp;:</span><span class="sxs-lookup"><span data-stu-id="3bf3d-114">There are two sets of APIs that a Xamarin.Android application may use for file access:</span></span></p>
+<ol>
+<li><span data-ttu-id="3bf3d-115"><strong>API .net (fournies par mono et encapsulées par Xamarin. Android)</strong> –  Celles-ci incluent les <a href="https://docs.microsoft.com/fr-fr/xamarin/essentials/file-system-helpers?context=xamarin/android" data-linktype="relative-path">applications auxiliaires de système de fichiers</a> fournies par <a href="https://docs.microsoft.com/fr-fr/xamarin/essentials/?context=xamarin/android" data-linktype="relative-path">Xamarin. Essentials</a>.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-115"><strong>The .NET APIs (provided by Mono and wrapped by Xamarin.Android)</strong> –  These includes the <a href="https://docs.microsoft.com/fr-fr/xamarin/essentials/file-system-helpers?context=xamarin/android" data-linktype="relative-path">file system helpers</a> provided by <a href="https://docs.microsoft.com/fr-fr/xamarin/essentials/?context=xamarin/android" data-linktype="relative-path">Xamarin.Essentials</a>.</span></span> <span data-ttu-id="3bf3d-116">Les API .NET offrent la meilleure compatibilité multiplateforme et, par conséquent, ce guide se concentre sur ces API.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-116">The .NET APIs provide the best cross-platform compatibility and as such the focus of this guide will be on these APIs.</span></span></li>
+<li><span data-ttu-id="3bf3d-117"><strong>Les API d’accès au fichier Java natif (fournies par Java et encapsulées par Xamarin. Android)</strong> – Java fournit ses propres API pour la lecture et l’écriture de fichiers.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-117"><strong>The native Java file access APIs (provided by Java and wrapped by Xamarin.Android)</strong> – Java provides its own APIs for reading and writing files.</span></span> <span data-ttu-id="3bf3d-118">Il s’agit d’une alternative entièrement acceptable pour les API .NET, mais qui sont spécifiques à Android et ne conviennent pas aux applications qui sont destinées à être multiplateformes.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-118">These are a completely acceptable alternative to the .NET APIs, but are specific to Android and are not suitable for apps that are intended to be cross-platform.</span></span></li>
+</ol>
+<p><span data-ttu-id="3bf3d-119">La lecture et l’écriture dans des fichiers sont presque identiques dans Xamarin. Android, comme c’est le cas pour toute autre application .NET.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-119">Reading and writing to files is almost identical in Xamarin.Android as it is to any other .NET application.</span></span> <span data-ttu-id="3bf3d-120">L’application Xamarin. Android détermine le chemin d’accès au fichier qui sera manipulé, puis utilise les idiomes .NET standard pour l’accès aux fichiers.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-120">The Xamarin.Android app determines the path to the file that will be manipulated, then uses standard .NET idioms for file access.</span></span> <span data-ttu-id="3bf3d-121">Étant donné que les chemins d’accès réels au stockage interne et externe peuvent varier d’un appareil à l’appareil ou d’une version Android à une version Android, il n’est pas recommandé de coder en dur le chemin d’accès aux fichiers.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-121">Because the actual paths to internal and external storage may vary from device to device or from Android version to Android version, it is not recommended to hard code the path to the files.</span></span> <span data-ttu-id="3bf3d-122">Utilisez plutôt les API Xamarin. Android pour déterminer le chemin d’accès aux fichiers.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-122">Instead, use the Xamarin.Android APIs to determine the path to files.</span></span> <span data-ttu-id="3bf3d-123">Ainsi, les API .NET pour la lecture et l’écriture de fichiers exposent les API Android natives qui vous aideront à déterminer le chemin d’accès aux fichiers sur le stockage interne et externe.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-123">That way, the .NET APIs for reading and writing files exposes the native Android APIs that will help with determining the path to files on internal and external storage.</span></span></p>
+<p><span data-ttu-id="3bf3d-124">Avant de discuter des API impliquées dans l’accès aux fichiers, il est important de comprendre certains détails relatifs au stockage interne et externe.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-124">Before discussing the APIs involved with file access, it is important to understand some of the details surrounding internal and external storage.</span></span> <span data-ttu-id="3bf3d-125">Ce sujet sera abordé dans la section suivante.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-125">This will be discussed in the next section.</span></span></p>
+<h2 id="internal-vs-external-storage" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#internal-vs-external-storage" aria-labelledby="internal-vs-external-storage"></a><span data-ttu-id="3bf3d-126">Stockage interne et externe</span><span class="sxs-lookup"><span data-stu-id="3bf3d-126">Internal vs external storage</span></span></h2>
+<p><span data-ttu-id="3bf3d-127">Conceptuellement, le stockage interne et le stockage externe sont très similaires – à ceux où une application Xamarin. Android peut enregistrer des fichiers.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-127">Conceptually, internal storage and external storage are very similar – they are both places at which a Xamarin.Android app may save files.</span></span> <span data-ttu-id="3bf3d-128">Cette similarité peut prêter à confusion pour les développeurs qui ne sont pas familiarisés avec Android, car il n’est pas évident qu’une application doit utiliser le stockage interne et le stockage externe.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-128">This similarity may be confusing for developers who are not familiar with Android as it is not clear when an app should use internal storage vs external storage.</span></span></p>
+<p><span data-ttu-id="3bf3d-129">Le stockage interne fait référence à la mémoire non volatile que Android alloue au système d’exploitation, fichiers APK et pour les applications individuelles.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-129">Internal storage refers to the non-volatile memory that Android allocates to the operating system, APKs, and for individual apps.</span></span> <span data-ttu-id="3bf3d-130">Cet espace n’est pas accessible, sauf par le système d’exploitation ou les applications.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-130">This space is not accessible except by the operating system or apps.</span></span> <span data-ttu-id="3bf3d-131">Android allouera un répertoire dans la partition de stockage interne pour chaque application.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-131">Android will allocate a directory in the internal storage partition for each app.</span></span> <span data-ttu-id="3bf3d-132">Lorsque l’application est désinstallée, tous les fichiers qui sont conservés sur le stockage interne dans ce répertoire sont également supprimés.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-132">When the app is uninstalled, all the files that are kept on internal storage in that directory will also be deleted.</span></span> <span data-ttu-id="3bf3d-133">Le stockage interne est mieux adapté aux fichiers qui ne sont accessibles qu’à l’application et qui ne sont pas partagés avec d’autres applications ou qui n’ont pas une valeur minimale une fois l’application désinstallée.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-133">Internal storage is best suited for files that are only accessible to the app and that will not be shared with other apps or will have very little value once the app is uninstalled.</span></span> <span data-ttu-id="3bf3d-134">Sur Android 6,0 ou version ultérieure, les fichiers sur le stockage interne peuvent être sauvegardés automatiquement par Google à l’aide <a href="https://developer.android.com/guide/topics/data/autobackup" data-linktype="external">de la fonctionnalité de sauvegarde automatique dans Android 6,0</a>.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-134">On Android 6.0 or higher, files on internal storage may be automatically backed up by Google using the <a href="https://developer.android.com/guide/topics/data/autobackup" data-linktype="external">Auto Backup feature in Android 6.0</a>.</span></span> <span data-ttu-id="3bf3d-135">Le stockage interne présente les inconvénients suivants&nbsp;:</span><span class="sxs-lookup"><span data-stu-id="3bf3d-135">Internal storage has the following disadvantages:</span></span></p>
+<ul>
+<li><span data-ttu-id="3bf3d-136">Les fichiers ne peuvent pas être partagés.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-136">Files cannot be shared.</span></span></li>
+<li><span data-ttu-id="3bf3d-137">Les fichiers seront supprimés lors de la désinstallation de l’application.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-137">Files  will be deleted when the app is uninstalled.</span></span></li>
+<li><span data-ttu-id="3bf3d-138">L’espace disponible sur le stockage interne peut être limité.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-138">The space available on internal storage maybe limited.</span></span></li>
+</ul>
+<p><span data-ttu-id="3bf3d-139">Le stockage externe fait référence au stockage de fichiers qui n’est pas un stockage interne et n’est pas exclusivement accessible à une application.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-139">External storage refers to file storage that is not internal storage and not exclusively accessible to an app.</span></span> <span data-ttu-id="3bf3d-140">L’objectif principal du stockage externe est de fournir un emplacement pour placer les fichiers destinés à être partagés entre les applications ou qui sont trop volumineux pour tenir sur le stockage interne.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-140">The primary purpose of external storage is to provide a place to put files that are meant to be shared between apps or that are too large to fit on the internal storage.</span></span> <span data-ttu-id="3bf3d-141">L’avantage du stockage externe est qu’il a généralement plus d’espace pour les fichiers que le stockage interne.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-141">The advantage of external storage is that it typically has much more space for files than internal storage.</span></span> <span data-ttu-id="3bf3d-142">Toutefois, le stockage externe n’est pas toujours présent sur un appareil et peut nécessiter une autorisation spéciale de la part de l’utilisateur pour y accéder.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-142">However, external storage is not always guaranteed to be present on a device and may require special permission from the user to access it.</span></span></p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Notes</p>
+<p><span data-ttu-id="3bf3d-143">Pour les appareils qui prennent en charge plusieurs utilisateurs, Android fournit à chaque utilisateur leur propre répertoire sur le stockage interne et externe.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-143">For devices that support multiple users, Android will provide each user their own directory on both internal and external storage.</span></span> <span data-ttu-id="3bf3d-144">Ce répertoire n’est pas accessible aux autres utilisateurs sur l’appareil.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-144">This directory is inaccessible to other users on the device.</span></span> <span data-ttu-id="3bf3d-145">Cette séparation est invisible aux applications tant qu’elles ne sont pas codées en dur dans des fichiers sur un stockage interne ou externe.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-145">This separation is invisible to apps as long as they do not hardcode paths to files on internal or external storage.</span></span></p>
+</div>
+<p><span data-ttu-id="3bf3d-146">En règle générale, les applications Xamarin. Android doivent préférer enregistrer leurs fichiers sur le stockage interne lorsque cela est raisonnable et s’appuyer sur un stockage externe lorsque les fichiers doivent être partagés avec d’autres applications, sont très volumineux ou doivent être conservés même si l’application est désinstallée.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-146">As a rule of thumb, Xamarin.Android apps should prefer saving their files on internal storage when it is reasonable, and rely on external storage when files need to be shared with other apps, are very large, or should be retained even if the app is uninstalled.</span></span> <span data-ttu-id="3bf3d-147">Par exemple, un fichier de configuration est mieux adapté à un stockage interne, car il n’a aucune importance, sauf pour l’application qui le crée.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-147">For example, a configuration file is best suited for a internal storage as it has no importance except to the app that creates it.</span></span>  <span data-ttu-id="3bf3d-148">En revanche, les photos sont un bon candidat pour le stockage externe.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-148">In contrast, photos are a good candidate for external storage.</span></span> <span data-ttu-id="3bf3d-149">Ils peuvent être très volumineux et, dans de nombreux cas, l’utilisateur peut souhaiter le partager ou y accéder même si l’application est désinstallée.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-149">They can be very large and in many cases the user may want to share them or access them even if the app is uninstalled.</span></span></p>
+<p><span data-ttu-id="3bf3d-150">Ce guide se concentre sur le stockage interne.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-150">This guide will focus on internal storage.</span></span> <span data-ttu-id="3bf3d-151">Pour plus d’informations sur l’utilisation du stockage externe dans une application Xamarin. Android, consultez le guide <a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/external-storage" data-linktype="relative-path">stockage externe</a> .</span><span class="sxs-lookup"><span data-stu-id="3bf3d-151">Please see the guide <a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/external-storage" data-linktype="relative-path">External storage</a> for details on using external storage in a Xamarin.Android application.</span></span></p>
+<h2 id="working-with-internal-storage" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#working-with-internal-storage" aria-labelledby="working-with-internal-storage"></a><span data-ttu-id="3bf3d-152">Utilisation du stockage interne</span><span class="sxs-lookup"><span data-stu-id="3bf3d-152">Working with internal storage</span></span></h2>
+<p><span data-ttu-id="3bf3d-153">Le répertoire de stockage interne pour une application est déterminé par le système d’exploitation et est exposé aux applications Android par la <code>Android.Content.Context.FilesDir</code> propriété.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-153">The internal storage directory for an application is determined by the operating system, and is exposed to Android apps by the <code>Android.Content.Context.FilesDir</code> property.</span></span> <span data-ttu-id="3bf3d-154">Cela renverra un <code>Java.IO.File</code> objet représentant le répertoire qu’Android a exclusivement dédié à l’application.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-154">This will return a <code>Java.IO.File</code> object representing the directory that Android has dedicated exclusively for the app.</span></span>  <span data-ttu-id="3bf3d-155">Par exemple, une application avec le nom de package <strong>com. CompanyName</strong> le répertoire de stockage interne peut être&nbsp;:</span><span class="sxs-lookup"><span data-stu-id="3bf3d-155">For example, an app with the package name <strong>com.companyname</strong> the internal storage directory might be:</span></span></p>
+<div class="codeHeader" id="code-try-0" data-bi-name="code-header"><span class="language">Bash</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-large">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-bash" data-author-content="/data/user/0/com.companyname/files
+"><span>/data/user/0/com.companyname/files
+</span></code></pre>
+<p><span data-ttu-id="3bf3d-156">Ce document fait référence au répertoire de stockage interne en tant que _ _ stockage interne_.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-156">This document will refer to the internal storage directory as <em>INTERNAL_STORAGE</em>.</span></span></p>
+<div class="alert is-primary">
+<p class="alert-title"><span class="docon docon-status-info-outline" aria-hidden="true"></span> Important</p>
+<p><span data-ttu-id="3bf3d-157">Le chemin d’accès exact au répertoire de stockage interne peut varier d’un appareil à l’autre et entre les versions d’Android.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-157">The exact path to the internal storage directory can vary from device to device and between versions of Android.</span></span> <span data-ttu-id="3bf3d-158">Pour cette raison, les applications ne doivent pas coder en dur le chemin d’accès au répertoire de stockage des fichiers internes et utiliser à la place les API Xamarin. Android, telles que <code>System.Environment.GetFolderPath()</code> .</span><span class="sxs-lookup"><span data-stu-id="3bf3d-158">Because of this, apps must not hard code the path to the internal files storage directory, and instead use the Xamarin.Android APIs, such as <code>System.Environment.GetFolderPath()</code>.</span></span></p>
+</div>
+<p><span data-ttu-id="3bf3d-159">Pour optimiser le partage de code, les applications Xamarin. Android (ou les applications Xamarin. Forms ciblant Xamarin. Android) doivent utiliser la <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.environment.getfolderpath" data-linktype="absolute-path"><code>System.Environment.GetFolderPath()</code></a> méthode.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-159">To maximize code sharing, Xamarin.Android apps (or Xamarin.Forms apps targeting Xamarin.Android) should use the <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.environment.getfolderpath" data-linktype="absolute-path"><code>System.Environment.GetFolderPath()</code></a> method.</span></span> <span data-ttu-id="3bf3d-160">Dans Xamarin. Android, cette méthode retourne une chaîne pour un répertoire qui est le même emplacement que <code>Android.Content.Context.FilesDir</code> .</span><span class="sxs-lookup"><span data-stu-id="3bf3d-160">In Xamarin.Android, this method will return a string for a directory that is the same location as <code>Android.Content.Context.FilesDir</code>.</span></span> <span data-ttu-id="3bf3d-161">Cette méthode prend une énumération, <code>System.Environment.SpecialFolder</code> , qui est utilisée pour identifier un jeu de constantes énumérées qui représentent les chemins d’accès des dossiers spéciaux utilisés par le système d’exploitation.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-161">This method takes an enum, <code>System.Environment.SpecialFolder</code>, which is used to identify a set of enumerated constants that represent the paths of special folders used by the operating system.</span></span> <span data-ttu-id="3bf3d-162">Toutes les valeurs ne <code>System.Environment.SpecialFolder</code> sont pas mappées à un répertoire valide sur Xamarin. Android.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-162">Not all of the <code>System.Environment.SpecialFolder</code> values will map to a valid directory on Xamarin.Android.</span></span> <span data-ttu-id="3bf3d-163">Le tableau suivant décrit le chemin d’accès qui peut être attendu pour une valeur donnée <code>System.Environment.SpecialFolder</code> :</span><span class="sxs-lookup"><span data-stu-id="3bf3d-163">The following table describes what path can be expected for a given value of <code>System.Environment.SpecialFolder</code>:</span></span></p>
+<div class="table-scroll-wrapper"><table class="table"><caption class="visually-hidden">Table 1</caption>
+<thead>
+<tr>
+<th><span data-ttu-id="3bf3d-164">System.Environment.SpecialFolder</span><span class="sxs-lookup"><span data-stu-id="3bf3d-164">System.Environment.SpecialFolder</span></span></th>
+<th><span data-ttu-id="3bf3d-165">Chemin d’accès</span><span class="sxs-lookup"><span data-stu-id="3bf3d-165">Path</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ApplicationData</code></td>
+<td><span data-ttu-id="3bf3d-166"><strong>_Interne _ _/.Config de stockage</strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-166"><strong><em>INTERNAL_STORAGE</em>/.config</strong></span></span></td>
+</tr>
+<tr>
+<td><code>Desktop</code></td>
+<td><span data-ttu-id="3bf3d-167"><strong>_Interne _ _/Desktop de stockage</strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-167"><strong><em>INTERNAL_STORAGE</em>/Desktop</strong></span></span></td>
+</tr>
+<tr>
+<td><code>LocalApplicationData</code></td>
+<td><span data-ttu-id="3bf3d-168"><strong>_Interne _ _/.Local/share de stockage</strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-168"><strong><em>INTERNAL_STORAGE</em>/.local/share</strong></span></span></td>
+</tr>
+<tr>
+<td><code>MyDocuments</code></td>
+<td><span data-ttu-id="3bf3d-169"><strong><em>_stockage interne</em></strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-169"><strong><em>INTERNAL_STORAGE</em></strong></span></span></td>
+</tr>
+<tr>
+<td><code>MyMusic</code></td>
+<td><span data-ttu-id="3bf3d-170"><strong>_Interne _ _/Music de stockage</strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-170"><strong><em>INTERNAL_STORAGE</em>/Music</strong></span></span></td>
+</tr>
+<tr>
+<td><code>MyPictures</code></td>
+<td><span data-ttu-id="3bf3d-171"><strong>_Interne _ _/Pictures de stockage</strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-171"><strong><em>INTERNAL_STORAGE</em>/Pictures</strong></span></span></td>
+</tr>
+<tr>
+<td><code>MyVideos</code></td>
+<td><span data-ttu-id="3bf3d-172"><strong>_Interne _ _/Videos de stockage</strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-172"><strong><em>INTERNAL_STORAGE</em>/Videos</strong></span></span></td>
+</tr>
+<tr>
+<td><code>Personal</code></td>
+<td><span data-ttu-id="3bf3d-173"><strong><em>_stockage interne</em></strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-173"><strong><em>INTERNAL_STORAGE</em></strong></span></span></td>
+</tr>
+<tr>
+<td><code>Fonts</code></td>
+<td><span data-ttu-id="3bf3d-174"><strong>_Interne _ _/.Fonts de stockage</strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-174"><strong><em>INTERNAL_STORAGE</em>/.fonts</strong></span></span></td>
+</tr>
+<tr>
+<td><code>Templates</code></td>
+<td><span data-ttu-id="3bf3d-175"><strong>_Interne _ _/Templates de stockage</strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-175"><strong><em>INTERNAL_STORAGE</em>/Templates</strong></span></span></td>
+</tr>
+<tr>
+<td><code>CommonApplicationData</code></td>
+<td><span data-ttu-id="3bf3d-176"><strong>/usr/share</strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-176"><strong>/usr/share</strong></span></span></td>
+</tr>
+<tr>
+<td><code>CommonApplicationData</code></td>
+<td><span data-ttu-id="3bf3d-177"><strong>/usr/share</strong></span><span class="sxs-lookup"><span data-stu-id="3bf3d-177"><strong>/usr/share</strong></span></span></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="reading-or-writing-to-files-on-internal-storage" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#reading-or-writing-to-files-on-internal-storage" aria-labelledby="reading-or-writing-to-files-on-internal-storage"></a><span data-ttu-id="3bf3d-178">Lecture ou écriture dans des fichiers sur le stockage interne</span><span class="sxs-lookup"><span data-stu-id="3bf3d-178">Reading or Writing to files on internal storage</span></span></h3>
+<p><span data-ttu-id="3bf3d-179">Toutes les <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file" data-linktype="absolute-path">API C# pour l’écriture</a> dans un fichier sont suffisantes&nbsp;; le chemin d’accès au fichier qui se trouve dans le répertoire alloué à l’application est tout ce qui est nécessaire.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-179">Any of the <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file" data-linktype="absolute-path">C# APIs for writing</a> to a file are sufficient; all that is necessary is to get the path to the file that is in the directory allocated to the application.</span></span> <span data-ttu-id="3bf3d-180">Il est vivement recommandé d’utiliser les versions Async des API .NET pour réduire les problèmes qui peuvent être associés à l’accès aux fichiers bloquant le thread principal.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-180">It is strongly recommended that the async versions of the .NET APIs are used to minimize any issues that may be associate with file access blocking the main thread.</span></span></p>
+<p><span data-ttu-id="3bf3d-181">Cet extrait de code est un exemple d’écriture d’un entier dans un fichier texte UTF-8 dans le répertoire de stockage interne d’une application&nbsp;:</span><span class="sxs-lookup"><span data-stu-id="3bf3d-181">This code snippet is one example of writing an integer to a UTF-8 text file to the internal storage directory of an application:</span></span></p>
+<div class="codeHeader" id="code-try-1" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-large">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="public async Task SaveCountAsync(int count)
+{
+    var backingFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), &quot;count.txt&quot;);
+    using (var writer = File.CreateText(backingFile))
+    {
+        await writer.WriteLineAsync(count.ToString());
+    }
+}
+"><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">async</span> Task <span class="hljs-title">SaveCountAsync</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> count</span>)</span>
+{
+    <span class="hljs-keyword">var</span> backingFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), <span class="hljs-string">"count.txt"</span>);
+    <span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> writer = File.CreateText(backingFile))
+    {
+        <span class="hljs-keyword">await</span> writer.WriteLineAsync(count.ToString());
+    }
+}
+</span></code></pre>
+<p><span data-ttu-id="3bf3d-182">L’extrait de code suivant fournit un moyen de lire une valeur entière qui a été stockée dans un fichier texte&nbsp;:</span><span class="sxs-lookup"><span data-stu-id="3bf3d-182">The next code snippet provides one way to read an integer value that was stored in a text file:</span></span></p>
+<div class="codeHeader" id="code-try-2" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-large">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="public async Task&lt;int&gt; ReadCountAsync()
+{
+    var backingFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), &quot;count.txt&quot;);
+
+    if (backingFile == null || !File.Exists(backingFile))
+    {
+        return 0;
+    }
+
+    var count = 0;
+    using (var reader = new StreamReader(backingFile, true))
+    {
+        string line;
+        while ((line = await reader.ReadLineAsync()) != null)
+        {
+            if (int.TryParse(line, out var newcount))
+            {
+                count = newcount;
+            }
+        }
+    }
+
+    return count;
+}
+"><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">async</span> Task&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">ReadCountAsync</span>(<span class="hljs-params"></span>)</span>
+{
+    <span class="hljs-keyword">var</span> backingFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), <span class="hljs-string">"count.txt"</span>);
+
+    <span class="hljs-keyword">if</span> (backingFile == <span class="hljs-literal">null</span> || !File.Exists(backingFile))
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> reader = <span class="hljs-keyword">new</span> StreamReader(backingFile, <span class="hljs-literal">true</span>))
+    {
+        <span class="hljs-keyword">string</span> line;
+        <span class="hljs-keyword">while</span> ((line = <span class="hljs-keyword">await</span> reader.ReadLineAsync()) != <span class="hljs-literal">null</span>)
+        {
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">int</span>.TryParse(line, <span class="hljs-keyword">out</span> <span class="hljs-keyword">var</span> newcount))
+            {
+                count = newcount;
+            }
+        }
+    }
+
+    <span class="hljs-keyword">return</span> count;
+}
+</span></code></pre>
+<h2 id="using--xamarinessentials-ndash-file-system-helpers" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#using--xamarinessentials-ndash-file-system-helpers" aria-labelledby="using--xamarinessentials-ndash-file-system-helpers"></a><span data-ttu-id="3bf3d-183">Utilisation des – applications auxiliaires du système de fichiers Xamarin. Essentials</span><span class="sxs-lookup"><span data-stu-id="3bf3d-183">Using  Xamarin.Essentials – File System Helpers</span></span></h2>
+<p><span data-ttu-id="3bf3d-184"><a href="https://docs.microsoft.com/fr-fr/xamarin/essentials/file-system-helpers?context=xamarin/android" data-linktype="relative-path">Xamarin. Essentials</a> est un ensemble d’API permettant d’écrire du code compatible multiplateforme.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-184"><a href="https://docs.microsoft.com/fr-fr/xamarin/essentials/file-system-helpers?context=xamarin/android" data-linktype="relative-path">Xamarin.Essentials</a> is a set of APIs for writing cross-platform compatible code.</span></span> <span data-ttu-id="3bf3d-185">Les applications <a href="https://docs.microsoft.com/fr-fr/xamarin/essentials/file-system-helpers?context=xamarin/android" data-linktype="relative-path">auxiliaires du système de fichiers</a> sont une classe qui contient une série d’applications auxiliaires permettant de simplifier la localisation des répertoires de cache et de données de l’application.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-185">The <a href="https://docs.microsoft.com/fr-fr/xamarin/essentials/file-system-helpers?context=xamarin/android" data-linktype="relative-path">File System Helpers</a> is a class that contains a series of helpers to simplify locating the application's cache and data directories.</span></span> <span data-ttu-id="3bf3d-186">Cet extrait de code fournit un exemple de la façon de rechercher le répertoire de stockage interne et le répertoire de cache pour une application&nbsp;:</span><span class="sxs-lookup"><span data-stu-id="3bf3d-186">This code snippet provides an example of how to find the internal storage directory and the cache directory for an app:</span></span></p>
+<div class="codeHeader" id="code-try-3" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-large">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="// Get the path to a file on internal storage
+var backingFile = Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, &quot;count.txt&quot;);
+
+// Get the path to a file in the cache directory
+var cacheFile = Path.Combine(Xamarin.Essentials.FileSystem.CacheDirectory, &quot;count.txt&quot;);
+"><span><span class="hljs-comment">// Get the path to a file on internal storage</span>
+<span class="hljs-keyword">var</span> backingFile = Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, <span class="hljs-string">"count.txt"</span>);
+
+<span class="hljs-comment">// Get the path to a file in the cache directory</span>
+<span class="hljs-keyword">var</span> cacheFile = Path.Combine(Xamarin.Essentials.FileSystem.CacheDirectory, <span class="hljs-string">"count.txt"</span>);
+</span></code></pre>
+<h2 id="hiding-files-from-the-mediastore" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#hiding-files-from-the-mediastore" aria-labelledby="hiding-files-from-the-mediastore"></a><span data-ttu-id="3bf3d-187">Masquage des fichiers du <code>MediaStore</code></span><span class="sxs-lookup"><span data-stu-id="3bf3d-187">Hiding files from the <code>MediaStore</code></span></span></h2>
+<p><span data-ttu-id="3bf3d-188">Le <code>MediaStore</code> est un composant Android qui collecte des métadonnées sur les fichiers multimédias (vidéos, musique, images) sur un appareil Android.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-188">The <code>MediaStore</code> is an Android component that collects meta data about media files (videos, music, images) on an Android device.</span></span> <span data-ttu-id="3bf3d-189">Son objectif est de simplifier le partage de ces fichiers sur toutes les applications Android sur l’appareil.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-189">Its purpose is simplify the sharing of these files across all Android apps on the device.</span></span></p>
+<p><span data-ttu-id="3bf3d-190">Les fichiers privés ne s’affichent pas en tant que média partageable.</span><span class="sxs-lookup"><span data-stu-id="3bf3d-190">Private files will not show up as shareable media.</span></span> <span data-ttu-id="3bf3d-191">Par exemple, si une application enregistre une image dans son stockage externe privé, ce fichier n’est pas récupéré par le scanneur multimédia ( <code>MediaStore</code> ).</span><span class="sxs-lookup"><span data-stu-id="3bf3d-191">For example, if an app saves a picture to its private external storage, then that file will not be picked up by the media scanner (<code>MediaStore</code>).</span></span></p>
+<p><span data-ttu-id="3bf3d-192">Les fichiers publics sont récupérés par <code>MediaStore</code> .</span><span class="sxs-lookup"><span data-stu-id="3bf3d-192">Public files will be picked up by <code>MediaStore</code>.</span></span> <span data-ttu-id="3bf3d-193">Répertoires qui ont un nom de fichier de zéro octet <strong>. Nomedias</strong> ne sera pas analysé par <code>MediaStore</code> .</span><span class="sxs-lookup"><span data-stu-id="3bf3d-193">Directories that have a zero byte file name <strong>.NOMEDIA</strong> will not be scanned by <code>MediaStore</code>.</span></span></p>
+<h2 id="related-links" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#related-links" aria-labelledby="related-links"></a><span data-ttu-id="3bf3d-194">Liens associés</span><span class="sxs-lookup"><span data-stu-id="3bf3d-194">Related Links</span></span></h2>
+<ul>
+<li><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/external-storage" data-linktype="relative-path"><span data-ttu-id="3bf3d-195">Stockage externe</span><span class="sxs-lookup"><span data-stu-id="3bf3d-195">External Storage</span></span></a></li>
+<li><a href="https://developer.android.com/training/data-storage/files" data-linktype="external"><span data-ttu-id="3bf3d-196">Enregistrer des fichiers sur le stockage de l’appareil</span><span class="sxs-lookup"><span data-stu-id="3bf3d-196">Save files on device storage</span></span></a></li>
+<li><a href="https://docs.microsoft.com/fr-fr/xamarin/essentials/file-system-helpers?context=xamarin/android" data-linktype="relative-path"><span data-ttu-id="3bf3d-197">Applications d’assistance du système de fichiers Xamarin. Essentials</span><span class="sxs-lookup"><span data-stu-id="3bf3d-197">Xamarin.Essentials File System Helpers</span></span></a></li>
+<li><a href="https://developer.android.com/guide/topics/data/autobackup" data-linktype="external"><span data-ttu-id="3bf3d-198">Sauvegarder des données utilisateur avec la sauvegarde automatique</span><span class="sxs-lookup"><span data-stu-id="3bf3d-198">Backup user data with Auto Backup</span></span></a></li>
+<li><a href="https://source.android.com/devices/storage/adoptable" data-linktype="external"><span data-ttu-id="3bf3d-199">Stockage à adopter</span><span class="sxs-lookup"><span data-stu-id="3bf3d-199">Adoptable Storage</span></span></a></li>
+</ul>
+
+						<!-- </content> -->
+
+						</main>
+
+						<!-- page rating section -->
+								<div class="is-hidden-desktop has-border-top has-margin-top-large has-padding-top-small">
+									
+									
+<div class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small" data-bi-name="rating">
+    <div class="binary-rating">
+        <div class="binary-rating-buttons">
+            <h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Cette page est-elle utile&nbsp;?</h3>
+            <div>
+                <button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Yes" data-bi-name="rating-yes" aria-expanded="false" data-bi-sat="1" aria-controls="rating-container-mobile">
+                    <span aria-hidden="true" class="icon docon docon-like"></span>
+                    <span>Yes</span>
+                </button>
+                <button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="No" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-controls="rating-container-mobile">
+                    <span aria-hidden="true" class="icon docon docon-dislike"></span>
+                    <span>No</span>
+                </button>
+            </div>
+        </div>
+        <form class="feedback-verbatim-form is-hidden" id="rating-container-mobile">
+            <div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-extra-small">
+                <label for="rating-textarea-mobile" class="visually-hidden">D'autres commentaires&nbsp;?</label>
+                <textarea id="rating-textarea-mobile" rows="4" maxlength="999" placeholder="D&#39;autres commentaires ?" required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+            </div>
+            <div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+                <button class="skip-rating button is-transparent has-text-primary is-small has-border-none" type="button">Ignorer</button>
+                <button class="submit-rating button is-primary is-small" data-bi-name="rating-verbatim" disabled="" type="submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
+    <div class="thankyou-rating is-hidden" tabindex="-1">
+        <p>Merci.</p>
+    </div>
+</div>								</div>
+						<!-- end page rating section -->
+
+
+						<!-- feedback section -->
+<section class="feedback-section is-relative" data-bi-name="feedback-section">
+
+    <h2 id="feedback" class="title is-3 has-margin-top-large">Commentaires</h2>
+
+    <div class="alert choose-feedback-type">
+        <p aria-hidden="true" id="send-feedback-about">Envoyer et afficher des commentaires pour</p>
+
+        <div class="choose-feedback-buttons has-margin-top-medium">
+                <a class="button feedback-type-product has-margin-bottom-small" aria-label="Envoyer des commentaires à propos de ce produit" href="https://developercommunity.visualstudio.com/" data-bi-name="product-feedback">
+                    <span>Ce produit</span>
+                    <span aria-hidden="true" class="icon docon docon-navigate-external is-size-h4 has-margin-left-none"></span>
+                </a>
+
+			<a class="button feedback-type-product has-margin-bottom-small github-link" aria-label="Envoyer des commentaires à propos de cette page" data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/xamarin-docs.fr-fr/issues/new?title=&amp;body=%0A%0A%5BTapez%20vos%20commentaires%20ici%5D%0A%0A%0A---%0A%23%23%23%23%20D%C3%A9tails%20du%20document%0A%0A%E2%9A%A0%20*Ne%20pas%20modifier%20cette%20section.%20C%E2%80%99est%20obligatoire%20pour%20docs.microsoft.com%20%E2%9E%9F%20Liaison%20des%20probl%C3%A8mes%20GitHub.*%0A%0A*%20ID%3A%20cdfb32ba-3510-a171-c451-4b3bac673c7c%0A*%20Version%20Independent%20ID%3A%207299b788-36f9-f4e2-2ba2-45893f466c19%0A*%20Content%3A%20%5BAcc%C3%A8s%20aux%20fichiers%20avec%20Xamarin.%20Android%20-%20Xamarin%5D(https%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fxamarin%2Fandroid%2Fplatform%2Ffiles%2F)%0A*%20Content%20Source%3A%20%5Bdocs%2Fandroid%2Fplatform%2Ffiles%2Findex.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fxamarin-docs.fr-fr%2Fblob%2Flive%2Fdocs%2Fandroid%2Fplatform%2Ffiles%2Findex.md)%0A*%20Product%3A%20**xamarin**%0A*%20Technology%3A%20**xamarin-android**%0A*%20GitHub%20Login%3A%20%40davidortinau%0A*%20Microsoft%20Alias%3A%20**daortin**">
+				<span aria-hidden="true" class="docon docon-brand-github has-padding-right-extra-small"></span>
+				<span>Cette page</span>
+			</a>
+        </div>
+    </div>
+
+    <div class="action-container is-flex has-flex-justify-content-end has-margin-top-small has-margin-bottom-small">
+        <a class="view-on-github" data-bi-name="view-on-github" href="https://github.com/MicrosoftDocs/xamarin-docs.fr-fr/issues?utf8=%E2%9C%93&amp;q=%227299b788-36f9-f4e2-2ba2-45893f466c19%22&amp;in=body">
+            <span aria-hidden="true" class="docon docon-brand-github"></span>
+            <span>Afficher tous les commentaires de la page</span>
+            <span aria-hidden="true" class="icon docon docon-navigate-external is-size-h5"></span>
+        </a>
+    </div>
+</section>
+
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <div class="is-flex is-full-height has-padding-right-extra-large-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link has-flex-shrink-none" href="https://docs.microsoft.com/fr-fr/locale?target=https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/" data-bi-name="select-locale"><span class="icon docon docon-world is-size-large has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">Français</span></a>
+		<div class="has-margin-left-medium has-margin-right-medium has-flex-shrink-none">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button is-transparent is-small is-icon-only-touch has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu-interactive" aria-expanded="false" title="Thème" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Thème</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="light" aria-pressed="false">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Clair					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="dark" aria-pressed="true">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Sombre					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Contraste élevé					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>		</div>
+	</div>
+    <ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/previous-versions/" data-bi-name="archivelink">Version précédente de Docs</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/teamblog" data-bi-name="bloglink">Blog</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/contribute" data-bi-name="contributorGuide">Collaboration</a></li>
+				<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Confidentialité &amp; cookies</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/legal/termsofuse" data-bi-name="termsofuse">Conditions d'utilisation</a></li>
+				<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Commentaires sur le site</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?linkid=2121428" data-bi-name="conformanceDisclosure ">Accessibilité</a></li>
+			<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Marques</a></li>
+		<li>© Microsoft 2020</li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+					<div class="is-size-small right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Actions sur la page">
+						<div id="affixed-right-container" class="doc-outline is-fixed is-vertically-scrollable" style="width: 172.641px; top: 24px; bottom: 179px;">
+								
+								
+<div class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small" data-bi-name="rating">
+    <div class="binary-rating">
+        <div class="binary-rating-buttons">
+            <h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Cette page est-elle utile&nbsp;?</h3>
+            <div>
+                <button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Yes" data-bi-name="rating-yes" aria-expanded="false" data-bi-sat="1" aria-controls="rating-container-desktop">
+                    <span aria-hidden="true" class="icon docon docon-like"></span>
+                    <span>Yes</span>
+                </button>
+                <button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="No" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-controls="rating-container-desktop">
+                    <span aria-hidden="true" class="icon docon docon-dislike"></span>
+                    <span>No</span>
+                </button>
+            </div>
+        </div>
+        <form class="feedback-verbatim-form is-hidden" id="rating-container-desktop">
+            <div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-extra-small">
+                <label for="rating-textarea-desktop" class="visually-hidden">D'autres commentaires&nbsp;?</label>
+                <textarea id="rating-textarea-desktop" rows="4" maxlength="999" placeholder="D&#39;autres commentaires ?" required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+            </div>
+            <div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+                <button class="skip-rating button is-transparent has-text-primary is-small has-border-none" type="button">Ignorer</button>
+                <button class="submit-rating button is-primary is-small" data-bi-name="rating-verbatim" disabled="" type="submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
+    <div class="thankyou-rating is-hidden" tabindex="-1">
+        <p>Merci.</p>
+    </div>
+</div>							<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="Plan de l&#39;article">
+								<h3>Dans cet article</h3>
+							<ol><li class=""><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#internal-vs-external-storage">Stockage interne et externe</a></li><li class=""><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#working-with-internal-storage">Utilisation du stockage interne</a></li><li class=""><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#using--xamarinessentials-ndash-file-system-helpers">Utilisation des – applications auxiliaires du système de fichiers Xamarin. Essentials</a></li><li class=""><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#hiding-files-from-the-mediastore">Masquage des fichiers du MediaStore</a></li><li class="selected"><a href="https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/#related-links">Liens associés</a></li></ol></nav>
+						</div>
+					</div>
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <div class="is-flex is-full-height has-padding-right-extra-large-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link has-flex-shrink-none" href="https://docs.microsoft.com/fr-fr/locale?target=https://docs.microsoft.com/fr-fr/xamarin/android/platform/files/" data-bi-name="select-locale"><span class="icon docon docon-world is-size-large has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">Français</span></a>
+		<div class="has-margin-left-medium has-margin-right-medium has-flex-shrink-none">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button is-transparent is-small is-icon-only-touch has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu" aria-expanded="false" title="Thème" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Thème</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="light" aria-pressed="false">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Clair					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="dark" aria-pressed="true">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Sombre					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Contraste élevé					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>		</div>
+	</div>
+    <ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/previous-versions/" data-bi-name="archivelink">Version précédente de Docs</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/teamblog" data-bi-name="bloglink">Blog</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/contribute" data-bi-name="contributorGuide">Collaboration</a></li>
+				<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Confidentialité &amp; cookies</a></li>
+			<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/legal/termsofuse" data-bi-name="termsofuse">Conditions d'utilisation</a></li>
+				<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Commentaires sur le site</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?linkid=2121428" data-bi-name="conformanceDisclosure ">Accessibilité</a></li>
+			<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Marques</a></li>
+		<li>© Microsoft 2020</li>
+    </ul>
+</footer>
+	</div>
+
+	<div id="action-panel" role="region" aria-label="Volet des actions" class="action-panel has-default-focus" tabindex="-1"></div>
+	<span id="adobe-target-experiment-container" hidden=""></span>
+
+
+<div class="usabilla_live_button_container" role="button" tabindex="0" style="right: 0px; top: 50%; margin-top: 0px; position: fixed; width: 0px; height: 0px; z-index: 99999990; display: none;" aria-label="Usabilla Feedback Button"><iframe src="./Accès aux fichiers avec Xamarin. Android - Xamarin _ Microsoft Docs_files/saved_resource(1).html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" data-tags="right" title="Usabilla Feedback Button" style="width: 0px; height: 0px; margin: 0px; padding: 0px; border: 0px; overflow: hidden; z-index: 9998; position: absolute; left: 0px; top: 0px; box-shadow: 0px 0px 0px; background-color: transparent;"></iframe></div></body></html>

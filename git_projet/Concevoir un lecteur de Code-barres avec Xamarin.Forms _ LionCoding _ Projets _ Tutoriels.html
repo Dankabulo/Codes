@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/ -->
+<html lang="fr" class=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  
+  <title>Concevoir un lecteur de Code-barres avec Xamarin.Forms | LionCoding | Projets | Tutoriels</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="description" content="Dans ce premier article concernant Xamarin.Forms, il sera question de mettre en place une application Cross-Platform pouvant scanner et lire les codes-barres et de pouvoir partager le r&amp;#xE9;sul">
+<meta name="keywords" content="Xamarin,Code-barres,Barcode,Visual studio,Share">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Concevoir un lecteur de Code-barres avec Xamarin.Forms">
+<meta property="og:url" content="https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/index.html">
+<meta property="og:site_name" content="LionCoding | Projets | Tutoriels">
+<meta property="og:description" content="Dans ce premier article concernant Xamarin.Forms, il sera question de mettre en place une application Cross-Platform pouvant scanner et lire les codes-barres et de pouvoir partager le r&amp;#xE9;sul">
+<meta property="og:locale" content="fr">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=1dmQVj7-23wlLfREP3oySVdo5JG4lFxGv">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=1YsyuWLZvKBdHtq-yPAIBLhsQnHlGK65w">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=1bxZ5BOnmCKpq2rHuQi92pN9n5CwIitHR">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=1B2cVcnR73XtE21VMLSgd0AboLItVtkv5">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=10Gv-GIEFEcEjEN9nB8iPHGNDp97ywwmo">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=1Uy3Aq3BpsYoNLVCpc7LLvCFIBW3CfrxN">
+<meta property="og:updated_time" content="2020-06-20T14:09:49.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Concevoir un lecteur de Code-barres avec Xamarin.Forms">
+<meta name="twitter:description" content="Dans ce premier article concernant Xamarin.Forms, il sera question de mettre en place une application Cross-Platform pouvant scanner et lire les codes-barres et de pouvoir partager le r&amp;#xE9;sul">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=view&amp;id=1dmQVj7-23wlLfREP3oySVdo5JG4lFxGv">
+  
+    <link rel="alternative" href="https://lioncoding.com/feed.xml" title="LionCoding | Projets | Tutoriels" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://lioncoding.com/favicon.ico">
+  
+
+  <meta content="{{ title }}" name="description">
+  <meta content="{{ title }}" name="keywords">
+  <meta content="{{ title }}" name="author">
+  <meta name="google-site-verification" content="sfRybH_Mn50-a_lGoRf21hf28qx1iOucU8CsBe_hEVM">
+
+  <link href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css" rel="stylesheet"> 
+  <link href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css(1)" rel="stylesheet">
+  <link href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css(2)" rel="stylesheet">
+  <link href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css(3)" rel="stylesheet"> 
+  <link href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css(4)" rel="stylesheet">
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script type="text/javascript" async="" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/analytics.js.téléchargement"></script><script id="twitter-wjs" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/widgets.js.téléchargement"></script><script async="" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/st.js.téléchargement"></script><script async="" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/default" charset="UTF-8" crossorigin="*"></script><script async="" defer="" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/buttons.js.téléchargement"></script>
+  <!-- Global styles START -->
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/font-awesome.min.css">
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/bootstrap.min.css">
+  <!-- Global styles END -->
+
+  <!-- Page level plugin styles START -->
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/animate.css">
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/owl.carousel.css">
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/components.css">
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/prism.css">
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/slider.css">
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/style.css">
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/portfolio.css">
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/style-responsive.css">
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/red.css">
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/theme-styles.css">
+  <!-- Theme styles END -->
+<link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/prism-line-numbers.css" type="text/css"><script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/embed.js.téléchargement" data-timestamp="1592977328143"></script><style type="text/css">.fancybox-margin{margin-right:12px;}</style><style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#sTZdueS-1592977328297{outline:none!important;visibility:visible!important;resize:none!important;box-shadow:none!important;overflow:visible!important;background:none!important;opacity:1!important;filter:alpha(opacity=100)!important;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity1)!important;-moz-opacity:1!important;-khtml-opacity:1!important;top:auto!important;right:10px!important;bottom:90px!important;left:auto!important;position:fixed!important;border:0!important;min-height:0!important;min-width:0!important;max-height:none!important;max-width:none!important;padding:0!important;margin:0!important;-moz-transition-property:none!important;-webkit-transition-property:none!important;-o-transition-property:none!important;transition-property:none!important;transform:none!important;-webkit-transform:none!important;-ms-transform:none!important;width:auto!important;height:auto!important;display:none!important;z-index:2000000000!important;background-color:transparent!important;cursor:auto!important;float:none!important;border-radius:unset!important;pointer-events:auto!important}#zjhjuv8-1592977328298.open{animation : tawkMaxOpen .25s ease!important;}</style><script charset="utf-8" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/button.1378e6a69a23712ca26755ee3c4084b4.js.téléchargement"></script><script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/count-data.js.téléchargement"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.5c5dad4ae74bbb3422efd01116dc45e6.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.d1c2fbfd8acab46a487aabc1b327ec9e.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.c1bff69470c1c3db88f177e778afdc25.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/alfalfalfa.0823c767a3bc925f628afd9bed26c958.js.téléchargement" async="" charset="UTF-8"></script></head>
+
+<body class="corporate page-header-fixed">
+  <!-- BEGIN TOP BAR -->
+<div class="pre-header">
+  <div class="container">
+    <div class="row">
+      <!-- BEGIN TOP BAR LEFT PART -->
+      <div class="col-md-6 col-sm-6 col-xs-9 additional-shop-info">
+      	<ul class="list-unstyled list-inline">
+      	  <!--<li><i class="fa fa-phone"></i><span>undefined</span></li>-->
+      	  <li><i class="fa fa-envelope-o"></i><span>laurent@lioncoding.com</span></li>
+      	</ul>
+      </div>
+      <!-- END TOP BAR LEFT PART -->
+      <!-- BEGIN TOP BAR MENU -->
+      <div class="col-md-6 col-sm-6 col-xs-2 additional-nav">
+      	<ul class="list-unstyled list-inline pull-right">
+					<li><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-follow-button twitter-follow-button-rendered" style="position: static; visibility: visible; width: 126px; height: 20px;" title="Twitter Follow Button" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/follow_button.751466924564365530b311cd28fbf79b.fr.html" data-screen-name="lioncoding"></iframe></li>
+      	  <li><a href="https://github.com/egbakou"><i class="fa fa-github"></i></a></li>
+      	</ul>
+      </div>
+      <!-- END TOP BAR MENU -->
+    </div>
+  </div>
+</div>
+<!-- END TOP BAR -->
+<!-- BEGIN HEADER -->
+<div class="header reduce-header">
+  <div class="container">
+    <!--<a class="site-logo" href="/" id="logo">LionCoding | Projets | Tutoriels</a>-->
+
+    <a class="site-logo" href="https://lioncoding.com/">
+      <img style="height:40px" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/logo-corp-red.png" alt="Metronic FrontEnd">
+    </a>
+
+    <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+
+    <!-- BEGIN NAVIGATION -->
+    <div class="header-navigation pull-right font-transform-inherit">
+      <ul>
+	
+	<li class="">
+	  <a href="https://lioncoding.com/">Accueil</a>
+	</li>
+	
+	<li class="">
+	  <a href="https://lioncoding.com/categories/xamarinforms">Xamarin.Forms</a>
+	</li>
+	
+	<li class="">
+	  <a href="https://lioncoding.com/contact/">Contact</a>
+	</li>
+	
+	<li class="">
+	  <a href="https://lioncoding.com/about/">?</a>
+	</li>
+	
+	<!-- BEGIN TOP SEARCH -->
+	<li class="menu-search">
+	  <span class="sep"></span>
+	  <i class="fa fa-search search-btn"></i>
+	  <div class="search-box">
+	    <form action="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#">
+	      <div class="input-group">
+		<input type="text" placeholder="Rechercher" class="form-control st-default-search-input">
+		<span class="input-group-btn">
+		  <button class="btn btn-primary" type="submit">Rechercher</button>
+		</span>
+	      </div>
+	    </form>
+	  </div>
+	</li>
+	<!-- END TOP SEARCH -->
+      </ul>
+    </div>
+    <!-- END NAVIGATION -->
+  </div>
+</div>
+<!-- Header END -->
+
+  <div class="container">
+  <ul class="breadcrumb">
+    <li><a href="https://lioncoding.com/">Accueil</a></li>
+    <li><a href="https://lioncoding.com/archives">Posts</a></li>
+    <li class="active">Post</li>
+  </ul>
+  <section id="main">
+    
+    <h2 itemprop="name">
+      <a class="article-title" href="https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/">Concevoir un lecteur de Code-barres avec Xamarin.Forms</a>
+    </h2>
+
+
+    <div class="row">
+<div class="col-md-9 col-sm-9 blog-posts">
+<article id="post-2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms" class="article article-type-post blog-item" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+  </div>
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
+      <ul class="blog-info">
+	<li><i class="fa fa-user"></i> Kodjo Laurent EGBAKOU</li>
+	<li><i class="fa fa-calendar"></i>
+	  <time datetime="2019-02-21T17:08:32.000Z" itemprop="datePublished">2019/02/21</time>
+
+	</li>
+	<li class="hidden-xs"><i class="fa fa-comments"></i>
+	  <a href="https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/#disqus_thread" class="article-comment-link">0 Comments</a>
+	</li>
+	<li class="hidden-xs"><i class="fa fa-tags"></i> 
+	  
+  
+    <a href="https://lioncoding.com/tags/Xamarin/" title="Xamarin">Xamarin</a>,
+  
+    <a href="https://lioncoding.com/tags/Code-barres/" title="Code-barres">Code-barres</a>,
+  
+    <a href="https://lioncoding.com/tags/Barcode/" title="Barcode">Barcode</a>,
+  
+    <a href="https://lioncoding.com/tags/Visual-studio/" title="Visual studio">Visual studio</a>,
+  
+    <a href="https://lioncoding.com/tags/Share/" title="Share">Share</a>
+  
+
+
+	</li>
+      </ul>
+      
+  <div class="article-category">
+    
+    Category: 
+    
+    Categories:
+    <a class="article-category-link" href="https://lioncoding.com/categories/xamarinforms/">xamarinforms</a>
+  </div>
+  <br>
+
+
+    </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="image-strip">
+<img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/barcodeReaderXF_post(fr).jpg">
+</div>
+
+
+
+<p>Dans ce premier article concernant Xamarin.Forms, il sera question de mettre en place une application Cross-Platform pouvant scanner et lire les codes-barres et de pouvoir partager le résultat de scan via les applications disponibles sur le smartphone.</p>
+<h2 id="Creation-du-projet-Cross-platform-Xamarin"><a href="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#Creation-du-projet-Cross-platform-Xamarin" class="headerlink" title="Création du projet Cross-platform Xamarin"></a>Création du projet Cross-platform Xamarin</h2><p><img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/project_creation.PNG" alt=""></p>
+<p><em>Figure 1: Création du projet</em></p>
+<h2 id="Ajout-des-packages-nuget-a-notre-solution"><a href="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#Ajout-des-packages-nuget-a-notre-solution" class="headerlink" title="Ajout des packages nuget à notre solution"></a>Ajout des packages nuget à notre solution</h2><p>Quatre packages nuget seront nécessaires pour mettre en place notre lecteur de code-barres:</p>
+<ol>
+<li><a href="https://www.nuget.org/packages/Autofac/" target="_blank" rel="noopener">Autofac</a>: Pour faire l’inversion de contrôle;</li>
+<li><a href="https://www.nuget.org/packages/ZXing.Net.Mobile/" target="_blank" rel="noopener">ZXing.Net.Mobile</a>: Pour le scan et la lecture des codes-barres;</li>
+<li><a href="https://www.nuget.org/packages/ZXing.Net.Mobile.Forms/" target="_blank" rel="noopener">ZXing.Net.Mobile.Forms</a>: Pour le scan et la lecture des codes-barres;</li>
+<li><a href="https://www.nuget.org/packages/Xamarin.Essentials" target="_blank" rel="noopener">Xamarin.Essentials</a>: Pour partager le résultat de scan via les applications disponibles sur le smartphone.</li>
+</ol>
+<blockquote>
+<p>Je ne présenterai pas les configurations concernant le premier package nuget à savoir <a href="https://www.nuget.org/packages/Autofac/" target="_blank" rel="noopener">Autofac</a> car il mérite à lui seul un article. Faites donc un tour sur Github pour télécharger ou cloner le <a href="https://github.com/egbakou/BarCodeReader" target="_blank" rel="noopener">projet</a>  afin d’avoir plus de détails sur comment faire l’inversion de contrôle.</p>
+</blockquote>
+<h2 id="Initialisations-et-Configurations"><a href="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#Initialisations-et-Configurations" class="headerlink" title="Initialisations et Configurations"></a>Initialisations et Configurations</h2><p>Pour pouvoir utiliser les trois derniers packages présentés dans le tableau, il est impératif de les initialiser et d’accorder les permission nécessaires sur chaque plateforme de notre solution.</p>
+<h3 id="Projet-Android"><a href="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#Projet-Android" class="headerlink" title="Projet Android"></a>Projet Android</h3><ul>
+<li>Initialisation et accord de permission dans le fichier <strong><em>MainActivity.cs</em></strong></li>
+</ul>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token keyword">void</span> <span class="token function">OnCreate</span><span class="token punctuation">(</span><span class="token class-name">Bundle</span> savedInstanceState<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    ZXing<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>Mobile<span class="token punctuation">.</span>Forms<span class="token punctuation">.</span>Android<span class="token punctuation">.</span>Platform<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Xamarin<span class="token punctuation">.</span>Essentials<span class="token punctuation">.</span>Platform<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> savedInstanceState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">void</span> <span class="token function">OnRequestPermissionsResult</span><span class="token punctuation">(</span><span class="token keyword">int</span> requestCode<span class="token punctuation">,</span> <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> permissions<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name">GeneratedEnum</span><span class="token punctuation">]</span> Android<span class="token punctuation">.</span>Content<span class="token punctuation">.</span>PM<span class="token punctuation">.</span>Permission<span class="token punctuation">[</span><span class="token punctuation">]</span> grantResults<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">global</span><span class="token punctuation">::</span>ZXing<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>Mobile<span class="token punctuation">.</span>Android<span class="token punctuation">.</span>PermissionsHandler<span class="token punctuation">.</span><span class="token function">OnRequestPermissionsResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> permissions<span class="token punctuation">,</span> grantResults<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Xamarin<span class="token punctuation">.</span>Essentials<span class="token punctuation">.</span>Platform<span class="token punctuation">.</span><span class="token function">OnRequestPermissionsResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> permissions<span class="token punctuation">,</span> grantResults<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">base</span><span class="token punctuation">.</span><span class="token function">OnRequestPermissionsResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> permissions<span class="token punctuation">,</span> grantResults<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>Activation de la permission d’allumage de la caméra et du Flash dans le fichier <strong><em>AssemblyInfo.cs</em></strong></li>
+</ul>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token punctuation">[</span>assembly<span class="token punctuation">:</span> <span class="token function">UsesPermission</span><span class="token punctuation">(</span>Android<span class="token punctuation">.</span>Manifest<span class="token punctuation">.</span>Permission<span class="token punctuation">.</span>Flashlight<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>assembly<span class="token punctuation">:</span> <span class="token function">UsesPermission</span><span class="token punctuation">(</span>Android<span class="token punctuation">.</span>Manifest<span class="token punctuation">.</span>Permission<span class="token punctuation">.</span>Camera<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="Projet-IOS"><a href="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#Projet-IOS" class="headerlink" title="Projet IOS"></a>Projet IOS</h3><ul>
+<li>Initialisation des packages dans le fichier<strong><em>AppDelegate.cs</em></strong></li>
+</ul>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">bool</span> <span class="token function">FinishedLaunching</span><span class="token punctuation">(</span><span class="token class-name">UIApplication</span> app<span class="token punctuation">,</span> <span class="token class-name">NSDictionary</span> options<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    ZXing<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>Mobile<span class="token punctuation">.</span>Forms<span class="token punctuation">.</span>iOS<span class="token punctuation">.</span>Platform<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Codes-du-projet-partage"><a href="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#Codes-du-projet-partage" class="headerlink" title="Codes du projet partagé"></a>Codes du projet partagé</h2><h3 id="La-vue-et-son-code-behind"><a href="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#La-vue-et-son-code-behind" class="headerlink" title="La vue et son code behind"></a>La vue et son code behind</h3><p>Notre vue sera très simple. nous utiliserons une <strong>ImageButton</strong> qui permettra de naviguer vers la page de scan des codes-barres. En-dessous de cet bouton,se positionnera un <strong>Label</strong> qui affichera le résultat de scan.</p>
+<p>Dans la barre de menu, nous placerons deux <strong>ToolbarItem</strong> dont le premier aura pour rôle d’effacer le résultat de scan s’il y en a et le second de le partager.</p>
+<p>Voici le code source de notre vue:</p>
+<pre class="line-numbers  language-xml"><code class=" language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ContentPage</span>
+    <span class="token attr-name"><span class="token namespace">x:</span>Class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>BarCodeReader.Views.MainMenuView<span class="token punctuation">"</span></span>
+    <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><a class="vglnk" href="http://xamarin.com/schemas/2014/forms" rel="nofollow"><span>http</span><span>://</span><span>xamarin</span><span>.</span><span>com</span><span>/</span><span>schemas</span><span>/</span><span>2014</span><span>/</span><span>forms</span></a><span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">xmlns:</span>x</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><a class="vglnk" href="http://schemas.microsoft.com/winfx/2009/xaml" rel="nofollow"><span>http</span><span>://</span><span>schemas</span><span>.</span><span>microsoft</span><span>.</span><span>com</span><span>/</span><span>winfx</span><span>/</span><span>2009</span><span>/</span><span>xaml</span></a><span class="token punctuation">"</span></span>
+    <span class="token attr-name">Title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{Binding Title}<span class="token punctuation">"</span></span>
+    <span class="token attr-name">BackgroundImage</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bg.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ContentPage.ToolbarItems</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ToolbarItem</span>
+            <span class="token attr-name">Command</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{Binding ClearResultCommand}<span class="token punctuation">"</span></span>
+            <span class="token attr-name">Icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>clear.png<span class="token punctuation">"</span></span>
+            <span class="token attr-name">Text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Clear<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ToolbarItem</span>
+            <span class="token attr-name">Command</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{Binding ShareResultCommand}<span class="token punctuation">"</span></span>
+            <span class="token attr-name">Icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>share.png<span class="token punctuation">"</span></span>
+            <span class="token attr-name">Text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Share<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ContentPage.ToolbarItems</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ContentPage.Content</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>StackLayout</span> <span class="token attr-name">HorizontalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CenterAndExpand<span class="token punctuation">"</span></span> <span class="token attr-name">VerticalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CenterAndExpand<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ImageButton</span>
+                <span class="token attr-name">Aspect</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AspectFit<span class="token punctuation">"</span></span>
+                <span class="token attr-name">BackgroundColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Transparent<span class="token punctuation">"</span></span>
+                <span class="token attr-name">Command</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{Binding ScanCommand}<span class="token punctuation">"</span></span>
+                <span class="token attr-name">FlexLayout.AlignSelf</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Center<span class="token punctuation">"</span></span>
+                <span class="token attr-name">FlexLayout.Grow</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span>
+                <span class="token attr-name">HorizontalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CenterAndExpand<span class="token punctuation">"</span></span>
+                <span class="token attr-name">Source</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>barcodescanner.png<span class="token punctuation">"</span></span>
+                <span class="token attr-name">VerticalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CenterAndExpand<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisualStateManager.VisualStateGroups</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisualStateGroup</span> <span class="token attr-name"><span class="token namespace">x:</span>Name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CommonStates<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisualState</span> <span class="token attr-name"><span class="token namespace">x:</span>Name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Normal<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisualState.Setters</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Setter</span> <span class="token attr-name">Property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Scale<span class="token punctuation">"</span></span> <span class="token attr-name">Value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VisualState.Setters</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VisualState</span><span class="token punctuation">&gt;</span></span>
+
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisualState</span> <span class="token attr-name"><span class="token namespace">x:</span>Name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Pressed<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisualState.Setters</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Setter</span> <span class="token attr-name">Property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Scale<span class="token punctuation">"</span></span> <span class="token attr-name">Value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VisualState.Setters</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VisualState</span><span class="token punctuation">&gt;</span></span>
+
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VisualStateGroup</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VisualStateManager.VisualStateGroups</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ImageButton</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Label</span>
+                <span class="token attr-name">Margin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10,20,10,0<span class="token punctuation">"</span></span>
+                <span class="token attr-name">FontAttributes</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Bold<span class="token punctuation">"</span></span>
+                <span class="token attr-name">FontSize</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>18<span class="token punctuation">"</span></span>
+                <span class="token attr-name">HorizontalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CenterAndExpand<span class="token punctuation">"</span></span>
+                <span class="token attr-name">HorizontalTextAlignment</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Center<span class="token punctuation">"</span></span>
+                <span class="token attr-name">Text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{Binding ScanResult}<span class="token punctuation">"</span></span>
+                <span class="token attr-name">TextColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#525ABB<span class="token punctuation">"</span></span>
+                <span class="token attr-name">VerticalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CenterAndExpand<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>StackLayout</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ContentPage.Content</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ContentPage</span><span class="token punctuation">&gt;</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Le code behind correspondant est :</p>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> BarCodeReader<span class="token punctuation">.</span>ViewModels<span class="token punctuation">;</span>
+
+<span class="token keyword">using</span> Xamarin<span class="token punctuation">.</span>Forms<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Xamarin<span class="token punctuation">.</span>Forms<span class="token punctuation">.</span>Xaml<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> BarCodeReader<span class="token punctuation">.</span>Views
+<span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token class-name">XamlCompilation</span><span class="token punctuation">(</span>XamlCompilationOptions<span class="token punctuation">.</span>Compile<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">partial</span> <span class="token keyword">class</span> <span class="token class-name">MainMenuView</span> <span class="token punctuation">:</span> <span class="token class-name">ContentPage</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token class-name">MainMenuViewModel</span> viewModel<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token function">MainMenuView</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">InitializeComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            BindingContext <span class="token operator">=</span> viewModel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MainMenuViewModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">RegisterMesssages</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">RegisterMesssages</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            MessagingCenter<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Subscribe</span><span class="token punctuation">&lt;</span><span class="token class-name">MainMenuViewModel</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"NoScanResultToClear"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>m <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token function">DisplayAlert</span><span class="token punctuation">(</span><span class="token string">"Warning !"</span><span class="token punctuation">,</span> <span class="token string">"No scan result to clear."</span><span class="token punctuation">,</span> <span class="token string">"OK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            MessagingCenter<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Subscribe</span><span class="token punctuation">&lt;</span><span class="token class-name">MainMenuViewModel</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"NoScanResultToShare"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>m <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token function">DisplayAlert</span><span class="token punctuation">(</span><span class="token string">"Warning !"</span><span class="token punctuation">,</span> <span class="token string">"No scan result to share."</span><span class="token punctuation">,</span> <span class="token string">"OK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>Si vous disposez du code de ma solution disponible sur github, Il est à constater qu‘elle implémente le MVVM.  Les MessagingCenter mis en place dans le code behind permettent de faire un certain nombre de traitement que notre futur View Model ne pourra pas faire; ceci car la méthode DisplayAlert() permettant d’afficher des boîtes de dialogue ne peut pas être appelée dans un View Model. On pourrait intégrer un package de boîte de dialogue dans notre solution mais cela n’est pas nécessaire.</p>
+</blockquote>
+<h3 id="Notre-View-Model"><a href="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#Notre-View-Model" class="headerlink" title="Notre View Model"></a>Notre View Model</h3><p>Il est important que vous téléchargiez le <a href="https://github.com/egbakou/BarCodeReader" target="_blank" rel="noopener">dépôt du projet</a> sur github car notre View Model héritera d’une classe implémentant L’INPC(INotifyPropertyChanged ), qui ne sera pas présenté dans cet article.</p>
+<p>Le code source complet du View Model:</p>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">.</span>Threading<span class="token punctuation">.</span>Tasks<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Windows<span class="token punctuation">.</span>Input<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Xamarin<span class="token punctuation">.</span>Essentials<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Xamarin<span class="token punctuation">.</span>Forms<span class="token punctuation">;</span>
+<span class="token keyword">using</span> ZXing<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>Mobile<span class="token punctuation">.</span>Forms<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> BarCodeReader<span class="token punctuation">.</span>ViewModels
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainMenuViewModel</span> <span class="token punctuation">:</span> <span class="token class-name">BaseViewModel</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token function">MainMenuViewModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Title <span class="token operator">=</span> <span class="token string">"Barcode Reader"</span><span class="token punctuation">;</span>
+            ScanCommand <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">await</span> <span class="token function">Scannning</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ClearResultCommand <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span>ClearResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ShareResultCommand <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">await</span> <span class="token function">ShareResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">private</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">ShareText</span><span class="token punctuation">(</span><span class="token keyword">string</span> text<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">await</span> Share<span class="token punctuation">.</span><span class="token function">RequestAsync</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ShareTextRequest</span>
+            <span class="token punctuation">{</span>
+                Text <span class="token operator">=</span> text<span class="token punctuation">,</span>
+                Title <span class="token operator">=</span> <span class="token string">"Share"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// Share Scan result</span>
+        <span class="token keyword">private</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">ShareResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">.</span><span class="token function">IsNullOrEmpty</span><span class="token punctuation">(</span>ScanResult<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                MessagingCenter<span class="token punctuation">.</span><span class="token function">Send</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"NoScanResultToShare"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">await</span> <span class="token function">ShareText</span><span class="token punctuation">(</span>ScanResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// Clear Scan result</span>
+        <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">ClearResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">.</span><span class="token function">IsNullOrEmpty</span><span class="token punctuation">(</span>ScanResult<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                MessagingCenter<span class="token punctuation">.</span><span class="token function">Send</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"NoScanResultToClear"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                ScanResult <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// Do scanning</span>
+        <span class="token keyword">private</span> <span class="token keyword">async</span> <span class="token class-name">Task</span> <span class="token function">Scannning</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> scanPage <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZXingScannerPage</span>
+            <span class="token punctuation">{</span>
+                Title <span class="token operator">=</span> <span class="token string">"Scanning..."</span><span class="token punctuation">,</span>
+                BackgroundColor <span class="token operator">=</span> Color<span class="token punctuation">.</span><span class="token function">FromHex</span><span class="token punctuation">(</span><span class="token string">"#212223"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            <span class="token keyword">await</span> App<span class="token punctuation">.</span>Current<span class="token punctuation">.</span>MainPage<span class="token punctuation">.</span>Navigation<span class="token punctuation">.</span><span class="token function">PushAsync</span><span class="token punctuation">(</span>scanPage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            scanPage<span class="token punctuation">.</span>OnScanResult <span class="token operator">+=</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+            <span class="token punctuation">{</span>
+                <span class="token comment">// Stop scanning</span>
+                scanPage<span class="token punctuation">.</span>IsScanning <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+
+                <span class="token comment">// Pop to page and show the result</span>
+                Device<span class="token punctuation">.</span><span class="token function">BeginInvokeOnMainThread</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+                <span class="token punctuation">{</span>
+                    <span class="token keyword">await</span> App<span class="token punctuation">.</span>Current<span class="token punctuation">.</span>MainPage<span class="token punctuation">.</span>Navigation<span class="token punctuation">.</span><span class="token function">PopAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    ScanResult <span class="token operator">=</span> result<span class="token punctuation">?.</span>Text<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">ICommand</span> ScanCommand <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">private</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> <span class="token class-name">ICommand</span> ClearResultCommand <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">private</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> <span class="token class-name">ICommand</span> ShareResultCommand <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">private</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+        <span class="token keyword">private</span> <span class="token keyword">string</span> _scanResult<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token keyword">string</span> ScanResult
+        <span class="token punctuation">{</span>
+            <span class="token keyword">get</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> _scanResult<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+            <span class="token keyword">set</span> <span class="token punctuation">{</span> <span class="token function">SetProperty</span><span class="token punctuation">(</span><span class="token keyword">ref</span> _scanResult<span class="token punctuation">,</span> <span class="token keyword">value</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>   
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>La méthode <strong><em>Scannning</em>()</strong> fait le scan et renvoie le résultat au Label de notre vue. La méthode <strong><em>ShareResult</em></strong>() ouvre une petite fenêtre  montrant les applications sur le smartphone pouvant faire le partage du résultat de scan et la méthode <strong><em>ClearResult()</em></strong> efface ce dernier.</p>
+<h2 id="Resultat-de-notre-travail"><a href="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#Resultat-de-notre-travail" class="headerlink" title="Résultat de notre travail"></a>Résultat de notre travail</h2><ul>
+<li>Notre vue après lancement de l’application</li>
+</ul>
+<p><img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/interface.png" class="phone"></p>
+<ul>
+<li>Au clic sur le bouton image au centre de l’écran, la page de scan apparaît:</li>
+</ul>
+<p><img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/scanning.png" class="phone"></p>
+<ul>
+<li>J’ai scanné le code-barres d’un bouquin sur Xamarin et j’ai le résultat suivant:</li>
+</ul>
+<p><img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/ScanningResult.png" class="phone"></p>
+<ul>
+<li>Au clic sur le bouton de partage qui se trouve sur la barre de menu, nous avons ceci: </li>
+</ul>
+<p><img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/shareScanResult.png" class="phone"></p>
+<h3 id="Ressources"><a href="https://lioncoding.com/2019/02/21/2019-02-21-concevoir-un-lecteur-de-code-barres-avec-xamarin-forms/#Ressources" class="headerlink" title="Ressources"></a>Ressources</h3><p>Voici le <a href="https://github.com/egbakou/BarCodeReader" target="_blank" rel="noopener">code source</a> de ce projet sur Github.</p>
+
+      
+    </div>
+
+    <div>
+        <article>
+    <div id="share-buttons">
+        <!-- Twitter -->
+        <a href="https://twitter.com/intent/tweet?text=https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/" target="_blank">
+            <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/twitter.png" alt="Twitter">
+        </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/" target="_blank">
+            <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/facebook.png" alt="Facebook">
+        </a>   
+        <!-- Email -->
+        <a href="mailto:?Body=https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/">
+            <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/email.png" alt="Email">
+        </a>
+        <!-- LinkedIn -->
+        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;amp;url=https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/" target="_blank">
+            <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/linkedin.png" alt="LinkedIn">
+        </a>
+        <!-- Print -->
+        <a href="javascript:;" onclick="window.print()">
+                <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/print.png" alt="Print">
+        </a>
+        <!-- Digg -->
+        <a href="http://www.digg.com/submit?url=https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/" target="_blank">
+            <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/diggit.png" alt="Digg">
+        </a>
+        <!-- Google+ -->
+        <a href="https://plus.google.com/share?url=https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/" target="_blank">
+            <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/google.png" alt="Google">
+        </a>
+        <!-- Reddit -->
+        <a href="http://reddit.com/submit?url=https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/&amp;amp;title=Simple%20Share%20Buttons" target="_blank">
+            <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/reddit.png" alt="Reddit">
+        </a>
+    </div>
+</article>
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+   <div class="col-md-6" style="margin-bottom: 20px !important">
+      <h4 style="color: black">Post récent</h4>
+      <a href="https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/" id="article-nav-newer" class="article-nav-link-wrap">
+          <strong "article-nav-title"="">
+            
+              Export de données sous format Excel dans Xamarin.Forms
+            
+          </strong>
+      </a>
+      <br>
+   </div>
+  
+  
+    <div class="col-md-6" style="margin-bottom: 20px !important">
+        <h4 style="color: black">Post antérieur</h4>
+        <a href="https://lioncoding.com/2019/01/01/2019-01-01-Un-Behavior-pour-convertir-les-evenements-des-Controls-Xamarin-en-Command/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-title">Un Behavior pour convertir les événements des Controls Xamarin en Command</strong>
+        </a>
+        <br>
+    </div>
+    
+  
+</nav>
+
+  
+  <br>
+</article>
+
+
+
+<section id="comments">
+  <h4>Commentaires</h4>
+  <div id="disqus_thread"><iframe id="dsq-app9473" name="dsq-app9473" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(1).html" horizontalscrolling="no" verticalscrolling="no" style="height: 917px !important;"></iframe></div>
+</section>
+<br>
+
+
+</div>
+<div class="col-md-3 col-sm-3 blog-sidebar">
+  <script type="text/javascript" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/widget_2.js.téléchargement"></script><script type="text/javascript">kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'E1E81NG7F');kofiwidget2.draw();</script><style>img.kofiimg{display: initial!important;vertical-align:middle;height:13px!important;width:20px!important;padding-top:0!important;padding-bottom:0!important;border:none;margin-top:0;margin-right:5px!important;margin-left:0!important;margin-bottom:3px!important;content:url('https://storage.ko-fi.com/cdn/cup-border.png')}.kofiimg:after{vertical-align:middle;height:25px;padding-top:0;padding-bottom:0;border:none;margin-top:0;margin-right:6px;margin-left:0;margin-bottom:4px!important;content:url('https://storage.ko-fi.com/cdn/whitelogo.svg')}.btn-container{display:inline-block!important;white-space:nowrap;min-width:160px}span.kofitext{color:#fff !important;letter-spacing: -0.15px!important;text-wrap:none;vertical-align:middle;line-height:33px !important;padding:0;text-align:center;text-decoration:none!important; text-shadow: 0 1px 1px rgba(34, 34, 34, 0.05);}.kofitext a{color:#fff !important;text-decoration:none:important;}.kofitext a:hover{color:#fff !important;text-decoration:none}a.kofi-button{box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);line-height:36px!important;min-width:150px;display:inline-block!important;background-color:#29abe0;padding:2px 12px !important;text-align:center !important;border-radius:7px;color:#fff;cursor:pointer;overflow-wrap:break-word;vertical-align:middle;border:0 none #fff !important;font-family:'Quicksand',Helvetica,Century Gothic,sans-serif !important;text-decoration:none;text-shadow:none;font-weight:700!important;font-size:14px !important}a.kofi-button:visited{color:#fff !important;text-decoration:none !important}a.kofi-button:hover{opacity:.85;color:#f5f5f5 !important;text-decoration:none !important}a.kofi-button:active{color:#f5f5f5 !important;text-decoration:none !important}.kofitext img.kofiimg {height:15px!important;width:22px!important;display: initial;animation: kofi-wiggle 3s infinite;}@keyframes kofi-wiggle{0%{transform:rotate(0) scale(1)}60%{transform:rotate(0) scale(1)}75%{transform:rotate(0) scale(1.12)}80%{transform:rotate(0) scale(1.1)}84%{transform:rotate(-10deg) scale(1.1)}88%{transform:rotate(10deg) scale(1.1)}92%{transform:rotate(-10deg) scale(1.1)}96%{transform:rotate(10deg) scale(1.1)}100%{transform:rotate(0) scale(1)}}</style><link href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css(5)" rel="stylesheet" type="text/css"><div class="btn-container"><a title="Support me on ko-fi.com" class="kofi-button" style="background-color:#29abe0;" href="https://ko-fi.com/E1E81NG7F" target="_blank"> <span class="kofitext"><img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/cup-border.webp" class="kofiimg">Support Me on Ko-fi</span></a></div>
+ 
+<br>
+<h2 class="no-top-space">Mes Badges</h2>
+
+<!-- Microsoft MVP-->
+<a href="https://mvp.microsoft.com/en-us/PublicProfile/5003669">
+  <img width="250px" height="100px" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/MVP_Logo_Horizontal_Secondary_Blue286_RGB_300ppi.png">
+</a>
+<!-- PLANET XAMARIN -->
+<a href="https://planetxamarin.com/">
+  <img width="250px" height="100px" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/planetxamarin-featured-badge.png">
+</a>
+<!-- snppts-->
+<a href="https://www.snppts.dev/">
+  <img width="250px" height="100px" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/snppts-badge.jpg">
+</a>
+<br>
+<!-- CATEGORIES START -->
+<h2 class="no-top-space">Categories</h2>
+
+<div class="widget-wrap">
+  <div class="widget">
+    <ul class="nav sidebar-categories margin-bottom-40">
+      
+	<li>
+	  <a href="https://lioncoding.com/categories/xamarinforms/">xamarinforms (24)</a>
+	</li>
+      
+    </ul>
+  </div>
+</div>
+
+<!-- CATEGORIES END -->
+
+<!-- BEGIN BLOG TAGS -->
+<div class="blog-tags margin-bottom-20">
+  <h2>Tags</h2>
+  
+  <div class="widget-wrap">
+    <div class="widget">
+      
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/NET/"><i class="fa fa-tags"></i>.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/API/"><i class="fa fa-tags"></i>API</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Activity/"><i class="fa fa-tags"></i>Activity</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/App-User-LocationInfo/"><i class="fa fa-tags"></i>App.User.LocationInfo</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Barcode/"><i class="fa fa-tags"></i>Barcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Behaviors/"><i class="fa fa-tags"></i>Behaviors</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Binding/"><i class="fa fa-tags"></i>Binding</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Calculeted-Field/"><i class="fa fa-tags"></i>Calculeted Field</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Code-behind/"><i class="fa fa-tags"></i>Code behind</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Code-barres/"><i class="fa fa-tags"></i>Code-barres</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Color/"><i class="fa fa-tags"></i>Color</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Color-Picker/"><i class="fa fa-tags"></i>Color Picker</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/ColorPicker/"><i class="fa fa-tags"></i>ColorPicker</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Command/"><i class="fa fa-tags"></i>Command</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Control-Event/"><i class="fa fa-tags"></i>Control Event</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Converter/"><i class="fa fa-tags"></i>Converter</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Country-Info/"><i class="fa fa-tags"></i>Country Info</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Country-List/"><i class="fa fa-tags"></i>Country List</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Credit-Card/"><i class="fa fa-tags"></i>Credit Card</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Disable-Valiation-button/"><i class="fa fa-tags"></i>Disable  Valiation button</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Emoji/"><i class="fa fa-tags"></i>Emoji</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Enable-Valiation-button/"><i class="fa fa-tags"></i>Enable Valiation button</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Excel/"><i class="fa fa-tags"></i>Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Export/"><i class="fa fa-tags"></i>Export</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Extension/"><i class="fa fa-tags"></i>Extension</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/FingerPrint/"><i class="fa fa-tags"></i>FingerPrint</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Format/"><i class="fa fa-tags"></i>Format</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Hot-Reload/"><i class="fa fa-tags"></i>Hot Reload</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Location/"><i class="fa fa-tags"></i>Location</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Login/"><i class="fa fa-tags"></i>Login</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Nuget/"><i class="fa fa-tags"></i>Nuget</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Oauth2/"><i class="fa fa-tags"></i>Oauth2</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Picker/"><i class="fa fa-tags"></i>Picker</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/RESTCountries-NET/"><i class="fa fa-tags"></i>RESTCountries.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Reporting/"><i class="fa fa-tags"></i>Reporting</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Share/"><i class="fa fa-tags"></i>Share</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Smartphone/"><i class="fa fa-tags"></i>Smartphone</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Statusbar/"><i class="fa fa-tags"></i>Statusbar</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Timeline/"><i class="fa fa-tags"></i>Timeline</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Triggers/"><i class="fa fa-tags"></i>Triggers</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/UI/"><i class="fa fa-tags"></i>UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/UI-Challenge/"><i class="fa fa-tags"></i>UI Challenge</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Validation/"><i class="fa fa-tags"></i>Validation</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Visual-studio/"><i class="fa fa-tags"></i>Visual studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/WhatsApp-UI/"><i class="fa fa-tags"></i>WhatsApp UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/WhatsApp-UI-in-Xamarin/"><i class="fa fa-tags"></i>WhatsApp UI in Xamarin</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/XAML/"><i class="fa fa-tags"></i>XAML</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/XamDevSummit/"><i class="fa fa-tags"></i>XamDevSummit</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Xamarin/"><i class="fa fa-tags"></i>Xamarin</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Xamarin-Tracking-Plugin/"><i class="fa fa-tags"></i>Xamarin Tracking Plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Xamarin-UI/"><i class="fa fa-tags"></i>Xamarin UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Xaml/"><i class="fa fa-tags"></i>Xaml</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Xaml-format/"><i class="fa fa-tags"></i>Xaml format</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/custom-stepper/"><i class="fa fa-tags"></i>custom stepper</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/stepper-with-entry/"><i class="fa fa-tags"></i>stepper with entry</a></li></ul>
+    </div>
+  </div>
+
+
+</div>
+<!-- END BLOG TAGS -->
+
+
+<!-- BEGIN FEATURED POSTS -->                            
+<h2>Nouveaux posts</h2>
+<div class="recent-news margin-bottom-10">
+  
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/barcodeReaderXF_post(fr).jpg" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/">Concevoir un lecteur de Code-barres avec Xamarin.Forms</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+  
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/tweet(1).png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/04/08/2019-04-08-UI-Concevoir-un-Timeline-dans-Xamarin-Forms/">UI: Concevoir un Timeline dans Xamarin.Forms</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/Copie de _with_code.PNG" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/04/28/2019-04-28-Xamarin-Forms-Formatage-automatique-du-code-Xaml/">Xamarin.Forms: Formatage automatique du code XAML</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/3UI.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/05/08/2019-05-08-WhatsApp-UI-dans-Xamarin-Forms-Partie-1/">WhatsApp UI dans Xamarin.Forms (Partie 1)</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/screenshot1.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/05/09/2019-05-09-WhatsApp-UI-dans-Xamarin-Forms-Partie-2/">WhatsApp UI dans Xamarin.Forms (Partie 2)</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/STATUT.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/05/10/2019-05-10-WhatsApp-UI-dans-Xamarin-Forms-Partie-3/">WhatsApp UI dans Xamarin.Forms (Partie 3)</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/3UI.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/05/11/2019-05-11-WhatsApp-UI-dans-Xamarin-Forms-Partie-5-Fin/">WhatsApp UI dans Xamarin.Forms (Partie 5 &amp; Fin)</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/CALL.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/05/11/2019-05-11-WhatsApp-UI-dans-Xamarin-Forms-Partie-4/">WhatsApp UI dans Xamarin.Forms (Partie 4)</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/uc" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/06/22/2019-06-22-Mon-premier-Nuget-package-App-User-LocationInfo/">Nuget package App.User.LocationInfo</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/D_M7UGzWwAccEew.jpeg" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/07/11/2019-07-11-Hot-Reload-pour-Xamarin-Forms/">Hot Reload dans Xamarin.Forms 🔥🔥🔥🔥🔥🔥</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/uc(1)" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/07/19/2019-07-19-Xamarin-Forms-FingerPrint/">Xamarin.Forms FingerPrint</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/RESTCountries.NET.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/08/11/2019-08-11-A-la-decouverte-de-RESTCountries-NET/">A la découverte de RESTCountries.NET</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/oauth2_api_xamarin_2.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/10/27/2019-10-27-Consommer-des-API-protegees-par-Oauth2-dans-Xamarin-Forms/">Consommer des API protégées par OAuth2 dans Xamarin.Forms</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/2d214269c2b5da7da0f23d716c2bc78b.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/10/11/2019-10-11-Xamarin-UI-Challenge-Credit-Card-Checkout/">Xamarin UI Challenge - Credit Card Checkout</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/Download-EMI-calculator.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/12/23/2019-23-12-Les-Champs-calcules-dans-Xamarin-Forms-les-bonnes-pratiques/">Les Champs calculés dans Xamarin.Forms: les bonnes pratiques 🎅</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/uc(2)" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/11/05/2019-11-05-Credit-Card-checkout-CarouselView-de-Xamarin-forms-4-3-en-action/">Credit Card Checkout - CarouselView de Xamarin.Forms 4.3 en action</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/uc(3)" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2020/01/25/2020-01-25-Les-solutions-pour-Activer-ou-Desactiver-le-bouton-de-validation-d-un-formulaire-Xamarin-Forms/">Activer ou Désactiver le bouton de validation d'un formulaire Xamarin.Forms</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/screenshot(1).png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2020/02/26/2020-02-26-Controle-personnalise-en-Xamarin-Forms-Un-Stepper-disposant-d-un-Entry/">Contrôle personnalisé dans Xamarin.Forms - Un Stepper disposant d'un Entry</a></h3>
+	</div>                        
+      </div>
+    
+  
+</div>
+<!-- END FEATURED POSTS -->                            
+
+</div>
+</div>
+
+  </section>
+</div>
+
+    <!-- BEGIN PRE-FOOTER -->
+    <div class="pre-footer">
+      <div class="container">
+        <div class="row">
+          <!-- BEGIN BOTTOM ABOUT BLOCK -->
+          <div class="col-md-4 col-sm-6 pre-footer-col">
+            <h2>A propos de nous</h2>
+            <p>Mis en place en Juin 2018, ce blog partage avec vous des projets, des nouveautés, des astuces, en développement d'applications.</p>
+          </div>
+          <!-- END BOTTOM ABOUT BLOCK -->
+
+          <!-- BEGIN BOTTOM CONTACTS -->
+          <div class="col-md-4 col-sm-6 pre-footer-col">
+            
+          </div>
+          <!-- END BOTTOM CONTACTS -->
+
+	
+          <!-- BEGIN TWITTER BLOCK -->
+          <div class="col-md-4 col-sm-6 pre-footer-col">
+              <h2>Contacts</h2>
+              <address class="margin-bottom-40">
+                Lomé-Togo<br>
+                <!--Phone: undefined<br>-->
+                Email: <a href="mailto:laurent@lioncoding.com">laurent@lioncoding.com</a><br>
+              </address>
+          </div>
+          <!-- END TWITTER BLOCK -->
+	
+        </div>
+      </div>
+    </div>
+    <!-- END PRE-FOOTER -->
+
+    <!-- BEGIN FOOTER -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- BEGIN COPYRIGHT -->
+          <div class="col-md-6 col-sm-6 padding-top-10">
+                  © 2020 LionCoding | Projets | Tutoriels<br>
+          </div>
+          <!-- END COPYRIGHT -->
+	  <!-- BEGIN SOCIAL -->
+<div class="col-md-6 col-sm-6">
+  <ul class="social-footer list-unstyled list-inline pull-right">
+    
+      <li><a href="https://github.com/egbakou"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://twitter.com/lioncoding"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://lioncoding.com/feed.xml"><i class="fa fa-rss"></i></a></li>
+    
+      <li><a href="https://linkedin.com/in/laurentegbakou"><i class="fa fa-linkedin"></i></a></li>
+    
+    <li><a href="https://lioncoding.com/sitemap.xml"><i class="fa fa-sitemap"></i></a></li>
+  </ul>  
+</div>
+<!-- END SOCIAL -->
+
+        </div>
+      </div>
+    </div>
+    <!-- END FOOTER -->
+
+  <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
+<!--[if lt IE 9]>
+<script src="/metronic/assets/plugins/respond.min.js"></script>
+<![endif]--> 
+<script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/jquery.min.js.téléchargement"></script>
+<script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/jquery-migrate.min.js.téléchargement"></script>
+<script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/bootstrap.min.js.téléchargement"></script>
+<script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/back-to-top.js.téléchargement"></script>
+<script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/owl.carousel.min.js.téléchargement"></script>
+<script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/layout.js.téléchargement"></script>
+<script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/wow.min.js.téléchargement"></script>
+<script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/prism.js.téléchargement"></script>
+
+
+  <link rel="stylesheet" href="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/jquery.fancybox.css">
+  <script src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/jquery.fancybox.pack.js.téléchargement"></script>
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        Layout.init();    
+        Layout.initOWL();
+        Layout.initTwitter();
+        Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+        Layout.initNavScrolling(); 
+	new WOW().init();
+    });
+</script>
+<!-- END CORE PLUGINS -->
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5eedc4389e5f69442290f526/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+<!--End of Tawk.to Script-->
+
+
+<!-- BEGIN PAGE-SPECIFIC PLUGINS --> 
+
+
+
+
+
+
+
+<!-- END PAGE-SPECIFIC PLUGINS --> 
+
+<!-- BEGIN INTEGRATIONS -->
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','mqSgSxnMMDR4bbs2NXuy','2.0.0');
+    </script>
+
+
+
+<script>
+  
+    var disqus_config = function () {
+      this.page.url = 'https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/';
+    };
+  
+  (function() {  // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//lioncoding.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<script id="dsq-count-scr" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/count.js.téléchargement" async=""></script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132769949-1');
+</script>
+
+<!-- End Google Analytics -->
+
+
+<!-- END INTEGRATIONS -->
+
+
+
+<div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 10px; right: 10px; opacity: 1; cursor: pointer;"><img src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/up.png" style="width:40px; height:40px"></div><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/widget_iframe.751466924564365530b311cd28fbf79b.html" title="Twitter settings iframe" style="display: none;"></iframe><div id="sTZdueS-1592977328297" class="" style="display: block !important;"><iframe id="zjhjuv8-1592977328298" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(2).html" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; top: auto !important; right: auto !important; bottom: auto !important; left: auto !important; position: static !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 350px !important; z-index: 999999 !important; cursor: auto !important; float: none !important; border-radius: unset !important; pointer-events: auto !important; display: none !important; height: 120px !important;"></iframe><iframe id="qcfnlQ3-1592977328299" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(3).html" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; position: fixed !important; border: 0px !important; padding: 0px !important; transition-property: none !important; z-index: 1000001 !important; cursor: auto !important; float: none !important; pointer-events: auto !important; box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 10px 0px !important; height: 60px !important; min-height: 60px !important; max-height: 60px !important; width: 60px !important; min-width: 60px !important; max-width: 60px !important; border-radius: 50% !important; transform: rotate(0deg) translateZ(0px) !important; transform-origin: 0px center !important; margin: 0px !important; top: auto !important; bottom: 20px !important; right: 20px !important; left: auto !important; display: block !important;"></iframe><iframe id="sEYtV2T-1592977328299" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(4).html" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; position: fixed !important; border: 0px !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; z-index: 1000003 !important; cursor: auto !important; float: none !important; border-radius: unset !important; pointer-events: auto !important; top: auto !important; bottom: 60px !important; right: 15px !important; left: auto !important; width: 21px !important; max-width: 21px !important; min-width: 21px !important; height: 21px !important; max-height: 21px !important; min-height: 21px !important; display: block !important;"></iframe><div class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; top: 0px !important; right: auto !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 100% !important; display: none !important; z-index: 1000001 !important; cursor: move !important; float: left !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="WHjfniv-1592977328297" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; top: 0px !important; right: auto !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 6px !important; height: 100% !important; display: block !important; z-index: 999998 !important; cursor: w-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="AFrioYz-1592977328297" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; top: 0px !important; right: 0px !important; bottom: auto !important; left: auto !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 6px !important; display: block !important; z-index: 999998 !important; cursor: n-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="odyawRm-1592977328298" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; top: 0px !important; right: auto !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: nw-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><iframe id="DSRUyrp-1592977328431" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(5).html" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; position: fixed !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 378px !important; height: 662px !important; display: none !important; z-index: 999999 !important; cursor: auto !important; float: none !important; border-radius: unset !important; pointer-events: auto !important; bottom: 100px !important; top: auto !important; right: 20px !important; left: auto !important;"></iframe></div><iframe style="display: none;" src="./Concevoir un lecteur de Code-barres avec Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(6).html"></iframe></body></html>

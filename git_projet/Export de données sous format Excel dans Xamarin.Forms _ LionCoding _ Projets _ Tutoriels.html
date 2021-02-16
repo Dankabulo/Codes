@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/ -->
+<html lang="fr" class=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  
+  <title>Export de données sous format Excel dans Xamarin.Forms | LionCoding | Projets | Tutoriels</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="description" content="Dans cet article , nous verrons comment exporter les donn&amp;#xE9;es qui alimentent une ListView de Xamarin.Forms sous format Excel en utilisant le NuGet  package  DocumentFormat.OpenXml. Cr&amp;#xE9;at">
+<meta name="keywords" content="Xamarin,Visual studio,Export,Excel,Reporting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Export de données sous format Excel dans Xamarin.Forms">
+<meta property="og:url" content="https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/index.html">
+<meta property="og:site_name" content="LionCoding | Projets | Tutoriels">
+<meta property="og:description" content="Dans cet article , nous verrons comment exporter les donn&amp;#xE9;es qui alimentent une ListView de Xamarin.Forms sous format Excel en utilisant le NuGet  package  DocumentFormat.OpenXml. Cr&amp;#xE9;at">
+<meta property="og:locale" content="fr">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=1UT_3POa-vRywy-JqGPecOibhosXXkCcl">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=1SOyJjqaomDHlzryup1IzCbrE8f7H864Q">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=1UT_3POa-vRywy-JqGPecOibhosXXkCcl">
+<meta property="og:updated_time" content="2020-06-20T14:09:49.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Export de données sous format Excel dans Xamarin.Forms">
+<meta name="twitter:description" content="Dans cet article , nous verrons comment exporter les donn&amp;#xE9;es qui alimentent une ListView de Xamarin.Forms sous format Excel en utilisant le NuGet  package  DocumentFormat.OpenXml. Cr&amp;#xE9;at">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=view&amp;id=1UT_3POa-vRywy-JqGPecOibhosXXkCcl">
+  
+    <link rel="alternative" href="https://lioncoding.com/feed.xml" title="LionCoding | Projets | Tutoriels" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://lioncoding.com/favicon.ico">
+  
+
+  <meta content="{{ title }}" name="description">
+  <meta content="{{ title }}" name="keywords">
+  <meta content="{{ title }}" name="author">
+  <meta name="google-site-verification" content="sfRybH_Mn50-a_lGoRf21hf28qx1iOucU8CsBe_hEVM">
+
+  <link href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css" rel="stylesheet"> 
+  <link href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css(1)" rel="stylesheet">
+  <link href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css(2)" rel="stylesheet">
+  <link href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css(3)" rel="stylesheet"> 
+  <link href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css(4)" rel="stylesheet">
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script type="text/javascript" async="" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/analytics.js.téléchargement"></script><script id="twitter-wjs" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/widgets.js.téléchargement"></script><script async="" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/st.js.téléchargement"></script><script async="" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/default" charset="UTF-8" crossorigin="*"></script><script async="" defer="" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/buttons.js.téléchargement"></script>
+  <!-- Global styles START -->
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/font-awesome.min.css">
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/bootstrap.min.css">
+  <!-- Global styles END -->
+
+  <!-- Page level plugin styles START -->
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/animate.css">
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/owl.carousel.css">
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/components.css">
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/prism.css">
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/slider.css">
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/style.css">
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/portfolio.css">
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/style-responsive.css">
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/red.css">
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/theme-styles.css">
+  <!-- Theme styles END -->
+<link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/prism-line-numbers.css" type="text/css"><script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/embed.js.téléchargement" data-timestamp="1592977478131"></script><style type="text/css">.fancybox-margin{margin-right:12px;}</style><style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#ZHbaspV-1592977493168{outline:none!important;visibility:visible!important;resize:none!important;box-shadow:none!important;overflow:visible!important;background:none!important;opacity:1!important;filter:alpha(opacity=100)!important;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity1)!important;-moz-opacity:1!important;-khtml-opacity:1!important;top:auto!important;right:10px!important;bottom:90px!important;left:auto!important;position:fixed!important;border:0!important;min-height:0!important;min-width:0!important;max-height:none!important;max-width:none!important;padding:0!important;margin:0!important;-moz-transition-property:none!important;-webkit-transition-property:none!important;-o-transition-property:none!important;transition-property:none!important;transform:none!important;-webkit-transform:none!important;-ms-transform:none!important;width:auto!important;height:auto!important;display:none!important;z-index:2000000000!important;background-color:transparent!important;cursor:auto!important;float:none!important;border-radius:unset!important;pointer-events:auto!important}#fY13CGN-1592977493171.open{animation : tawkMaxOpen .25s ease!important;}</style><script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/count-data.js.téléchargement"></script><script charset="utf-8" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/button.1378e6a69a23712ca26755ee3c4084b4.js.téléchargement"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.5c5dad4ae74bbb3422efd01116dc45e6.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.d1c2fbfd8acab46a487aabc1b327ec9e.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.c1bff69470c1c3db88f177e778afdc25.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/alfalfalfa.0823c767a3bc925f628afd9bed26c958.js.téléchargement" async="" charset="UTF-8"></script></head>
+
+<body class="corporate">
+  <!-- BEGIN TOP BAR -->
+<div class="pre-header">
+  <div class="container">
+    <div class="row">
+      <!-- BEGIN TOP BAR LEFT PART -->
+      <div class="col-md-6 col-sm-6 col-xs-9 additional-shop-info">
+      	<ul class="list-unstyled list-inline">
+      	  <!--<li><i class="fa fa-phone"></i><span>undefined</span></li>-->
+      	  <li><i class="fa fa-envelope-o"></i><span>laurent@lioncoding.com</span></li>
+      	</ul>
+      </div>
+      <!-- END TOP BAR LEFT PART -->
+      <!-- BEGIN TOP BAR MENU -->
+      <div class="col-md-6 col-sm-6 col-xs-2 additional-nav">
+      	<ul class="list-unstyled list-inline pull-right">
+					<li><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-follow-button twitter-follow-button-rendered" style="position: static; visibility: visible; width: 126px; height: 20px;" title="Twitter Follow Button" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/follow_button.751466924564365530b311cd28fbf79b.fr.html" data-screen-name="lioncoding"></iframe></li>
+      	  <li><a href="https://github.com/egbakou"><i class="fa fa-github"></i></a></li>
+      	</ul>
+      </div>
+      <!-- END TOP BAR MENU -->
+    </div>
+  </div>
+</div>
+<!-- END TOP BAR -->
+<!-- BEGIN HEADER -->
+<div class="header">
+  <div class="container">
+    <!--<a class="site-logo" href="/" id="logo">LionCoding | Projets | Tutoriels</a>-->
+
+    <a class="site-logo" href="https://lioncoding.com/">
+      <img style="height:40px" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/logo-corp-red.png" alt="Metronic FrontEnd">
+    </a>
+
+    <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+
+    <!-- BEGIN NAVIGATION -->
+    <div class="header-navigation pull-right font-transform-inherit">
+      <ul>
+	
+	<li class="">
+	  <a href="https://lioncoding.com/">Accueil</a>
+	</li>
+	
+	<li class="">
+	  <a href="https://lioncoding.com/categories/xamarinforms">Xamarin.Forms</a>
+	</li>
+	
+	<li class="">
+	  <a href="https://lioncoding.com/contact/">Contact</a>
+	</li>
+	
+	<li class="">
+	  <a href="https://lioncoding.com/about/">?</a>
+	</li>
+	
+	<!-- BEGIN TOP SEARCH -->
+	<li class="menu-search">
+	  <span class="sep"></span>
+	  <i class="fa fa-search search-btn"></i>
+	  <div class="search-box">
+	    <form action="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#">
+	      <div class="input-group">
+		<input type="text" placeholder="Rechercher" class="form-control st-default-search-input">
+		<span class="input-group-btn">
+		  <button class="btn btn-primary" type="submit">Rechercher</button>
+		</span>
+	      </div>
+	    </form>
+	  </div>
+	</li>
+	<!-- END TOP SEARCH -->
+      </ul>
+    </div>
+    <!-- END NAVIGATION -->
+  </div>
+</div>
+<!-- Header END -->
+
+  <div class="container">
+  <ul class="breadcrumb">
+    <li><a href="https://lioncoding.com/">Accueil</a></li>
+    <li><a href="https://lioncoding.com/archives">Posts</a></li>
+    <li class="active">Post</li>
+  </ul>
+  <section id="main">
+    
+    <h2 itemprop="name">
+      <a class="article-title" href="https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/">Export de données sous format Excel dans Xamarin.Forms</a>
+    </h2>
+
+
+    <div class="row">
+<div class="col-md-9 col-sm-9 blog-posts">
+<article id="post-2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms" class="article article-type-post blog-item" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+  </div>
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
+      <ul class="blog-info">
+	<li><i class="fa fa-user"></i> Kodjo Laurent EGBAKOU</li>
+	<li><i class="fa fa-calendar"></i>
+	  <time datetime="2019-03-07T05:01:11.000Z" itemprop="datePublished">2019/03/07</time>
+
+	</li>
+	<li class="hidden-xs"><i class="fa fa-comments"></i>
+	  <a href="https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/#disqus_thread" class="article-comment-link">0 Comments</a>
+	</li>
+	<li class="hidden-xs"><i class="fa fa-tags"></i> 
+	  
+  
+    <a href="https://lioncoding.com/tags/Xamarin/" title="Xamarin">Xamarin</a>,
+  
+    <a href="https://lioncoding.com/tags/Visual-studio/" title="Visual studio">Visual studio</a>,
+  
+    <a href="https://lioncoding.com/tags/Export/" title="Export">Export</a>,
+  
+    <a href="https://lioncoding.com/tags/Excel/" title="Excel">Excel</a>,
+  
+    <a href="https://lioncoding.com/tags/Reporting/" title="Reporting">Reporting</a>
+  
+
+
+	</li>
+      </ul>
+      
+  <div class="article-category">
+    
+    Category: 
+    
+    Categories:
+    <a class="article-category-link" href="https://lioncoding.com/categories/xamarinforms/">xamarinforms</a>
+  </div>
+  <br>
+
+
+    </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="image-strip">
+<img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/post_img.png">
+</div>
+
+
+<p>Dans cet article , nous verrons comment exporter les données qui alimentent une ListView de Xamarin.Forms sous format Excel en utilisant le NuGet  package  <a href="https://www.nuget.org/packages/DocumentFormat.OpenXml/" target="_blank" rel="noopener">DocumentFormat.OpenXml</a>.</p>
+<h2 id="Creation-du-projet-Cross-platform-Xamarin"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Creation-du-projet-Cross-platform-Xamarin" class="headerlink" title="Création du projet Cross-platform Xamarin"></a>Création du projet Cross-platform Xamarin</h2><p><img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/create_project.PNG" alt=""></p>
+<p><em>Figure 1: Création du projet</em></p>
+<h2 id="Les-librairies-dont-nous-avons-besoin"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Les-librairies-dont-nous-avons-besoin" class="headerlink" title="Les librairies dont nous avons besoin"></a>Les librairies dont nous avons besoin</h2><ol>
+<li><a href="https://www.nuget.org/packages/Autofac/" target="_blank" rel="noopener">Autofac</a>: Pour faire l’inversion de contrôle.</li>
+<li><a href="https://www.nuget.org/packages/DocumentFormat.OpenXml/" target="_blank" rel="noopener">DocumentFormat.OpenXml</a>: Pour l’export de données sous format Excel.</li>
+<li><a href="https://www.nuget.org/packages/Plugin.Permissions" target="_blank" rel="noopener">Plugin.Permissions</a>: Pour la gestion des permissions de stockage.</li>
+</ol>
+<h2 id="Initialisations-et-Configurations"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Initialisations-et-Configurations" class="headerlink" title="Initialisations et Configurations"></a>Initialisations et Configurations</h2><p>Dans cette partie, nous allons initialiser le troisième plugin pour la plateforme Android.</p>
+<h3 id="Projet-Android"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Projet-Android" class="headerlink" title="Projet Android"></a>Projet Android</h3><ul>
+<li>Initialisation dans le fichier <strong><em>MainActivity.cs</em></strong></li>
+</ul>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token keyword">void</span> <span class="token function">OnCreate</span><span class="token punctuation">(</span><span class="token class-name">Bundle</span> bundle<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>         
+<span class="token comment">// ...</span>
+    Plugin<span class="token punctuation">.</span>CurrentActivity<span class="token punctuation">.</span>CrossCurrentActivity<span class="token punctuation">.</span>Current<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> bundle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">void</span> <span class="token function">OnRequestPermissionsResult</span><span class="token punctuation">(</span><span class="token keyword">int</span> requestCode<span class="token punctuation">,</span> <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> permissions<span class="token punctuation">,</span> Permission<span class="token punctuation">[</span><span class="token punctuation">]</span> grantResults<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    PermissionsImplementation<span class="token punctuation">.</span>Current<span class="token punctuation">.</span><span class="token function">OnRequestPermissionsResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> permissions<span class="token punctuation">,</span> grantResults<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">base</span><span class="token punctuation">.</span><span class="token function">OnRequestPermissionsResult</span><span class="token punctuation">(</span>requestCode<span class="token punctuation">,</span> permissions<span class="token punctuation">,</span> grantResults<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>Accord de la permission de stockage dans le fichier <strong><em>AssemblyInfo.cs</em></strong></li>
+</ul>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token punctuation">[</span>assembly<span class="token punctuation">:</span> <span class="token function">UsesPermission</span><span class="token punctuation">(</span>Android<span class="token punctuation">.</span>Manifest<span class="token punctuation">.</span>Permission<span class="token punctuation">.</span>WriteExternalStorage<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>Pourquoi avons-nous encore besoin d’un Plugin de gestion de permission si cela peut être effectuée dans le fichier <strong><em>AssemblyInfo.cs</em></strong> ? </p>
+<p>En effet, l’accord de la permission de stockage telle que présenté ne passe pas sur toute les plateformes Android. Nous aurons par biais de  <a href="https://www.nuget.org/packages/Plugin.Permissions" target="_blank" rel="noopener">Plugin.Permissions</a>, à vérifier lors de l’export de données, si nous avons l’autorisation de stocker des données sur le stockage interne du téléphone(sinon l’accorder).</p>
+</blockquote>
+<h2 id="Codes-du-projet-partage"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Codes-du-projet-partage" class="headerlink" title="Codes du projet partagé"></a>Codes du projet partagé</h2><p>Le principe ici est de créer une collection d’objets servant de source pour une ListView et de pouvoir exporter cette source de données.</p>
+<h3 id="Un-Model-tres-simple"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Un-Model-tres-simple" class="headerlink" title="Un Model très simple"></a>Un Model très simple</h3><pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> ExportDataToExcel<span class="token punctuation">.</span>Models
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">XFDeveloper</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">int</span> ID <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> <span class="token keyword">string</span> FullName <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> <span class="token keyword">string</span> Phone <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Un-Service-nous-fournissant-une-liste-d’objets-de-notre-Model"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Un-Service-nous-fournissant-une-liste-d%E2%80%99objets-de-notre-Model" class="headerlink" title="Un Service nous fournissant  une liste d’objets de notre Model"></a>Un Service nous fournissant  une liste d’objets de notre Model</h3><pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> ExportDataToExcel<span class="token punctuation">.</span>Models<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> ExportDataToExcel<span class="token punctuation">.</span>Services
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">XFDeveloperService</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> List<span class="token operator">&lt;</span>XFDeveloper<span class="token operator">&gt;</span> <span class="token function">GetAllXamarinDevelopers</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            List<span class="token operator">&lt;</span>XFDeveloper<span class="token operator">&gt;</span> developers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span>XFDeveloper<span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">new</span> <span class="token class-name">XFDeveloper</span>
+                <span class="token punctuation">{</span>
+                    ID <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                    FullName <span class="token operator">=</span> <span class="token string">"James Montemagno"</span><span class="token punctuation">,</span>
+                    Phone <span class="token operator">=</span> <span class="token string">"+00 0000 0001"</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">XFDeveloper</span>
+                <span class="token punctuation">{</span>
+                    ID <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span>
+                    FullName <span class="token operator">=</span> <span class="token string">"Leomaris Rayes"</span><span class="token punctuation">,</span>
+                    Phone <span class="token operator">=</span> <span class="token string">"+00 0000 0002"</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">XFDeveloper</span>
+                <span class="token punctuation">{</span>
+                    ID <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span>
+                    FullName <span class="token operator">=</span> <span class="token string">"K. Laurent egbakou"</span><span class="token punctuation">,</span>
+                    Phone <span class="token operator">=</span> <span class="token string">"+00 0000 0003"</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">XFDeveloper</span>
+                <span class="token punctuation">{</span>
+                    ID <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span>
+                    FullName <span class="token operator">=</span> <span class="token string">"Houssem Dellai"</span><span class="token punctuation">,</span>
+                    Phone <span class="token operator">=</span> <span class="token string">"+00 0000 0004"</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">XFDeveloper</span>
+                <span class="token punctuation">{</span>
+                    ID <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span>
+                    FullName <span class="token operator">=</span> <span class="token string">"Yves Gaston"</span><span class="token punctuation">,</span>
+                    Phone <span class="token operator">=</span> <span class="token string">"+00 0000 0005"</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">XFDeveloper</span>
+                <span class="token punctuation">{</span>
+                    ID <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">,</span>
+                    FullName <span class="token operator">=</span> <span class="token string">"John Doe"</span><span class="token punctuation">,</span>
+                    Phone <span class="token operator">=</span> <span class="token string">"+00 0000 0006"</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">XFDeveloper</span>
+                <span class="token punctuation">{</span>
+                    ID <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">,</span>
+                    FullName <span class="token operator">=</span> <span class="token string">"Marcel Adama"</span><span class="token punctuation">,</span>
+                    Phone <span class="token operator">=</span> <span class="token string">"+00 0000 0007"</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">XFDeveloper</span>
+                <span class="token punctuation">{</span>
+                    ID <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">,</span>
+                    FullName <span class="token operator">=</span> <span class="token string">"Carlos Ognankotan"</span><span class="token punctuation">,</span>
+                    Phone <span class="token operator">=</span> <span class="token string">"+00 0000 0008"</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">return</span> developers<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>                        
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="La-vue-nous-voulons-exporter-L’itemSource-de-notre-ListView-au-format-Excel"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#La-vue-nous-voulons-exporter-L%E2%80%99itemSource-de-notre-ListView-au-format-Excel" class="headerlink" title="La vue (nous voulons exporter L’itemSource de notre ListView au format Excel)"></a>La vue (nous voulons exporter L’itemSource de notre ListView au format Excel)</h3><pre class="line-numbers  language-xml"><code class=" language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ContentPage</span>
+    <span class="token attr-name"><span class="token namespace">x:</span>Class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ExportDataToExcel.Views.MainMenuView<span class="token punctuation">"</span></span>
+    <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><a class="vglnk" href="http://xamarin.com/schemas/2014/forms" rel="nofollow"><span>http</span><span>://</span><span>xamarin</span><span>.</span><span>com</span><span>/</span><span>schemas</span><span>/</span><span>2014</span><span>/</span><span>forms</span></a><span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">xmlns:</span>x</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><a class="vglnk" href="http://schemas.microsoft.com/winfx/2009/xaml" rel="nofollow"><span>http</span><span>://</span><span>schemas</span><span>.</span><span>microsoft</span><span>.</span><span>com</span><span>/</span><span>winfx</span><span>/</span><span>2009</span><span>/</span><span>xaml</span></a><span class="token punctuation">"</span></span>
+    <span class="token attr-name">Title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{Binding Title}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ContentPage.ToolbarItems</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ToolbarItem</span>
+            <span class="token attr-name">Command</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{Binding ExportToExcelCommand}<span class="token punctuation">"</span></span>
+            <span class="token attr-name">Icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>shareexcel.png<span class="token punctuation">"</span></span>
+            <span class="token attr-name">Text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Export excel<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ContentPage.ToolbarItems</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ContentPage.Content</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>StackLayout</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>StackLayout</span> <span class="token attr-name">VerticalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>FillAndExpand<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ListView</span>
+                    <span class="token attr-name">CachingStrategy</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>RecycleElement<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">HasUnevenRows</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>False<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">ItemsSource</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{Binding Developers}<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">SeparatorColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Transparent<span class="token punctuation">"</span></span>
+                    <span class="token attr-name">SeparatorVisibility</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>None<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ListView.RowHeight</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>OnIdiom</span>
+                            <span class="token attr-name"><span class="token namespace">x:</span>TypeArguments</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>x:Int32<span class="token punctuation">"</span></span>
+                            <span class="token attr-name">Phone</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>80<span class="token punctuation">"</span></span>
+                            <span class="token attr-name">Tablet</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>120<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ListView.RowHeight</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ListView.ItemTemplate</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>DataTemplate</span><span class="token punctuation">&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ViewCell</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Grid</span> <span class="token attr-name">ColumnSpacing</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>20<span class="token punctuation">"</span></span> <span class="token attr-name">RowSpacing</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Grid.ColumnDefinitions</span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ColumnDefinition</span> <span class="token attr-name">Width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ColumnDefinition</span> <span class="token attr-name">Width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Auto<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ColumnDefinition</span> <span class="token attr-name">Width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Auto<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Grid.ColumnDefinitions</span><span class="token punctuation">&gt;</span></span>
+
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Grid.RowDefinitions</span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RowDefinition</span> <span class="token attr-name">Height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>*<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RowDefinition</span> <span class="token attr-name">Height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Grid.RowDefinitions</span><span class="token punctuation">&gt;</span></span>
+
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BoxView</span>
+                                        <span class="token attr-name">Grid.Row</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">Grid.Column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">BackgroundColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>LightGray<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">HorizontalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Start<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">WidthRequest</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Image</span>
+                                        <span class="token attr-name">Grid.Row</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">Grid.Column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">HeightRequest</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">Source</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user.png<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">WidthRequest</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>StackLayout</span>
+                                        <span class="token attr-name">Grid.Row</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">Grid.Column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">HorizontalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>FillAndExpand<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">Orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Vertical<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">VerticalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token comment">&lt;!--  FULLNAME  --&gt;</span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Label</span>
+                                            <span class="token attr-name">FontSize</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>18<span class="token punctuation">"</span></span>
+                                            <span class="token attr-name">HorizontalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>FillAndExpand<span class="token punctuation">"</span></span>
+                                            <span class="token attr-name">Text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{Binding FullName}<span class="token punctuation">"</span></span>
+                                            <span class="token attr-name">VerticalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Start<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                                        <span class="token comment">&lt;!--  PHONE  --&gt;</span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Label</span>
+                                            <span class="token attr-name">FontSize</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>15<span class="token punctuation">"</span></span>
+                                            <span class="token attr-name">Text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{Binding Phone}<span class="token punctuation">"</span></span>
+                                            <span class="token attr-name">TextColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#43A047<span class="token punctuation">"</span></span>
+                                            <span class="token attr-name">VerticalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Start<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>StackLayout</span><span class="token punctuation">&gt;</span></span>
+
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BoxView</span>
+                                        <span class="token attr-name">Grid.Row</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">Grid.Column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">Grid.ColumnSpan</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>4<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">BackgroundColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>LightGray<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">HeightRequest</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">Opacity</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>.5<span class="token punctuation">"</span></span>
+                                        <span class="token attr-name">VerticalOptions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>End<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Grid</span><span class="token punctuation">&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ViewCell</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>DataTemplate</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ListView.ItemTemplate</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ListView</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>StackLayout</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>StackLayout</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ContentPage.Content</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ContentPage</span><span class="token punctuation">&gt;</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Le code behind correspondant est :</p>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> ExportDataToExcel<span class="token punctuation">.</span>ViewModels<span class="token punctuation">;</span>
+
+<span class="token keyword">using</span> Xamarin<span class="token punctuation">.</span>Forms<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Xamarin<span class="token punctuation">.</span>Forms<span class="token punctuation">.</span>Xaml<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> ExportDataToExcel<span class="token punctuation">.</span>Views
+<span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token class-name">XamlCompilation</span><span class="token punctuation">(</span>XamlCompilationOptions<span class="token punctuation">.</span>Compile<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">partial</span> <span class="token keyword">class</span> <span class="token class-name">MainMenuView</span> <span class="token punctuation">:</span> <span class="token class-name">ContentPage</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token class-name">MainMenuViewModel</span> viewModel<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token function">MainMenuView</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">InitializeComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            BindingContext <span class="token operator">=</span> viewModel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MainMenuViewModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">RegisterMesssages</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+
+        <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">RegisterMesssages</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            MessagingCenter<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Subscribe</span><span class="token punctuation">&lt;</span><span class="token class-name">MainMenuViewModel</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"DataExportedSuccessfully"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>m <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token function">DisplayAlert</span><span class="token punctuation">(</span><span class="token string">"Info"</span><span class="token punctuation">,</span> <span class="token string">"Data exported Successfully. The location is :"</span><span class="token operator">+</span>m<span class="token punctuation">.</span>FilePath<span class="token punctuation">,</span> <span class="token string">"OK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            MessagingCenter<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Subscribe</span><span class="token punctuation">&lt;</span><span class="token class-name">MainMenuViewModel</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"NoDataToExport"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>m <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token function">DisplayAlert</span><span class="token punctuation">(</span><span class="token string">"Warning !"</span><span class="token punctuation">,</span> <span class="token string">"No data to export."</span><span class="token punctuation">,</span> <span class="token string">"OK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Interface-d’acces-au-stockage-interne-du-telephone"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Interface-d%E2%80%99acces-au-stockage-interne-du-telephone" class="headerlink" title="Interface d’accès au stockage interne du téléphone"></a>Interface d’accès au stockage interne du téléphone</h3><pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> ExportDataToExcel<span class="token punctuation">.</span>Interfaces
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IExportFilesToLocation</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">string</span> <span class="token function">GetFolderLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>Chaque Plateforme implémentera cette interface. Sur la plateforme Android, nous allons créer un dossier <strong>Export</strong> sur le stockage interne et y stocker le fichier Excel et sur IOS, l’export se fera dans le dossier Documents. L’idée est  d’obtenir un emplacement de stockage en utilisant un <strong>DependencyService</strong>.</p>
+</blockquote>
+<ul>
+<li>Plateforme Android</li>
+</ul>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> ExportDataToExcel<span class="token punctuation">.</span>Droid<span class="token punctuation">;</span>
+<span class="token keyword">using</span> ExportDataToExcel<span class="token punctuation">.</span>Interfaces<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Java<span class="token punctuation">.</span>IO<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Xamarin<span class="token punctuation">.</span>Forms<span class="token punctuation">;</span>
+
+<span class="token punctuation">[</span>assembly<span class="token punctuation">:</span> <span class="token function">Dependency</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span>ExportFilesToLocation<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">namespace</span> ExportDataToExcel<span class="token punctuation">.</span>Droid
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExportFilesToLocation</span> <span class="token punctuation">:</span> <span class="token class-name">IExportFilesToLocation</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token function">ExportFilesToLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">string</span> <span class="token function">GetFolderLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">string</span> root <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>Android<span class="token punctuation">.</span>OS<span class="token punctuation">.</span>Environment<span class="token punctuation">.</span>IsExternalStorageEmulated<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                root <span class="token operator">=</span> Android<span class="token punctuation">.</span>OS<span class="token punctuation">.</span>Environment<span class="token punctuation">.</span>ExternalStorageDirectory<span class="token punctuation">.</span>AbsolutePath<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+                root <span class="token operator">=</span> System<span class="token punctuation">.</span>Environment<span class="token punctuation">.</span><span class="token function">GetFolderPath</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>Environment<span class="token punctuation">.</span>SpecialFolder<span class="token punctuation">.</span>MyDocuments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token class-name">File</span> myDir <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>root <span class="token operator">+</span> <span class="token string">"/Exports"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>myDir<span class="token punctuation">.</span><span class="token function">Exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                myDir<span class="token punctuation">.</span><span class="token function">Mkdir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">return</span> root <span class="token operator">+</span> <span class="token string">"/Exports/"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>IOS</li>
+</ul>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> ExportDataToExcel<span class="token punctuation">.</span>Interfaces<span class="token punctuation">;</span>
+<span class="token keyword">using</span> ExportDataToExcel<span class="token punctuation">.</span>iOS<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Xamarin<span class="token punctuation">.</span>Forms<span class="token punctuation">;</span>
+
+<span class="token punctuation">[</span>assembly<span class="token punctuation">:</span> <span class="token function">Dependency</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span>ExportFilesToLocation<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">namespace</span> ExportDataToExcel<span class="token punctuation">.</span>iOS
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExportFilesToLocation</span> <span class="token punctuation">:</span> <span class="token class-name">IExportFilesToLocation</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token function">ExportFilesToLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">string</span> <span class="token function">GetFolderLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">string</span> root <span class="token operator">=</span> System<span class="token punctuation">.</span>Environment<span class="token punctuation">.</span><span class="token function">GetFolderPath</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>Environment<span class="token punctuation">.</span>SpecialFolder<span class="token punctuation">.</span>MyDocuments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> root <span class="token operator">+</span> <span class="token string">"/"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Pour accéder à l’emplacement de stockage quelque soit la plateforme, la ligne de code suivante suffit:</p>
+<pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">var</span> path <span class="token operator">=</span> DependencyService<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Get</span><span class="token punctuation">&lt;</span><span class="token class-name">IExportFilesToLocation</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">GetFolderLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Le-View-Model"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Le-View-Model" class="headerlink" title="Le View Model"></a>Le View Model</h3><pre class="line-numbers  language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> DocumentFormat<span class="token punctuation">.</span>OpenXml<span class="token punctuation">;</span>
+<span class="token keyword">using</span> DocumentFormat<span class="token punctuation">.</span>OpenXml<span class="token punctuation">.</span>Packaging<span class="token punctuation">;</span>
+<span class="token keyword">using</span> DocumentFormat<span class="token punctuation">.</span>OpenXml<span class="token punctuation">.</span>Spreadsheet<span class="token punctuation">;</span>
+<span class="token keyword">using</span> ExportDataToExcel<span class="token punctuation">.</span>Interfaces<span class="token punctuation">;</span>
+<span class="token keyword">using</span> ExportDataToExcel<span class="token punctuation">.</span>Models<span class="token punctuation">;</span>
+<span class="token keyword">using</span> ExportDataToExcel<span class="token punctuation">.</span>Services<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Plugin<span class="token punctuation">.</span>Permissions<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Plugin<span class="token punctuation">.</span>Permissions<span class="token punctuation">.</span>Abstractions<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>ObjectModel<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Diagnostics<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Linq<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Windows<span class="token punctuation">.</span>Input<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Xamarin<span class="token punctuation">.</span>Forms<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Cell <span class="token operator">=</span> DocumentFormat<span class="token punctuation">.</span>OpenXml<span class="token punctuation">.</span>Spreadsheet<span class="token punctuation">.</span>Cell<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> ExportDataToExcel<span class="token punctuation">.</span>ViewModels
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainMenuViewModel</span> <span class="token punctuation">:</span> <span class="token class-name">BaseViewModel</span>
+    <span class="token punctuation">{</span>
+
+        <span class="token keyword">public</span> <span class="token function">MainMenuViewModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Title <span class="token operator">=</span> <span class="token string">"Xamarin Developers"</span><span class="token punctuation">;</span>
+            <span class="token function">LoadData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ExportToExcelCommand <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">await</span> <span class="token function">ExportDataToExcelAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">/* Get Xamarin developers list from Service*/</span>
+        <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">LoadData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Developers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token generic-method"><span class="token function">ObservableCollection</span><span class="token punctuation">&lt;</span><span class="token class-name">XFDeveloper</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>XFDeveloperService<span class="token punctuation">.</span><span class="token function">GetAllXamarinDevelopers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+
+        <span class="token comment">/* Export the list to excel file at the location provide by DependencyService */</span>
+        <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token class-name">System<span class="token punctuation">.</span>Threading<span class="token punctuation">.</span>Tasks<span class="token punctuation">.</span>Task</span> <span class="token function">ExportDataToExcelAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">// Granted storage permission</span>
+            <span class="token keyword">var</span> storageStatus <span class="token operator">=</span> <span class="token keyword">await</span> CrossPermissions<span class="token punctuation">.</span>Current<span class="token punctuation">.</span><span class="token function">CheckPermissionStatusAsync</span><span class="token punctuation">(</span>Permission<span class="token punctuation">.</span>Storage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>storageStatus <span class="token operator">!=</span> PermissionStatus<span class="token punctuation">.</span>Granted<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">var</span> results <span class="token operator">=</span> <span class="token keyword">await</span> CrossPermissions<span class="token punctuation">.</span>Current<span class="token punctuation">.</span><span class="token function">RequestPermissionsAsync</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> Permission<span class="token punctuation">.</span>Storage <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                storageStatus <span class="token operator">=</span> results<span class="token punctuation">[</span><span class="token class-name">Permission<span class="token punctuation">.</span>Storage</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>Developers<span class="token punctuation">.</span><span class="token function">Count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">try</span>
+                <span class="token punctuation">{</span>
+                    <span class="token keyword">string</span> date <span class="token operator">=</span> DateTime<span class="token punctuation">.</span>Now<span class="token punctuation">.</span><span class="token function">ToShortDateString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    date <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">Replace</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token string">"_"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token keyword">var</span> path <span class="token operator">=</span> DependencyService<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Get</span><span class="token punctuation">&lt;</span><span class="token class-name">IExportFilesToLocation</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">GetFolderLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"xfdevelopers"</span> <span class="token operator">+</span> date <span class="token operator">+</span> <span class="token string">".xlsx"</span><span class="token punctuation">;</span>
+                    FilePath <span class="token operator">=</span> path<span class="token punctuation">;</span>
+                    <span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token class-name">SpreadsheetDocument</span> document <span class="token operator">=</span> SpreadsheetDocument<span class="token punctuation">.</span><span class="token function">Create</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> SpreadsheetDocumentType<span class="token punctuation">.</span>Workbook<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token class-name">WorkbookPart</span> workbookPart <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">AddWorkbookPart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        workbookPart<span class="token punctuation">.</span>Workbook <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Workbook</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        <span class="token class-name">WorksheetPart</span> worksheetPart <span class="token operator">=</span> workbookPart<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddNewPart</span><span class="token punctuation">&lt;</span><span class="token class-name">WorksheetPart</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        worksheetPart<span class="token punctuation">.</span>Worksheet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Worksheet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        <span class="token class-name">Sheets</span> sheets <span class="token operator">=</span> workbookPart<span class="token punctuation">.</span>Workbook<span class="token punctuation">.</span><span class="token function">AppendChild</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Sheets</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">Sheet</span> sheet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Sheet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> Id <span class="token operator">=</span> workbookPart<span class="token punctuation">.</span><span class="token function">GetIdOfPart</span><span class="token punctuation">(</span>worksheetPart<span class="token punctuation">)</span><span class="token punctuation">,</span> SheetId <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> Name <span class="token operator">=</span> <span class="token string">"Xamarin Forms developers list"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                        sheets<span class="token punctuation">.</span><span class="token function">Append</span><span class="token punctuation">(</span>sheet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        workbookPart<span class="token punctuation">.</span>Workbook<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        <span class="token class-name">SheetData</span> sheetData <span class="token operator">=</span> worksheetPart<span class="token punctuation">.</span>Worksheet<span class="token punctuation">.</span><span class="token function">AppendChild</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">SheetData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        <span class="token comment">// Constructing header</span>
+                        <span class="token class-name">Row</span> row <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Row</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        row<span class="token punctuation">.</span><span class="token function">Append</span><span class="token punctuation">(</span>
+                            <span class="token function">ConstructCell</span><span class="token punctuation">(</span><span class="token string">"No"</span><span class="token punctuation">,</span> CellValues<span class="token punctuation">.</span>String<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            <span class="token function">ConstructCell</span><span class="token punctuation">(</span><span class="token string">"FullName"</span><span class="token punctuation">,</span> CellValues<span class="token punctuation">.</span>String<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            <span class="token function">ConstructCell</span><span class="token punctuation">(</span><span class="token string">"Phone"</span><span class="token punctuation">,</span> CellValues<span class="token punctuation">.</span>String<span class="token punctuation">)</span>
+                            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        <span class="token comment">// Insert the header row to the Sheet Data</span>
+                        sheetData<span class="token punctuation">.</span><span class="token function">AppendChild</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                        <span class="token comment">// Add each product</span>
+                        <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token keyword">var</span> d <span class="token keyword">in</span> Developers<span class="token punctuation">)</span>
+                        <span class="token punctuation">{</span>
+                            row <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Row</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            row<span class="token punctuation">.</span><span class="token function">Append</span><span class="token punctuation">(</span>
+                                <span class="token function">ConstructCell</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>ID<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> CellValues<span class="token punctuation">.</span>String<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                <span class="token function">ConstructCell</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>FullName<span class="token punctuation">,</span> CellValues<span class="token punctuation">.</span>String<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                <span class="token function">ConstructCell</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>Phone<span class="token punctuation">,</span> CellValues<span class="token punctuation">.</span>String<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            sheetData<span class="token punctuation">.</span><span class="token function">AppendChild</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+
+                        worksheetPart<span class="token punctuation">.</span>Worksheet<span class="token punctuation">.</span><span class="token function">Save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        MessagingCenter<span class="token punctuation">.</span><span class="token function">Send</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"DataExportedSuccessfully"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+
+                <span class="token punctuation">}</span>
+                <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Debug<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"ERROR: "</span><span class="token operator">+</span> e<span class="token punctuation">.</span>Message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                MessagingCenter<span class="token punctuation">.</span><span class="token function">Send</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"NoDataToExport"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+
+        <span class="token comment">/* To create cell in Excel */</span>
+        <span class="token keyword">private</span> <span class="token class-name">Cell</span> <span class="token function">ConstructCell</span><span class="token punctuation">(</span><span class="token keyword">string</span> <span class="token keyword">value</span><span class="token punctuation">,</span> <span class="token class-name">CellValues</span> dataType<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Cell</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                CellValue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CellValue</span><span class="token punctuation">(</span><span class="token keyword">value</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                DataType <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token generic-method"><span class="token function">EnumValue</span><span class="token punctuation">&lt;</span><span class="token class-name">CellValues</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>dataType<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+
+        <span class="token keyword">public</span> <span class="token class-name">ICommand</span> ExportToExcelCommand <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+        <span class="token keyword">private</span> ObservableCollection<span class="token operator">&lt;</span>XFDeveloper<span class="token operator">&gt;</span> _developers<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> ObservableCollection<span class="token operator">&lt;</span>XFDeveloper<span class="token operator">&gt;</span> Developers
+        <span class="token punctuation">{</span>
+            <span class="token keyword">get</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> _developers<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+            <span class="token keyword">set</span> <span class="token punctuation">{</span> <span class="token function">SetProperty</span><span class="token punctuation">(</span><span class="token keyword">ref</span> _developers<span class="token punctuation">,</span> <span class="token keyword">value</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">private</span> <span class="token keyword">string</span> _filePath<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token keyword">string</span> FilePath
+        <span class="token punctuation">{</span>
+            <span class="token keyword">get</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> _filePath<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+            <span class="token keyword">set</span> <span class="token punctuation">{</span> <span class="token function">SetProperty</span><span class="token punctuation">(</span><span class="token keyword">ref</span> _filePath<span class="token punctuation">,</span> <span class="token keyword">value</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>   
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Resultat-de-notre-travail"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Resultat-de-notre-travail" class="headerlink" title="Résultat de notre travail"></a>Résultat de notre travail</h2><p><img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/post_img.png"></p>
+<h2 id="Ressources"><a href="https://lioncoding.com/2019/03/07/2019-03-07-export-de-donnees-sous-format-excel-dans-xamarin-forms/#Ressources" class="headerlink" title="Ressources"></a>Ressources</h2><p>Voici le <a href="https://github.com/egbakou/ExportDataToExcel" target="_blank" rel="noopener">code source</a> de ce projet sur Github.</p>
+
+      
+    </div>
+
+    <div>
+        <article>
+    <div id="share-buttons">
+        <!-- Twitter -->
+        <a href="https://twitter.com/intent/tweet?text=https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/" target="_blank">
+            <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/twitter.png" alt="Twitter">
+        </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/" target="_blank">
+            <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/facebook.png" alt="Facebook">
+        </a>   
+        <!-- Email -->
+        <a href="mailto:?Body=https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/">
+            <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/email.png" alt="Email">
+        </a>
+        <!-- LinkedIn -->
+        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;amp;url=https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/" target="_blank">
+            <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/linkedin.png" alt="LinkedIn">
+        </a>
+        <!-- Print -->
+        <a href="javascript:;" onclick="window.print()">
+                <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/print.png" alt="Print">
+        </a>
+        <!-- Digg -->
+        <a href="http://www.digg.com/submit?url=https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/" target="_blank">
+            <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/diggit.png" alt="Digg">
+        </a>
+        <!-- Google+ -->
+        <a href="https://plus.google.com/share?url=https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/" target="_blank">
+            <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/google.png" alt="Google">
+        </a>
+        <!-- Reddit -->
+        <a href="http://reddit.com/submit?url=https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/&amp;amp;title=Simple%20Share%20Buttons" target="_blank">
+            <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/reddit.png" alt="Reddit">
+        </a>
+    </div>
+</article>
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+   <div class="col-md-6" style="margin-bottom: 20px !important">
+      <h4 style="color: black">Post récent</h4>
+      <a href="https://lioncoding.com/2019/03/15/2019-03-15-Interagir-avec-la-barre-de-statut-du-Smartphone-dans-Xamarin-Forms/" id="article-nav-newer" class="article-nav-link-wrap">
+          <strong "article-nav-title"="">
+            
+              Interagir avec la barre de statut du smartphone dans Xamarin.Forms
+            
+          </strong>
+      </a>
+      <br>
+   </div>
+  
+  
+    <div class="col-md-6" style="margin-bottom: 20px !important">
+        <h4 style="color: black">Post antérieur</h4>
+        <a href="https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-title">Concevoir un lecteur de Code-barres avec Xamarin.Forms</strong>
+        </a>
+        <br>
+    </div>
+    
+  
+</nav>
+
+  
+  <br>
+</article>
+
+
+
+<section id="comments">
+  <h4>Commentaires</h4>
+  <div id="disqus_thread"><iframe id="dsq-app9098" name="dsq-app9098" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(1).html" horizontalscrolling="no" verticalscrolling="no" style="height: 513px !important;"></iframe></div>
+</section>
+<br>
+
+
+</div>
+<div class="col-md-3 col-sm-3 blog-sidebar">
+  <script type="text/javascript" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/widget_2.js.téléchargement"></script><script type="text/javascript">kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'E1E81NG7F');kofiwidget2.draw();</script><style>img.kofiimg{display: initial!important;vertical-align:middle;height:13px!important;width:20px!important;padding-top:0!important;padding-bottom:0!important;border:none;margin-top:0;margin-right:5px!important;margin-left:0!important;margin-bottom:3px!important;content:url('https://storage.ko-fi.com/cdn/cup-border.png')}.kofiimg:after{vertical-align:middle;height:25px;padding-top:0;padding-bottom:0;border:none;margin-top:0;margin-right:6px;margin-left:0;margin-bottom:4px!important;content:url('https://storage.ko-fi.com/cdn/whitelogo.svg')}.btn-container{display:inline-block!important;white-space:nowrap;min-width:160px}span.kofitext{color:#fff !important;letter-spacing: -0.15px!important;text-wrap:none;vertical-align:middle;line-height:33px !important;padding:0;text-align:center;text-decoration:none!important; text-shadow: 0 1px 1px rgba(34, 34, 34, 0.05);}.kofitext a{color:#fff !important;text-decoration:none:important;}.kofitext a:hover{color:#fff !important;text-decoration:none}a.kofi-button{box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);line-height:36px!important;min-width:150px;display:inline-block!important;background-color:#29abe0;padding:2px 12px !important;text-align:center !important;border-radius:7px;color:#fff;cursor:pointer;overflow-wrap:break-word;vertical-align:middle;border:0 none #fff !important;font-family:'Quicksand',Helvetica,Century Gothic,sans-serif !important;text-decoration:none;text-shadow:none;font-weight:700!important;font-size:14px !important}a.kofi-button:visited{color:#fff !important;text-decoration:none !important}a.kofi-button:hover{opacity:.85;color:#f5f5f5 !important;text-decoration:none !important}a.kofi-button:active{color:#f5f5f5 !important;text-decoration:none !important}.kofitext img.kofiimg {height:15px!important;width:22px!important;display: initial;animation: kofi-wiggle 3s infinite;}@keyframes kofi-wiggle{0%{transform:rotate(0) scale(1)}60%{transform:rotate(0) scale(1)}75%{transform:rotate(0) scale(1.12)}80%{transform:rotate(0) scale(1.1)}84%{transform:rotate(-10deg) scale(1.1)}88%{transform:rotate(10deg) scale(1.1)}92%{transform:rotate(-10deg) scale(1.1)}96%{transform:rotate(10deg) scale(1.1)}100%{transform:rotate(0) scale(1)}}</style><link href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/css(5)" rel="stylesheet" type="text/css"><div class="btn-container"><a title="Support me on ko-fi.com" class="kofi-button" style="background-color:#29abe0;" href="https://ko-fi.com/E1E81NG7F" target="_blank"> <span class="kofitext"><img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/cup-border.webp" class="kofiimg">Support Me on Ko-fi</span></a></div>
+ 
+<br>
+<h2 class="no-top-space">Mes Badges</h2>
+
+<!-- Microsoft MVP-->
+<a href="https://mvp.microsoft.com/en-us/PublicProfile/5003669">
+  <img width="250px" height="100px" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/MVP_Logo_Horizontal_Secondary_Blue286_RGB_300ppi.png">
+</a>
+<!-- PLANET XAMARIN -->
+<a href="https://planetxamarin.com/">
+  <img width="250px" height="100px" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/planetxamarin-featured-badge.png">
+</a>
+<!-- snppts-->
+<a href="https://www.snppts.dev/">
+  <img width="250px" height="100px" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/snppts-badge.jpg">
+</a>
+<br>
+<!-- CATEGORIES START -->
+<h2 class="no-top-space">Categories</h2>
+
+<div class="widget-wrap">
+  <div class="widget">
+    <ul class="nav sidebar-categories margin-bottom-40">
+      
+	<li>
+	  <a href="https://lioncoding.com/categories/xamarinforms/">xamarinforms (24)</a>
+	</li>
+      
+    </ul>
+  </div>
+</div>
+
+<!-- CATEGORIES END -->
+
+<!-- BEGIN BLOG TAGS -->
+<div class="blog-tags margin-bottom-20">
+  <h2>Tags</h2>
+  
+  <div class="widget-wrap">
+    <div class="widget">
+      
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/NET/"><i class="fa fa-tags"></i>.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/API/"><i class="fa fa-tags"></i>API</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Activity/"><i class="fa fa-tags"></i>Activity</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/App-User-LocationInfo/"><i class="fa fa-tags"></i>App.User.LocationInfo</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Barcode/"><i class="fa fa-tags"></i>Barcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Behaviors/"><i class="fa fa-tags"></i>Behaviors</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Binding/"><i class="fa fa-tags"></i>Binding</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Calculeted-Field/"><i class="fa fa-tags"></i>Calculeted Field</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Code-behind/"><i class="fa fa-tags"></i>Code behind</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Code-barres/"><i class="fa fa-tags"></i>Code-barres</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Color/"><i class="fa fa-tags"></i>Color</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Color-Picker/"><i class="fa fa-tags"></i>Color Picker</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/ColorPicker/"><i class="fa fa-tags"></i>ColorPicker</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Command/"><i class="fa fa-tags"></i>Command</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Control-Event/"><i class="fa fa-tags"></i>Control Event</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Converter/"><i class="fa fa-tags"></i>Converter</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Country-Info/"><i class="fa fa-tags"></i>Country Info</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Country-List/"><i class="fa fa-tags"></i>Country List</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Credit-Card/"><i class="fa fa-tags"></i>Credit Card</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Disable-Valiation-button/"><i class="fa fa-tags"></i>Disable  Valiation button</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Emoji/"><i class="fa fa-tags"></i>Emoji</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Enable-Valiation-button/"><i class="fa fa-tags"></i>Enable Valiation button</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Excel/"><i class="fa fa-tags"></i>Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Export/"><i class="fa fa-tags"></i>Export</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Extension/"><i class="fa fa-tags"></i>Extension</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/FingerPrint/"><i class="fa fa-tags"></i>FingerPrint</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Format/"><i class="fa fa-tags"></i>Format</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Hot-Reload/"><i class="fa fa-tags"></i>Hot Reload</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Location/"><i class="fa fa-tags"></i>Location</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Login/"><i class="fa fa-tags"></i>Login</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Nuget/"><i class="fa fa-tags"></i>Nuget</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Oauth2/"><i class="fa fa-tags"></i>Oauth2</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Picker/"><i class="fa fa-tags"></i>Picker</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/RESTCountries-NET/"><i class="fa fa-tags"></i>RESTCountries.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Reporting/"><i class="fa fa-tags"></i>Reporting</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Share/"><i class="fa fa-tags"></i>Share</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Smartphone/"><i class="fa fa-tags"></i>Smartphone</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Statusbar/"><i class="fa fa-tags"></i>Statusbar</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Timeline/"><i class="fa fa-tags"></i>Timeline</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Triggers/"><i class="fa fa-tags"></i>Triggers</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/UI/"><i class="fa fa-tags"></i>UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/UI-Challenge/"><i class="fa fa-tags"></i>UI Challenge</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Validation/"><i class="fa fa-tags"></i>Validation</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Visual-studio/"><i class="fa fa-tags"></i>Visual studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/WhatsApp-UI/"><i class="fa fa-tags"></i>WhatsApp UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/WhatsApp-UI-in-Xamarin/"><i class="fa fa-tags"></i>WhatsApp UI in Xamarin</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/XAML/"><i class="fa fa-tags"></i>XAML</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/XamDevSummit/"><i class="fa fa-tags"></i>XamDevSummit</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Xamarin/"><i class="fa fa-tags"></i>Xamarin</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Xamarin-Tracking-Plugin/"><i class="fa fa-tags"></i>Xamarin Tracking Plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Xamarin-UI/"><i class="fa fa-tags"></i>Xamarin UI</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Xaml/"><i class="fa fa-tags"></i>Xaml</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/Xaml-format/"><i class="fa fa-tags"></i>Xaml format</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/custom-stepper/"><i class="fa fa-tags"></i>custom stepper</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://lioncoding.com/tags/stepper-with-entry/"><i class="fa fa-tags"></i>stepper with entry</a></li></ul>
+    </div>
+  </div>
+
+
+</div>
+<!-- END BLOG TAGS -->
+
+
+<!-- BEGIN FEATURED POSTS -->                            
+<h2>Nouveaux posts</h2>
+<div class="recent-news margin-bottom-10">
+  
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/barcodeReaderXF_post(fr).jpg" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/02/21/2019-02-21-Concevoir-un-lecteur-de-Code-barres-avec-Xamarin-Forms/">Concevoir un lecteur de Code-barres avec Xamarin.Forms</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+  
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/uc" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/04/08/2019-04-08-UI-Concevoir-un-Timeline-dans-Xamarin-Forms/">UI: Concevoir un Timeline dans Xamarin.Forms</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/uc(1)" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/04/28/2019-04-28-Xamarin-Forms-Formatage-automatique-du-code-Xaml/">Xamarin.Forms: Formatage automatique du code XAML</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/3UI.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/05/08/2019-05-08-WhatsApp-UI-dans-Xamarin-Forms-Partie-1/">WhatsApp UI dans Xamarin.Forms (Partie 1)</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/screenshot1.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/05/09/2019-05-09-WhatsApp-UI-dans-Xamarin-Forms-Partie-2/">WhatsApp UI dans Xamarin.Forms (Partie 2)</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/uc(2)" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/05/10/2019-05-10-WhatsApp-UI-dans-Xamarin-Forms-Partie-3/">WhatsApp UI dans Xamarin.Forms (Partie 3)</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/3UI.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/05/11/2019-05-11-WhatsApp-UI-dans-Xamarin-Forms-Partie-5-Fin/">WhatsApp UI dans Xamarin.Forms (Partie 5 &amp; Fin)</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/CALL.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/05/11/2019-05-11-WhatsApp-UI-dans-Xamarin-Forms-Partie-4/">WhatsApp UI dans Xamarin.Forms (Partie 4)</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/AppUserLocationInfo3.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/06/22/2019-06-22-Mon-premier-Nuget-package-App-User-LocationInfo/">Nuget package App.User.LocationInfo</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/D_M7UGzWwAccEew.jpeg" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/07/11/2019-07-11-Hot-Reload-pour-Xamarin-Forms/">Hot Reload dans Xamarin.Forms 🔥🔥🔥🔥🔥🔥</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/xamarinfingerprint.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/07/19/2019-07-19-Xamarin-Forms-FingerPrint/">Xamarin.Forms FingerPrint</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/uc(3)" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/08/11/2019-08-11-A-la-decouverte-de-RESTCountries-NET/">A la découverte de RESTCountries.NET</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/oauth2_api_xamarin_2.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/10/27/2019-10-27-Consommer-des-API-protegees-par-Oauth2-dans-Xamarin-Forms/">Consommer des API protégées par OAuth2 dans Xamarin.Forms</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/2d214269c2b5da7da0f23d716c2bc78b.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/10/11/2019-10-11-Xamarin-UI-Challenge-Credit-Card-Checkout/">Xamarin UI Challenge - Credit Card Checkout</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/Download-EMI-calculator.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/12/23/2019-23-12-Les-Champs-calcules-dans-Xamarin-Forms-les-bonnes-pratiques/">Les Champs calculés dans Xamarin.Forms: les bonnes pratiques 🎅</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/uc(4)" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2019/11/05/2019-11-05-Credit-Card-checkout-CarouselView-de-Xamarin-forms-4-3-en-action/">Credit Card Checkout - CarouselView de Xamarin.Forms 4.3 en action</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/1_nR5WmKEZK8quF9_Sy8_2Xg.png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2020/01/25/2020-01-25-Les-solutions-pour-Activer-ou-Desactiver-le-bouton-de-validation-d-un-formulaire-Xamarin-Forms/">Activer ou Désactiver le bouton de validation d'un formulaire Xamarin.Forms</a></h3>
+	</div>                        
+      </div>
+    
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/screenshot(1).png" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://lioncoding.com/2020/02/26/2020-02-26-Controle-personnalise-en-Xamarin-Forms-Un-Stepper-disposant-d-un-Entry/">Contrôle personnalisé dans Xamarin.Forms - Un Stepper disposant d'un Entry</a></h3>
+	</div>                        
+      </div>
+    
+  
+</div>
+<!-- END FEATURED POSTS -->                            
+
+</div>
+</div>
+
+  </section>
+</div>
+
+    <!-- BEGIN PRE-FOOTER -->
+    <div class="pre-footer">
+      <div class="container">
+        <div class="row">
+          <!-- BEGIN BOTTOM ABOUT BLOCK -->
+          <div class="col-md-4 col-sm-6 pre-footer-col">
+            <h2>A propos de nous</h2>
+            <p>Mis en place en Juin 2018, ce blog partage avec vous des projets, des nouveautés, des astuces, en développement d'applications.</p>
+          </div>
+          <!-- END BOTTOM ABOUT BLOCK -->
+
+          <!-- BEGIN BOTTOM CONTACTS -->
+          <div class="col-md-4 col-sm-6 pre-footer-col">
+            
+          </div>
+          <!-- END BOTTOM CONTACTS -->
+
+	
+          <!-- BEGIN TWITTER BLOCK -->
+          <div class="col-md-4 col-sm-6 pre-footer-col">
+              <h2>Contacts</h2>
+              <address class="margin-bottom-40">
+                Lomé-Togo<br>
+                <!--Phone: undefined<br>-->
+                Email: <a href="mailto:laurent@lioncoding.com">laurent@lioncoding.com</a><br>
+              </address>
+          </div>
+          <!-- END TWITTER BLOCK -->
+	
+        </div>
+      </div>
+    </div>
+    <!-- END PRE-FOOTER -->
+
+    <!-- BEGIN FOOTER -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- BEGIN COPYRIGHT -->
+          <div class="col-md-6 col-sm-6 padding-top-10">
+                  © 2020 LionCoding | Projets | Tutoriels<br>
+          </div>
+          <!-- END COPYRIGHT -->
+	  <!-- BEGIN SOCIAL -->
+<div class="col-md-6 col-sm-6">
+  <ul class="social-footer list-unstyled list-inline pull-right">
+    
+      <li><a href="https://github.com/egbakou"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="https://twitter.com/lioncoding"><i class="fa fa-twitter"></i></a></li>
+    
+      <li><a href="https://lioncoding.com/feed.xml"><i class="fa fa-rss"></i></a></li>
+    
+      <li><a href="https://linkedin.com/in/laurentegbakou"><i class="fa fa-linkedin"></i></a></li>
+    
+    <li><a href="https://lioncoding.com/sitemap.xml"><i class="fa fa-sitemap"></i></a></li>
+  </ul>  
+</div>
+<!-- END SOCIAL -->
+
+        </div>
+      </div>
+    </div>
+    <!-- END FOOTER -->
+
+  <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
+<!--[if lt IE 9]>
+<script src="/metronic/assets/plugins/respond.min.js"></script>
+<![endif]--> 
+<script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/jquery.min.js.téléchargement"></script>
+<script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/jquery-migrate.min.js.téléchargement"></script>
+<script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/bootstrap.min.js.téléchargement"></script>
+<script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/back-to-top.js.téléchargement"></script>
+<script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/owl.carousel.min.js.téléchargement"></script>
+<script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/layout.js.téléchargement"></script>
+<script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/wow.min.js.téléchargement"></script>
+<script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/prism.js.téléchargement"></script>
+
+
+  <link rel="stylesheet" href="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/jquery.fancybox.css">
+  <script src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/jquery.fancybox.pack.js.téléchargement"></script>
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        Layout.init();    
+        Layout.initOWL();
+        Layout.initTwitter();
+        Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+        Layout.initNavScrolling(); 
+	new WOW().init();
+    });
+</script>
+<!-- END CORE PLUGINS -->
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5eedc4389e5f69442290f526/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+<!--End of Tawk.to Script-->
+
+
+<!-- BEGIN PAGE-SPECIFIC PLUGINS --> 
+
+
+
+
+
+
+
+<!-- END PAGE-SPECIFIC PLUGINS --> 
+
+<!-- BEGIN INTEGRATIONS -->
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','mqSgSxnMMDR4bbs2NXuy','2.0.0');
+    </script>
+
+
+
+<script>
+  
+    var disqus_config = function () {
+      this.page.url = 'https://lioncoding.com/2019/03/07/2019-03-07-Export-de-donnees-sous-format-Excel-dans-Xamarin-Forms/';
+    };
+  
+  (function() {  // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//lioncoding.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<script id="dsq-count-scr" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/count.js.téléchargement" async=""></script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132769949-1');
+</script>
+
+<!-- End Google Analytics -->
+
+
+<!-- END INTEGRATIONS -->
+
+
+
+<div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 10px; right: 10px; opacity: 0; cursor: pointer;"><img src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/up.png" style="width:40px; height:40px"></div><div id="ZHbaspV-1592977493168" class="" style="display: block !important;"><iframe id="fY13CGN-1592977493171" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(2).html" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; top: auto !important; right: auto !important; bottom: auto !important; left: auto !important; position: static !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 350px !important; z-index: 999999 !important; cursor: auto !important; float: none !important; border-radius: unset !important; pointer-events: auto !important; display: none !important; height: 120px !important;"></iframe><iframe id="wXpZIQk-1592977493172" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(3).html" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; position: fixed !important; border: 0px !important; padding: 0px !important; transition-property: none !important; z-index: 1000001 !important; cursor: auto !important; float: none !important; pointer-events: auto !important; box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 10px 0px !important; height: 60px !important; min-height: 60px !important; max-height: 60px !important; width: 60px !important; min-width: 60px !important; max-width: 60px !important; border-radius: 50% !important; transform: rotate(0deg) translateZ(0px) !important; transform-origin: 0px center !important; margin: 0px !important; top: auto !important; bottom: 20px !important; right: 20px !important; left: auto !important; display: block !important;"></iframe><iframe id="bcCUcjM-1592977493172" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(4).html" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; position: fixed !important; border: 0px !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; z-index: 1000003 !important; cursor: auto !important; float: none !important; border-radius: unset !important; pointer-events: auto !important; top: auto !important; bottom: 60px !important; right: 15px !important; left: auto !important; width: 21px !important; max-width: 21px !important; min-width: 21px !important; height: 21px !important; max-height: 21px !important; min-height: 21px !important; display: block !important;"></iframe><div class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; top: 0px !important; right: auto !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 100% !important; display: none !important; z-index: 1000001 !important; cursor: move !important; float: left !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="s4bvKBP-1592977493168" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; top: 0px !important; right: auto !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 6px !important; height: 100% !important; display: block !important; z-index: 999998 !important; cursor: w-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="Y0xdWc3-1592977493168" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; top: 0px !important; right: 0px !important; bottom: auto !important; left: auto !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 6px !important; display: block !important; z-index: 999998 !important; cursor: n-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><div id="dVyzoh9-1592977493169" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; top: 0px !important; right: auto !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: nw-resize !important; float: none !important; border-radius: unset !important; pointer-events: auto !important;"></div><iframe id="rUSAT9k-1592977493218" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(5).html" frameborder="0" scrolling="no" title="chat widget" class="" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; position: fixed !important; border: 0px !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 378px !important; height: 613px !important; display: none !important; z-index: 999999 !important; cursor: auto !important; float: none !important; border-radius: unset !important; pointer-events: auto !important; bottom: 100px !important; top: auto !important; right: 20px !important; left: auto !important;"></iframe></div><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/widget_iframe.751466924564365530b311cd28fbf79b.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe style="display: none;" src="./Export de données sous format Excel dans Xamarin.Forms _ LionCoding _ Projets _ Tutoriels_files/saved_resource(6).html"></iframe></body></html>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BarCodeReader.Views.ListeConfigurationView"
+             Title="{Binding Title}">
+    <StackLayout
+                         Margin="10">
+        <ListView ItemsSource="{Binding MesOptions}"
+                  x:Name="listview"
+                  SelectionMode="None"
+                  ItemTapped="OnTapping">
+            <ListView.RowHeight>
+                <OnIdiom
+                            x:TypeArguments="x:Int32"
+                            Phone="80"
+                            Tablet="120" />
+            </ListView.RowHeight>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Titre}"
+                              TextColor="#19274d"
+                              Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

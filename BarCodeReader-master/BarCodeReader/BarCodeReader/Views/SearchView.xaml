@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BarCodeReader.Views.SearchView"
+             Title="{Binding Title}">
+    <ContentPage.Content >
+        <StackLayout>
+            <SearchBar x:Name="MainSearchBar" Placeholder="Rechercher par le Nom" TextChanged="Onsearch" />
+            <StackLayout VerticalOptions="FillAndExpand">
+                <ListView x:Name="listView" 
+                    CachingStrategy="RecycleElement"
+                    HasUnevenRows="False"
+                    SelectionMode="None"
+                    RefreshControlColor="Green"
+                    ItemsSource="{Binding ListeCible}"
+                    SeparatorColor="Transparent"
+                    SeparatorVisibility="None">
+                    <ListView.RowHeight>
+                        <OnIdiom
+                            x:TypeArguments="x:Int32"
+                            Phone="80"
+                            Tablet="120" />
+                    </ListView.RowHeight>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Clicked="OnDelete" 
+                                              CommandParameter="{Binding Matricule}"
+                                              Text="Supprimer" 
+                                              IconImageSource="delete.png"
+                                              IsDestructive="True" />
+                                </ViewCell.ContextActions>
+                                <Grid ColumnSpacing="20" RowSpacing="0">
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="1" />
+                                    </Grid.RowDefinitions>
+
+                                    <BoxView
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        BackgroundColor="LightGray"
+                                        HorizontalOptions="Start"
+                                        WidthRequest="10" />
+
+
+
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        HeightRequest="50"    
+                                        FontSize="18"
+                                            HorizontalOptions="FillAndExpand"
+                                            Text="{Binding Cote}"
+                                            VerticalOptions="Start" />
+
+
+                                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        HorizontalOptions="FillAndExpand"
+                                        Orientation="Vertical"
+                                        VerticalOptions="Center">
+                                        <Label
+                                            FontSize="18"
+                                            HorizontalOptions="FillAndExpand"
+                                            Text="{Binding Nom}"
+                                            VerticalOptions="Start" />
+                                        <Label
+                                            FontSize="15"
+                                            Text="{Binding Prenom}"
+                                            TextColor="#6BCB24"
+                                            VerticalOptions="Start" />
+                                    </StackLayout>
+                                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="4"
+                                        BackgroundColor="LightGray"
+                                        HeightRequest="1"
+                                        Opacity=".5"
+                                        VerticalOptions="End" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
